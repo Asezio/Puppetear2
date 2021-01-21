@@ -15,6 +15,8 @@ public class Weapon1 : WeaponBase
     void Update()
     {
         DetectThing();
+        Attack();
+        Flip();
     }
 
 

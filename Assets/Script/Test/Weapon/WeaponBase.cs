@@ -177,6 +177,7 @@ public class WeaponBase : MonoBehaviour
         {
             if(canAttack == true)
             {
+                Debug.Log("Attack");
                 anim.SetBool("Attack", true);
                 anim.SetTrigger("Interact");
                 StartCoroutine(StartAttack());
@@ -195,6 +196,26 @@ public class WeaponBase : MonoBehaviour
         yield return new WaitForSeconds(starttime);
         coll2D.enabled = true;
         StartCoroutine(disableHitBox());
+    }
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("Enemy"))
+        {
+            other.GetComponent<EnemyBase>().Die();
+        }
+    }
+
+    protected void Flip()
+    {
+        if (GameObject.FindGameObjectWithTag("Player").GetComponent<SpriteRenderer>().flipX == true)
+        {
+            transform.localEulerAngles = new Vector3(0, 180, 0);
+        }
+        else
+        {
+            transform.localEulerAngles = new Vector3(0, 0, 0);
+        }
     }
     //protected void DetectItem()
     //{
