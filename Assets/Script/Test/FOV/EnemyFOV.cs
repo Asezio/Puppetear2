@@ -5,9 +5,9 @@ using UnityEngine;
 public class EnemyFOV : MonoBehaviour
 {
     [SerializeField] private float speed = 25f;
-    [SerializeField] protected Vector3[] waypointList;
-    [SerializeField] protected float[] waitTimeList;
-    protected int wayPointIndex;
+    [SerializeField] private Vector3[] waypointList;
+    [SerializeField] private float[] waitTimeList;
+    private int wayPointIndex;
     [SerializeField] private Transform pfFieldofView;
     [SerializeField] Vector3 aimDirection;
     [SerializeField] private Transform player;
@@ -18,16 +18,16 @@ public class EnemyFOV : MonoBehaviour
 
     public FOV fieldOfView;
 
-    protected float waitTimer;
-    protected Vector3 lastMoveDir;
+    private float waitTimer;
+    private Vector3 lastMoveDir;
 
-    protected enum State
+    private enum State
     {
         Waiting,
         Moving,
     }
 
-    protected State state;
+    private State state;
     private void Start()
     {
         if (waitTimeList.Length != 0)
@@ -42,7 +42,7 @@ public class EnemyFOV : MonoBehaviour
         fieldOfView.SetViewDistance(viewDistance);
     }
 
-    protected virtual void Update()
+    private void Update()
     {
         switch (state)
         {
@@ -59,11 +59,12 @@ public class EnemyFOV : MonoBehaviour
         {
             fieldOfView.SetOrigin(transform.position);
             fieldOfView.SetAimDirection(GetAimDir());
-        }      
-        Debug.DrawLine(transform.position, transform.position + GetAimDir() * 10f);
+        }
+
+        Debug.DrawLine(transform.position, transform.position + GetAimDir() * 0.5f);
     }
 
-    protected virtual void HandleMovement()
+    private void HandleMovement()
     {
         switch (state)
         {
@@ -98,7 +99,10 @@ public class EnemyFOV : MonoBehaviour
                     }
 
                 }
+
+
                 break;
+
         }
     }
 
