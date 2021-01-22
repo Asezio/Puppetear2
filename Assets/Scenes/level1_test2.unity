@@ -143,7 +143,7 @@ MonoBehaviour:
   cooldown: 3
   timer: 0
   time: 0.1
-  starttime: 0.3
+  starttime: 0.15
   canAttack: 0
   isCarrying: 0
   isHiden: 0

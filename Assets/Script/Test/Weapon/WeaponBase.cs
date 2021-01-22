@@ -74,7 +74,7 @@ public class WeaponBase : MonoBehaviour
                 {
                     used.GetComponent<ItemBase>().Drop();
                     isCarrying = false;
-                    canAttack = true;
+                    StartCoroutine(ActivateAttack());
                     used.GetComponent<SortingOrder>().enabled = true;
                 }
                 else
@@ -175,9 +175,10 @@ public class WeaponBase : MonoBehaviour
     {
         if(Input.GetMouseButtonDown(0)||Input.GetButtonDown("Interact"))
         {
-            if(canAttack == true)
+            Debug.Log("Attack");
+            if (canAttack == true && GameObject.Find("UI_Weapon1").GetComponent<UIweapon>().isReady == true)
             {
-                Debug.Log("Attack");
+                //Debug.Log("Attack");
                 anim.SetBool("Attack", true);
                 anim.SetTrigger("Interact");
                 StartCoroutine(StartAttack());
@@ -196,6 +197,12 @@ public class WeaponBase : MonoBehaviour
         yield return new WaitForSeconds(starttime);
         coll2D.enabled = true;
         StartCoroutine(disableHitBox());
+    }
+
+    IEnumerator ActivateAttack()
+    {
+        yield return new WaitForEndOfFrame();
+        canAttack = true;
     }
 
     void OnTriggerEnter2D(Collider2D other)
