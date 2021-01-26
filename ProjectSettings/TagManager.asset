@@ -8,6 +8,7 @@ TagManager:
   - Item
   - UIWeapon
   - Obstacles
+  - drinker
   layers:
   - Default
   - TransparentFX

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyFOV : MonoBehaviour
+public class PatrolTest : MonoBehaviour
 {
     [SerializeField] private float speed = 25f;
     [SerializeField] private Vector3[] waypointList;
@@ -15,6 +15,8 @@ public class EnemyFOV : MonoBehaviour
     [SerializeField] private float fov = 90f;
     [SerializeField] private float viewDistance = 50f;
     [SerializeField] private LayerMask playerLayer;
+    [SerializeField] private float detectRange;
+    [SerializeField] private LayerMask thingLayers;
 
     public FOV fieldOfView;
 
@@ -25,6 +27,7 @@ public class EnemyFOV : MonoBehaviour
     {
         Waiting,
         Moving,
+        Drinking,
     }
 
     private State state;
@@ -36,6 +39,7 @@ public class EnemyFOV : MonoBehaviour
         }
 
         lastMoveDir = aimDirection;
+        state = State.Waiting;
 
         fieldOfView = Instantiate(pfFieldofView, null).GetComponent<FOV>();
         fieldOfView.SetFoV(fov);
@@ -44,16 +48,10 @@ public class EnemyFOV : MonoBehaviour
 
     private void Update()
     {
-        switch (state)
-        {
-            default:
-            //case State.Waiting:
-            case State.Moving:
-                HandleMovement();
-                FindTargetPlayer();
-                break;
 
-        }
+        HandleMovement();
+        FindTargetPlayer();
+
 
         if (fieldOfView != null)
         {
@@ -69,12 +67,32 @@ public class EnemyFOV : MonoBehaviour
         switch (state)
         {
             case State.Waiting:
+
+                Collider2D[] hitThing = Physics2D.OverlapCircleAll(transform.position, detectRange, thingLayers);
+
+                foreach (var thing in hitThing)
+                {
+                    if (thing.gameObject.tag == "drinker")
+                    {
+                        Debug.Log("hit drinker");
+                        // drink animation
+                        fieldOfView.gameObject.SetActive(false);
+                    }
+
+                }
+
+
                 waitTimer -= Time.deltaTime;
+
+
+
                 if (waitTimer <= 0f)
                 {
+                    fieldOfView.gameObject.SetActive(true);
                     state = State.Moving;
                 }
-                
+
+
                 break;
 
             case State.Moving:
@@ -98,10 +116,7 @@ public class EnemyFOV : MonoBehaviour
                         wayPointIndex = (wayPointIndex + 1) % waypointList.Length;
                         state = State.Waiting;
                     }
-
                 }
-
-
                 break;
 
         }
@@ -137,4 +152,8 @@ public class EnemyFOV : MonoBehaviour
         return lastMoveDir;
     }
 
+    void OnDrawGizmosSelected()
+    {
+        Gizmos.DrawWireSphere(transform.position, detectRange);
+    }
 }
