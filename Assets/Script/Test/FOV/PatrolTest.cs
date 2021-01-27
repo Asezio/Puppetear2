@@ -48,10 +48,8 @@ public class PatrolTest : MonoBehaviour
 
     private void Update()
     {
-
         HandleMovement();
         FindTargetPlayer();
-
 
         if (fieldOfView != null)
         {
@@ -79,20 +77,21 @@ public class PatrolTest : MonoBehaviour
                         fieldOfView.gameObject.SetActive(false);
                     }
 
+                    if (thing.gameObject.tag == "Electric Box")
+                    {
+                        Debug.Log("Electric Box");
+                        //drink animation
+                        fieldOfView.gameObject.SetActive(false);
+                    }
                 }
 
-
                 waitTimer -= Time.deltaTime;
-
-
 
                 if (waitTimer <= 0f)
                 {
                     fieldOfView.gameObject.SetActive(true);
                     state = State.Moving;
                 }
-
-
                 break;
 
             case State.Moving:
@@ -118,7 +117,6 @@ public class PatrolTest : MonoBehaviour
                     }
                 }
                 break;
-
         }
     }
 
@@ -131,11 +129,9 @@ public class PatrolTest : MonoBehaviour
             Vector3 dirToPlayer = (player.position - GetPosition()).normalized;
             if (Vector3.Angle(GetAimDir(), dirToPlayer) < fov / 2f)
             {
-
                 RaycastHit2D raycastHit2D = Physics2D.Raycast(GetPosition(), dirToPlayer, viewDistance, playerLayer);
                 if (raycastHit2D.collider != null)
                 {
-
                     Debug.Log(raycastHit2D.collider.name);
                 }
             }
