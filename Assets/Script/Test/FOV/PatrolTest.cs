@@ -23,14 +23,15 @@ public class PatrolTest : MonoBehaviour
     private float waitTimer;
     private Vector3 lastMoveDir;
 
-    private enum State
+    public enum State
     {
         Waiting,
         Moving,
         Drinking,
+        MoveToMachine,
     }
 
-    private State state;
+    public State state;
     private void Start()
     {
         if (waitTimeList.Length != 0)
@@ -70,6 +71,7 @@ public class PatrolTest : MonoBehaviour
 
                 foreach (var thing in hitThing)
                 {
+                    //if there's a drinker, stop and drink water.
                     if (thing.gameObject.tag == "drinker")
                     {
                         Debug.Log("hit drinker");
@@ -77,10 +79,10 @@ public class PatrolTest : MonoBehaviour
                         fieldOfView.gameObject.SetActive(false);
                     }
 
+                    //go and check the electric box
                     if (thing.gameObject.tag == "Electric Box")
                     {
                         Debug.Log("Electric Box");
-                        //drink animation
                         fieldOfView.gameObject.SetActive(false);
                     }
                 }
@@ -117,6 +119,7 @@ public class PatrolTest : MonoBehaviour
                     }
                 }
                 break;
+              
         }
     }
 
@@ -136,6 +139,15 @@ public class PatrolTest : MonoBehaviour
                 }
             }
         }
+    }
+
+    public void MoveToBox(Transform box)
+    {
+        Vector3 boxDir = (box.position - transform.position).normalized;
+        lastMoveDir = boxDir;
+        float distanceBefore = Vector3.Distance(transform.position, box.position);
+        transform.position = transform.position + boxDir * speed * Time.deltaTime;
+        float distanceAfter = Vector3.Distance(transform.position, boxDir);
     }
 
     public Vector3 GetPosition()
