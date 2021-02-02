@@ -25,7 +25,7 @@ public class WeaponBase : MonoBehaviour
     private PolygonCollider2D coll2D;
 
     protected GameObject test;
-    public GameObject used;
+    public GameObject used;//捡取的道具或隐藏点
 
     //protected GameObject[] enemyArr;
     protected List<float> thingList;
@@ -63,28 +63,46 @@ public class WeaponBase : MonoBehaviour
     {
         if (isCarrying == true)
         {
-
-            canAttack = false;
+            canAttack = false;           
             used.GetComponent<SortingOrder>().enabled = false;
             used.GetComponent<SpriteRenderer>().sortingOrder = GetComponentInParent<SpriteRenderer>().sortingOrder;
-            used.GetComponent<ItemBase>().Stick();
+            used.GetComponent<ItemMoveable>().Stick();
+            used.GetComponent<ItemMoveable>().startDetect = true;
             if (Input.GetButtonDown("Interact") || Input.GetMouseButtonDown(0))
             {
-                if (used.GetComponent<ItemBase>().CanDrop() == true)
+                if(used.GetComponent<ItemMoveable>().detected == false)
                 {
-                    used.GetComponent<ItemBase>().Drop();
-                    isCarrying = false;
-                    StartCoroutine(ActivateAttack());
-                    used.GetComponent<SortingOrder>().enabled = true;
+                    if (used.GetComponent<ItemMoveable>().CanDrop() == true)
+                    {
+                        used.GetComponent<ItemMoveable>().Drop();
+                        used.GetComponent<ItemMoveable>().startDetect = false;
+                        isCarrying = false;
+                        StartCoroutine(ActivateAttack());
+                        used.GetComponent<SortingOrder>().enabled = true;
+                    }
+                    else
+                    {
+                        //显示UI 无法掉落
+                        Debug.Log("Can't drop.");
+                    }
                 }
                 else
                 {
-                    //显示UI 无法掉落
-                    Debug.Log("Can't drop.");
+                    used.GetComponent<ItemMoveable>().ItemInteract(used.GetComponent<ItemMoveable>().eventNumber);
+                    isCarrying = false;
+                    StartCoroutine(ActivateAttack());
+                    used.GetComponent<ItemMoveable>().Destroy();
                 }
             }
         }
-        if (isCarrying == false && isHiden == false)
+
+        else if (isHiden == true)
+        {
+            canAttack = false;
+
+        }
+
+        else if (isCarrying == false && isHiden == false)
         {
             Collider2D[] hitThings = Physics2D.OverlapCircleAll(attackPoint.position, DetectRange, thinglayers);
             //Debug.Log(hitEnemies.Length);
@@ -106,38 +124,63 @@ public class WeaponBase : MonoBehaviour
                 thingDic.TryGetValue(thingList[0], out obj);//获取距离最近的对象
                                                             //Debug.Log(obj.name);
                                                             //若检测物体发生改变，上一检测目标取消描边
-                if (test != obj)
+                if (test != obj && test != null )
                 {
                     test.GetComponent<Interactable>().ExitMiaobian();
                 }
 
-                if (obj.tag != "Enemy")
-                {
-                    canAttack = false;
-                }
-                else
-                {
-                    canAttack = true;
-                }
+                //if (obj.tag != "Enemy")
+                //{
+                //    canAttack = false;
+                //}
+                //else
+                //{
+                //    canAttack = true;
+                //}
 
-                if ((playerTrans.position.x < obj.transform.position.x && playerSr.flipX == true && playerSr.flipX == true)
-                    || (playerTrans.position.x > obj.transform.position.x && playerSr.flipX == false && playerSr.flipX == false))
+                if ((playerTrans.position.x < obj.transform.position.x && playerSr.flipX == true )
+                    || (playerTrans.position.x > obj.transform.position.x && playerSr.flipX == false ))
                 {
+                    //Debug.Log(obj.name);
                     //当前物体描边
-                    obj.GetComponent<Interactable>().MiaoBian();
-
-                    //将检测物体设置为当前选中物体
-                    test = obj;
-
-
-                    if (Input.GetButtonDown("Interact") || Input.GetMouseButtonDown(0))
+                    if (obj.GetComponent<ItemStatic>() == null || obj.GetComponent<ItemStatic>().isAvailable == true)
                     {
-                        if (obj.tag == ("Item"))
+                        obj.GetComponent<Interactable>().MiaoBian();
+                        //将检测物体设置为当前选中物体
+                        test = obj;
+                        if (obj.tag == "Enemy")
                         {
-                            isCarrying = true;
-                            used = obj;
-                            //obj.GetComponent<ItemBase>().MoveTo();
+                            canAttack = true;
                         }
+                        else
+                        {
+                            canAttack = false;
+                        }
+
+                        if (Input.GetButtonDown("Interact") || Input.GetMouseButtonDown(0))
+                        {
+                            if (obj.tag == ("Item"))//拾取道具
+                            {
+                                isCarrying = true;
+                                used = obj;
+                                //obj.GetComponent<ItemBase>().MoveTo();
+                            }
+
+                            else if (obj.tag == "Hide")//Hide
+                            {
+                                isHiden = true;
+
+                            }
+
+                            else if (obj.tag == "ItemInteractable")
+                            {
+                                //Debug.Log("1");
+                                obj.GetComponent<ItemStatic>().switchflag=true;
+                            }
+                        }
+                    
+
+                    
                         //anim.SetTrigger("Interact");
                         //obj.GetComponent<Interactable>().ExitMiaobian();
                         //obj.GetComponent<EnemyBase>().Die();
@@ -173,19 +216,13 @@ public class WeaponBase : MonoBehaviour
 
     protected void Attack()
     {
-        if(Input.GetMouseButtonDown(0)||Input.GetButtonDown("Interact"))
-        {
-            Debug.Log("Attack");
-            if (canAttack == true && GameObject.Find("UI_Weapon1").GetComponent<UIweapon>().isReady == true)
-            {
-                //Debug.Log("Attack");
-                anim.SetBool("Attack", true);
-                anim.SetTrigger("Interact");
-                StartCoroutine(StartAttack());
-                GameObject.Find("UI_Weapon1").GetComponent<UIweapon1>().Activate();
-            }
-        }
+        //Debug.Log("Attack");
+        anim.SetBool("Attack", true);
+        anim.SetTrigger("Interact");
+        StartCoroutine(StartAttack());
+        GameObject.Find("UI_Weapon1").GetComponent<UIweapon1>().Activate();
     }
+
     IEnumerator disableHitBox()
     {
         yield return new WaitForSeconds(time);

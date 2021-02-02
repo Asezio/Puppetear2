@@ -9,6 +9,8 @@ TagManager:
   - UIWeapon
   - Obstacles
   - drinker
+  - Hide
+  - ItemInteractable
   layers:
   - Default
   - TransparentFX
@@ -21,9 +23,9 @@ TagManager:
   - Player
   - Collider
   - Enemy
-  - Thing
-  - 
-  - 
+  - ItemS
+  - ItemM
+  - itemInteractable
   - 
   - 
   - 

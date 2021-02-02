@@ -14,9 +14,16 @@ public class Weapon1 : WeaponBase
     // Update is called once per frame
     void Update()
     {
-        DetectThing();
-        Attack();
+        DetectThing();       
         Flip();
+        if (canAttack == true && GameObject.Find("UI_Weapon1").GetComponent<UIweapon>().isReady == true)
+        {
+            if (Input.GetMouseButtonDown(0) || Input.GetButtonDown("Interact"))
+            {
+                Debug.Log("Attack");
+                Attack();
+            }
+        }
     }
 
 

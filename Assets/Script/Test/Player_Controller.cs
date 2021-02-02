@@ -20,9 +20,12 @@ public class Player_Controller : BaseUnit
         
         //控制垂直移动方向 S:-1 W:-1 不按键：0
         float directionY = Input.GetAxisRaw("Vertical");
+        if (!gameObject.GetComponentInChildren<WeaponBase>().isHiden)
+        {
+            Move(directionX, directionY);
+            Flip(directionX);
+        }
 
-        Move(directionX,directionY);
-        Flip(directionX);
         //Vector2 position = transform.position;
         //position.x += moveX * Time.deltaTime;
         //position.y += moveY * Time.deltaTime;
