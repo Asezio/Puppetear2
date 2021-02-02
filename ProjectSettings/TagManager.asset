@@ -9,8 +9,12 @@ TagManager:
   - UIWeapon
   - Obstacles
   - drinker
+<<<<<<< HEAD
   - Hide
   - ItemInteractable
+=======
+  - machine
+>>>>>>> 7e276e1d90848185a59b36dcd7bd097b213e7621
   layers:
   - Default
   - TransparentFX

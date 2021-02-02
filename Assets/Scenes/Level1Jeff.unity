@@ -1431,7 +1431,7 @@ GameObject:
   - component: {fileID: 685058635}
   - component: {fileID: 685058634}
   - component: {fileID: 685058633}
-  - component: {fileID: 685058632}
+  - component: {fileID: 685058639}
   m_Layer: 11
   m_Name: Test_Policeman (2)
   m_TagString: Enemy
@@ -1439,40 +1439,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &685058632
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 685058631}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f35a79ee242ab404b97ed9ff96ea27e9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 0.5
-  waypointList:
-  - {x: 1.909, y: -1.559, z: 0}
-  - {x: 3, y: -1.559, z: 0}
-  waitTimeList:
-  - 2
-  - 4
-  pfFieldofView: {fileID: 6956349500320316925, guid: 6f55c8cfb428a6a40adc962eca83f0cc,
-    type: 3}
-  aimDirection: {x: 0, y: 0, z: 0}
-  player: {fileID: 1120793815}
-  fov: 90
-  viewDistance: 0.5
-  playerLayer:
-    serializedVersion: 2
-    m_Bits: 256
-  detectRange: 0.68
-  thingLayers:
-    serializedVersion: 2
-    m_Bits: 2048
-  fieldOfView: {fileID: 0}
-  state: 0
 --- !u!114 &685058633
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1577,7 +1543,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 685058631}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.293, y: -1.609, z: 0}
+  m_LocalPosition: {x: 2.488, y: -1.496, z: 0}
   m_LocalScale: {x: 0.31362, y: 0.31362, z: 0.31362}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1595,6 +1561,42 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bab044239623587488fdb2181276f4e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &685058639
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 685058631}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93b555d93cd7b5542b4b03728f976652, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 0.5
+  pfFieldofView: {fileID: 6956349500320316925, guid: 6f55c8cfb428a6a40adc962eca83f0cc,
+    type: 3}
+  fov: 90
+  viewDistance: 0.5
+  aimDirection: {x: 0, y: 0, z: 0}
+  fieldOfView: {fileID: 0}
+  player: {fileID: 1120793815}
+  playerLayer:
+    serializedVersion: 2
+    m_Bits: 256
+  waypointList:
+  - {x: 1.817, y: -1.6, z: 0}
+  - {x: 2.863, y: -1.6, z: 0}
+  waitTimeList:
+  - 2
+  - 2
+  detectRange: 0.5
+  thingLayers:
+    serializedVersion: 2
+    m_Bits: 2048
+  machineOffset: 0.2
+  machineWaitTimer: 3
+  state: 0
 --- !u!1 &736925090
 GameObject:
   m_ObjectHideFlags: 0
@@ -1772,22 +1774,23 @@ MonoBehaviour:
   m_GameObject: {fileID: 787698979}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 24c7a3a1062b52340987f1f9e282f888, type: 3}
+  m_Script: {fileID: 11500000, guid: e1678bc8ea7fee0438cf8bc458a50b1b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0.1
-  waypointList: []
-  waitTimeList: []
+  speed: 0.5
   pfFieldofView: {fileID: 6956349500320316925, guid: 6f55c8cfb428a6a40adc962eca83f0cc,
     type: 3}
-  aimDirection: {x: 1, y: 0, z: 0}
-  player: {fileID: 1120793815}
   fov: 90
   viewDistance: 0.5
+  aimDirection: {x: 0, y: 0, z: 0}
+  fieldOfView: {fileID: 0}
+  player: {fileID: 1120793815}
   playerLayer:
     serializedVersion: 2
     m_Bits: 256
-  fieldOfView: {fileID: 0}
+  sleepTimer: 3
+  awakeTimer: 5
+  state: 0
 --- !u!70 &787698981
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -2590,13 +2593,41 @@ GameObject:
   m_Component:
   - component: {fileID: 1231065102}
   - component: {fileID: 1231065101}
-  m_Layer: 0
+  - component: {fileID: 1231065103}
+  - component: {fileID: 1231065100}
+  m_Layer: 11
   m_Name: Box_1 (1)
-  m_TagString: Untagged
+  m_TagString: machine
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!61 &1231065100
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1231065099}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.009211242, y: 0.44588375}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.50921124, y: 0.054116268}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
 --- !u!212 &1231065101
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2655,12 +2686,25 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1231065099}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.503, y: -1.753, z: 0}
+  m_LocalPosition: {x: 3.12, y: -1.74, z: 0}
   m_LocalScale: {x: 0.41384768, y: 0.41384768, z: 0.41384768}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1231065103
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1231065099}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca9bcdebfb7faff4f8a14df60e9dd9a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  machState: 1
 --- !u!1 &1244341465
 GameObject:
   m_ObjectHideFlags: 0
@@ -2954,7 +2998,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1314613190}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.889, y: -1.78, z: 0}
+  m_LocalPosition: {x: 0.059, y: -1.805, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -3039,6 +3083,7 @@ GameObject:
   - component: {fileID: 1450843306}
   - component: {fileID: 1450843305}
   - component: {fileID: 1450843304}
+  - component: {fileID: 1450843307}
   m_Layer: 11
   m_Name: UIBulletIcon
   m_TagString: drinker
@@ -3130,12 +3175,25 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1450843303}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.252, y: -1.584, z: 0}
+  m_LocalPosition: {x: 3.252, y: -0.66, z: 0}
   m_LocalScale: {x: 0.1588268, y: 0.1588268, z: 0.1588268}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1450843307
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1450843303}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a5e40d30b59f834eb4f12b1f09f3d78, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isPoisoned: 0
 --- !u!1001 &1712071006
 PrefabInstance:
   m_ObjectHideFlags: 0
