@@ -2,67 +2,48 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PatrolTest : MonoBehaviour
+public class PatrolAI : AIBase
 {
-    [SerializeField] private float speed = 25f;
+    [Header("Waypoints Setting")]
     [SerializeField] private Vector3[] waypointList;
     [SerializeField] private float[] waitTimeList;
+    private float waitTimer;
     private int wayPointIndex;
-    [SerializeField] private Transform pfFieldofView;
-    [SerializeField] Vector3 aimDirection;
-    [SerializeField] private Transform player;
 
-    [SerializeField] private float fov = 90f;
-    [SerializeField] private float viewDistance = 50f;
-    [SerializeField] private LayerMask playerLayer;
+    [Header("Detect Setting")]
     [SerializeField] private float detectRange;
     [SerializeField] private LayerMask thingLayers;
 
-    [SerializeField] private float boxOffset;
-    [SerializeField] private float boxWaitTimer;
+    [Header("Interactive Machine")]
+    [SerializeField] private float machineOffset;
+    [SerializeField] private float machineWaitTimer;
 
-    public FOV fieldOfView;
-
-    [SerializeField] private float waitTimer;
-    private Vector3 lastMoveDir;
+    [Header("State")]
+    public State state;
 
     public enum State
     {
         Waiting,
         Moving,
-        Drinking,
         MoveToMachine,
         WaitMachine,
     }
 
-    public State state;
-    private void Start()
+    protected override void Start()
     {
+        base.Start();
+
         if (waitTimeList.Length != 0)
         {
             waitTimer = waitTimeList[0];
         }
-
-        lastMoveDir = aimDirection;
-        state = State.Waiting;
-
-        fieldOfView = Instantiate(pfFieldofView, null).GetComponent<FOV>();
-        fieldOfView.SetFoV(fov);
-        fieldOfView.SetViewDistance(viewDistance);
     }
 
-    private void Update()
+    protected override void Update()
     {
+        base.Update();
+
         HandleMovement();
-        FindTargetPlayer();
-
-        if (fieldOfView != null)
-        {
-            fieldOfView.SetOrigin(transform.position);
-            fieldOfView.SetAimDirection(GetAimDir());
-        }
-
-        Debug.DrawLine(transform.position, transform.position + GetAimDir() * 0.5f);
     }
 
     private void HandleMovement()
@@ -71,15 +52,20 @@ public class PatrolTest : MonoBehaviour
         switch (state)
         {
             case State.Waiting:
-
                 foreach (var thing in hitThing)
                 {
                     //if there's a drinker, stop and drink water.
-                    if (thing.gameObject.tag == "drinker")
+                    if (thing.GetComponent<Drinker>() != null)
                     {
                         Debug.Log("hit drinker");
                         // drink animation
                         fieldOfView.gameObject.SetActive(false);
+
+                        if (thing.GetComponent<Drinker>().isPoisoned == true)
+                        {
+                            TaskManager.instance.UpdateTaskList(2);
+                            Die();
+                        }
                     }
 
                     //go and check the electric box
@@ -89,13 +75,16 @@ public class PatrolTest : MonoBehaviour
                         fieldOfView.gameObject.SetActive(false);
                     }
 
-                    if (thing.gameObject.tag == "machine" && thing.GetComponent<Machine>().machState == true)
+                    if (thing.GetComponent<Machine>() != null)  
                     {
-                        state = State.MoveToMachine;
-                        break;
+                        if (thing.GetComponent<Machine>().machState == true)
+                        {
+                            state = State.MoveToMachine;
+                            break;
+                        }
+
                     }
                 }
-
                 waitTimer -= Time.deltaTime;
 
                 if (waitTimer <= 0f)
@@ -126,74 +115,60 @@ public class PatrolTest : MonoBehaviour
                         wayPointIndex = (wayPointIndex + 1) % waypointList.Length;
                         state = State.Waiting;
                     }
+
+                    foreach (var thing in hitThing)
+                    {
+                        if (thing.GetComponent<Machine>() != null)
+                        {
+                            if (thing.GetComponent<Machine>().machState == true)
+                            {
+                                state = State.MoveToMachine;
+                                break;
+                            }
+
+                        }
+                    }
                 }
                 break;
 
             case State.MoveToMachine:
                 foreach (var thing in hitThing)
                 {
-                    Debug.Log("exploringBox");
-                    Vector3 boxDir = (thing.transform.position - transform.position).normalized;
-                    lastMoveDir = boxDir;
-                    float distanceBefore = Vector3.Distance(transform.position, thing.transform.position);
-                    transform.position = transform.position + boxDir * speed * Time.deltaTime;
-                    float distanceAfter = Vector3.Distance(transform.position, boxDir);
-                    if (distanceAfter < boxOffset || distanceBefore <= distanceAfter)
+                    if (thing.GetComponent<Machine>() != null)
                     {
-                        //Debug.Log(boxWaitTimer);
-                        if (thing.GetComponent<Machine>() != null)
+                        Debug.Log("Machine");
+                        Vector3 machDir = (thing.transform.position - transform.position).normalized;
+                        lastMoveDir = machDir;
+                        transform.position = transform.position + machDir * speed * Time.deltaTime;
+                        float distanceAfter = Vector3.Distance(transform.position, thing.transform.position);
+                        if (distanceAfter < machineOffset)
                         {
                             thing.GetComponent<Machine>().machState = false;
+                            state = State.WaitMachine;
                         }
-
-                        state = State.WaitMachine;
                     }
                 }
                 break;
 
             case State.WaitMachine:
-                boxWaitTimer -= Time.deltaTime;
+                machineWaitTimer -= Time.deltaTime;
 
-                if (boxWaitTimer <= 0)
+                if (machineWaitTimer <= 0)
                 {
                     state = State.Moving;
                 }
                 break;
-
-
         }
     }
 
-    private void FindTargetPlayer()
+    void AIFlip()
     {
-        if (Vector3.Distance(GetPosition(), player.position) < viewDistance)
-        {
 
-            // Player inside viewDistance
-            Vector3 dirToPlayer = (player.position - GetPosition()).normalized;
-            if (Vector3.Angle(GetAimDir(), dirToPlayer) < fov / 2f)
-            {
-                RaycastHit2D raycastHit2D = Physics2D.Raycast(GetPosition(), dirToPlayer, viewDistance, playerLayer);
-                if (raycastHit2D.collider != null)
-                {
-                    Debug.Log(raycastHit2D.collider.name);
-                }
-            }
-        }
-    }
-
-    public Vector3 GetPosition()
-    {
-        return transform.position;
-    }
-
-    public Vector3 GetAimDir()
-    {
-        return lastMoveDir;
     }
 
     void OnDrawGizmosSelected()
     {
         Gizmos.DrawWireSphere(transform.position, detectRange);
     }
+
 }
