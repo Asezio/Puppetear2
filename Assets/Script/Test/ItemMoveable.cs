@@ -165,11 +165,12 @@ public class ItemMoveable : ItemBase
             //}
             //itemSList.Sort();//对距离进行排序
                              //Debug.Log("***" + enemyList[0]);
-            GameObject obj;
+            GameObject obj;           
             obj = detectThings[0].gameObject;
+            
             //itemSDic.TryGetValue(itemSList[0], out obj);//获取距离最近的对象
-                                                        //Debug.Log(obj.name);
-                                                        //若检测物体发生改变，上一检测目标取消描边
+            //Debug.Log(obj.name);
+            //若检测物体发生改变，上一检测目标取消描边
             if (test != obj)
             {
                 test.GetComponent<Interactable>().ExitMiaobian();
@@ -178,6 +179,7 @@ public class ItemMoveable : ItemBase
             //当前物体描边
             if (obj.GetComponent<ItemStatic>().itemName == gameObject.GetComponent<ItemMoveable>().targetName)
             {
+                //Debug.Log(obj.name);
                 detected = true;
                 obj.GetComponent<Interactable>().MiaoBian();
                 used = obj;
@@ -207,6 +209,7 @@ public class ItemMoveable : ItemBase
         {
             used.GetComponent<ItemStatic>().isPoisoned = true;
             //used.GetComponent<ItemStatic>().Destroy();
+            used.GetComponent<SpriteRenderer>().color=new Color32(0,255,25,255);
         }
         else if (number == 2)
         {
@@ -214,14 +217,9 @@ public class ItemMoveable : ItemBase
         }
     }
 
-
-
-
-
-
-
     public void Destroy()
     {
+        test.GetComponent<Interactable>().ExitMiaobian();
         Destroy(gameObject);
     }
 }

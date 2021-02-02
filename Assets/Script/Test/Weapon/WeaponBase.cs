@@ -99,6 +99,16 @@ public class WeaponBase : MonoBehaviour
         else if (isHiden == true)
         {
             canAttack = false;
+            isCarrying = false;
+            Transform usedPos = used.GetComponentInChildren<Transform>();
+            GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>().position = usedPos.position;
+            used.GetComponent<Interactable>().MiaoBian();
+            Vector3 leavePosition = new Vector3(usedPos.position.x, usedPos.position.y - 0.2f, usedPos.position.z);
+            if (Input.GetButtonDown("Interact") || Input.GetMouseButtonDown(0))
+            {
+                isHiden = false;
+                GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>().position = leavePosition;
+            }
 
         }
 
@@ -124,7 +134,7 @@ public class WeaponBase : MonoBehaviour
                 thingDic.TryGetValue(thingList[0], out obj);//获取距离最近的对象
                                                             //Debug.Log(obj.name);
                                                             //若检测物体发生改变，上一检测目标取消描边
-                if (test != obj && test != null )
+                if (test != obj && test != null)
                 {
                     test.GetComponent<Interactable>().ExitMiaobian();
                 }
@@ -169,7 +179,7 @@ public class WeaponBase : MonoBehaviour
                             else if (obj.tag == "Hide")//Hide
                             {
                                 isHiden = true;
-
+                                used = obj;
                             }
 
                             else if (obj.tag == "ItemInteractable")
