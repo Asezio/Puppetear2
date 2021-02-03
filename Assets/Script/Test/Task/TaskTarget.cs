@@ -1,31 +1,39 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class TaskTarget : MonoBehaviour
 {
-    public GameObject[] targetList;
     public int targetAmount;
+    public int poisonAmount;
+    public static int targetFinAmount;
+    public static int poisonFinAmount;
+    public GameObject targetTask;
+    public GameObject poisonTask;
 
     private void Start()
     {
-        targetAmount = targetList.Length;
+        targetFinAmount = 0;
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        
+        UpdateTask(targetTask,targetFinAmount,targetAmount);
+        UpdateTask(poisonTask, poisonFinAmount, poisonAmount);
     }
 
-    public void TargetManage()
+    public void UpdateTask(GameObject task, int finish, int require)
     {
-        for (int i = 0; i < targetList.Length; i++)
+        task.transform.GetChild(2).GetComponent<Text>().text = finish.ToString();
+
+        if (finish == require)
         {
-            if (targetList[i] == null)
+            for (int i = 0; i < 3; i++)
             {
-
+                task.transform.GetChild(i).GetComponent<Text>().color = Color.green;
             }
         }
     }
+
 }

@@ -19,6 +19,9 @@ public class AIBase : MonoBehaviour
     [SerializeField] protected Transform player;
     [SerializeField] protected LayerMask playerLayer;
 
+    [Header("Is Target")]
+    public bool isTarget; 
+
     protected SpriteRenderer sr;
 
     private void Awake()
