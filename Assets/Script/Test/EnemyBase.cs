@@ -32,8 +32,7 @@ public class EnemyBase : MonoBehaviour
         UITimeBar.timeLeft = GameObject.Find("TimeLeft").GetComponent<UITimeBar>().timeMax;
         yield return new WaitForSeconds(waitTime);
         Debug.Log("2");
-        
-
+       
     }
 
 }
