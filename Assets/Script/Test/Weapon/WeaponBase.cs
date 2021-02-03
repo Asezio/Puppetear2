@@ -101,9 +101,9 @@ public class WeaponBase : MonoBehaviour
             canAttack = false;
             isCarrying = false;
             Transform usedPos = used.GetComponentInChildren<Transform>();
-            GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>().position = usedPos.position;
-            used.GetComponent<Interactable>().MiaoBian();
-            Vector3 leavePosition = new Vector3(usedPos.position.x, usedPos.position.y - 0.2f, usedPos.position.z);
+            Vector3 leavePosition = new Vector3(usedPos.position.x, used.transform.position.y - 0.2f, usedPos.position.z);
+            GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>().position =new Vector3 (usedPos.position.x, used.transform.position.y +0.5f, usedPos.position.z);
+            used.GetComponent<Interactable>().MiaoBian();           
             if (Input.GetButtonDown("Interact") || Input.GetMouseButtonDown(0))
             {
                 isHiden = false;
