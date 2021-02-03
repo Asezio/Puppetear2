@@ -21,6 +21,7 @@ public class PatrolAI : AIBase
     [Header("State")]
     public State state;
 
+
     public enum State
     {
         Waiting,
@@ -63,7 +64,7 @@ public class PatrolAI : AIBase
 
                         if (thing.GetComponent<Drinker>().isPoisoned == true)
                         {
-                            TaskManager.instance.UpdateTaskList(2);
+                            TaskTarget.poisonFinAmount++;
                             Die();
                         }
                     }
@@ -75,9 +76,9 @@ public class PatrolAI : AIBase
                         fieldOfView.gameObject.SetActive(false);
                     }
 
-                    if (thing.GetComponent<Machine1>() != null)  
+                    if (thing.GetComponent<Machine>() != null)  
                     {
-                        if (thing.GetComponent<Machine1>().machState == true)
+                        if (thing.GetComponent<Machine>().isActive == true)
                         {
                             state = State.MoveToMachine;
                             break;
@@ -118,9 +119,9 @@ public class PatrolAI : AIBase
 
                     foreach (var thing in hitThing)
                     {
-                        if (thing.GetComponent<Machine1>() != null)
+                        if (thing.GetComponent<Machine>() != null)
                         {
-                            if (thing.GetComponent<Machine1>().machState == true)
+                            if (thing.GetComponent<Machine>().isActive == true)
                             {
                                 state = State.MoveToMachine;
                                 break;
@@ -134,7 +135,7 @@ public class PatrolAI : AIBase
             case State.MoveToMachine:
                 foreach (var thing in hitThing)
                 {
-                    if (thing.GetComponent<Machine1>() != null)
+                    if (thing.GetComponent<Machine>() != null)
                     {
                         Debug.Log("Machine");
                         Vector3 machDir = (thing.transform.position - transform.position).normalized;
@@ -143,7 +144,7 @@ public class PatrolAI : AIBase
                         float distanceAfter = Vector3.Distance(transform.position, thing.transform.position);
                         if (distanceAfter < machineOffset)
                         {
-                            thing.GetComponent<Machine1>().machState = false;
+                            thing.GetComponent<Machine>().isActive = false;
                             state = State.WaitMachine;
                         }
                     }
@@ -161,10 +162,6 @@ public class PatrolAI : AIBase
         }
     }
 
-    void AIFlip()
-    {
-
-    }
 
     void OnDrawGizmosSelected()
     {
