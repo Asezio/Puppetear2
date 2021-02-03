@@ -20,8 +20,9 @@ public class EnemyBase : MonoBehaviour
     {
         UITimeBar.timeLeft = GameObject.Find("TimeLeft").GetComponent<UITimeBar>().timeMax;
         Destroy(gameObject,0.5f);
-        Destroy(GetComponent<EnemyFOV>().fieldOfView.gameObject,0.5f);
-
+        Destroy(GetComponent<AIBase>().fieldOfView.gameObject,0.5f);
+        int addPoints = Random.Range(150, 241);
+        GameObject.FindGameObjectWithTag("Player").GetComponent<Points>().sp.currentPoint += addPoints;
     }
 
 

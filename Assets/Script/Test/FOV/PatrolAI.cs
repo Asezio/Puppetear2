@@ -75,9 +75,9 @@ public class PatrolAI : AIBase
                         fieldOfView.gameObject.SetActive(false);
                     }
 
-                    if (thing.GetComponent<Machine>() != null)  
+                    if (thing.GetComponent<Machine1>() != null)  
                     {
-                        if (thing.GetComponent<Machine>().machState == true)
+                        if (thing.GetComponent<Machine1>().machState == true)
                         {
                             state = State.MoveToMachine;
                             break;
@@ -118,9 +118,9 @@ public class PatrolAI : AIBase
 
                     foreach (var thing in hitThing)
                     {
-                        if (thing.GetComponent<Machine>() != null)
+                        if (thing.GetComponent<Machine1>() != null)
                         {
-                            if (thing.GetComponent<Machine>().machState == true)
+                            if (thing.GetComponent<Machine1>().machState == true)
                             {
                                 state = State.MoveToMachine;
                                 break;
@@ -134,7 +134,7 @@ public class PatrolAI : AIBase
             case State.MoveToMachine:
                 foreach (var thing in hitThing)
                 {
-                    if (thing.GetComponent<Machine>() != null)
+                    if (thing.GetComponent<Machine1>() != null)
                     {
                         Debug.Log("Machine");
                         Vector3 machDir = (thing.transform.position - transform.position).normalized;
@@ -143,7 +143,7 @@ public class PatrolAI : AIBase
                         float distanceAfter = Vector3.Distance(transform.position, thing.transform.position);
                         if (distanceAfter < machineOffset)
                         {
-                            thing.GetComponent<Machine>().machState = false;
+                            thing.GetComponent<Machine1>().machState = false;
                             state = State.WaitMachine;
                         }
                     }

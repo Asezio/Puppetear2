@@ -2,18 +2,24 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Drinker : MonoBehaviour
+public class Machine1 : MonoBehaviour
 {
-    public bool isPoisoned;
+    public bool machState;
+    public float lastTime;
     // Start is called before the first frame update
     void Start()
     {
-        isPoisoned = false;
+        machState = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        isPoisoned = GetComponent<ItemStatic>().isPoisoned;
+        if (GetComponent<ItemStatic>().switchflag==true)
+        {
+            machState = true;
+        }
     }
+
+
 }

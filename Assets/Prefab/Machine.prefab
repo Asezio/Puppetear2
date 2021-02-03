@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 4184743742716072460}
   - component: {fileID: 4184743742716072463}
   - component: {fileID: 4184743742716072462}
+  - component: {fileID: 7953550733088321721}
   - component: {fileID: 4184743742716072465}
   - component: {fileID: 4184743742716072464}
   - component: {fileID: 4184743742716072458}
@@ -31,7 +32,7 @@ Transform:
   m_GameObject: {fileID: 4184743742716072467}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 1.537, y: -1.78, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
+  m_LocalScale: {x: 1.2, y: 1.2, z: 1}
   m_Children:
   - {fileID: 4184743744201543636}
   m_Father: {fileID: 0}
@@ -77,7 +78,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 17
   m_Sprite: {fileID: 21300000, guid: 2a9ecd4ee3599e04b8dc6b13bd45adda, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.8773585, g: 0.58273226, b: 0.045523323, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -130,6 +131,19 @@ PolygonCollider2D:
       - {x: 0.18598092, y: 0.2600999}
       - {x: 0.02145958, y: 0.23950887}
       - {x: -0.49379265, y: 0.18554115}
+--- !u!114 &7953550733088321721
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4184743742716072467}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca9bcdebfb7faff4f8a14df60e9dd9a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  machState: 0
 --- !u!114 &4184743742716072465
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -206,7 +220,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4184743744201543636
 Transform:
   m_ObjectHideFlags: 0

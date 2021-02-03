@@ -2,11 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
+[CreateAssetMenu(fileName = "New Skill",menuName ="Inventory/New Skill")]
 public class SkillPoints : ScriptableObject
 {
-    public int speedPoint;
-    public int smartPoint;
-    public int hintPoint;
+    
+    public int currentPoint;
+    public int skillPoint;
+    //public int hintPoint;
 
 
 }
