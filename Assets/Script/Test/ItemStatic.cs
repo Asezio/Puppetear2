@@ -42,5 +42,9 @@ public class ItemStatic : ItemBase
         switchflag = false;
     }
 
-
+    public void FBIOpenTheDoor()
+    {
+        gameObject.GetComponentInChildren<OpenDoor>().canOpen = true;
+        //Debug.Log("Kere");
+    }
 }

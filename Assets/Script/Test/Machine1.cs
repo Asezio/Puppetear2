@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class Machine1 : MonoBehaviour
 {
-    public bool machState;
+    public bool isActive;
     public float lastTime;
     // Start is called before the first frame update
     void Start()
     {
-        machState = false;
+        isActive = false;
     }
 
     // Update is called once per frame
@@ -17,7 +17,7 @@ public class Machine1 : MonoBehaviour
     {
         if (GetComponent<ItemStatic>().switchflag==true)
         {
-            machState = true;
+            isActive = true;
         }
     }
 

@@ -213,7 +213,8 @@ public class ItemMoveable : ItemBase
         }
         else if (number == 2)
         {
-            
+            used.GetComponent<ItemStatic>().FBIOpenTheDoor();
+            //Debug.Log("Here");
         }
     }
 
