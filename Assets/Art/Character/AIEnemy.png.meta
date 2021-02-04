@@ -1,0 +1,800 @@
+fileFormatVersion: 2
+guid: 4db39b5a086e7544990ec49e32cf899a
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -5506832661773461036
+    second: AIEnemy_0
+  - first:
+      213: 3332200492113092844
+    second: AIEnemy_1
+  - first:
+      213: -3545121586269849954
+    second: AIEnemy_2
+  - first:
+      213: -2897059746595617857
+    second: AIEnemy_3
+  - first:
+      213: 4272232205799365868
+    second: AIEnemy_4
+  - first:
+      213: -583277905046940516
+    second: AIEnemy_5
+  - first:
+      213: 3580449653096902640
+    second: AIEnemy_6
+  - first:
+      213: 823845799407042531
+    second: AIEnemy_7
+  - first:
+      213: 143553821297272188
+    second: AIEnemy_8
+  - first:
+      213: -8746117820963242725
+    second: AIEnemy_9
+  - first:
+      213: 5798014443520489103
+    second: AIEnemy_10
+  - first:
+      213: 1283699864721152309
+    second: AIEnemy_11
+  - first:
+      213: 2484213221259957571
+    second: AIEnemy_12
+  - first:
+      213: -4627140502045586697
+    second: AIEnemy_13
+  - first:
+      213: -2354867209581425023
+    second: AIEnemy_14
+  - first:
+      213: -7450205704534848284
+    second: AIEnemy_15
+  - first:
+      213: -8608536701891771722
+    second: AIEnemy_16
+  - first:
+      213: -7199654475419019573
+    second: AIEnemy_17
+  - first:
+      213: -3461043371917179111
+    second: AIEnemy_18
+  - first:
+      213: 6061300762455001578
+    second: AIEnemy_19
+  - first:
+      213: -8431416642529204269
+    second: AIEnemy_20
+  - first:
+      213: 8112889954705793897
+    second: AIEnemy_21
+  - first:
+      213: -5982511725405284264
+    second: AIEnemy_22
+  - first:
+      213: -8433812453475665410
+    second: AIEnemy_23
+  - first:
+      213: -5581605824371433483
+    second: AIEnemy_24
+  - first:
+      213: 3010734017044079364
+    second: AIEnemy_25
+  - first:
+      213: -1080753622823846344
+    second: AIEnemy_26
+  - first:
+      213: -8374726869032842197
+    second: AIEnemy_27
+  - first:
+      213: -7818125457821590023
+    second: AIEnemy_28
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: -1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: AIEnemy_0
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 874
+        width: 77
+        height: 120
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4d9597ddedcc393b0800000000000000
+      internalID: -5506832661773461036
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AIEnemy_1
+      rect:
+        serializedVersion: 2
+        x: 226
+        y: 874
+        width: 77
+        height: 120
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ce068cc51ba5e3e20800000000000000
+      internalID: 3332200492113092844
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AIEnemy_2
+      rect:
+        serializedVersion: 2
+        x: 401
+        y: 876
+        width: 77
+        height: 119
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e96f0dc33b23dcec0800000000000000
+      internalID: -3545121586269849954
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AIEnemy_3
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 874
+        width: 77
+        height: 119
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fb3c51f72839bc7d0800000000000000
+      internalID: -2897059746595617857
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AIEnemy_4
+      rect:
+        serializedVersion: 2
+        x: 751
+        y: 874
+        width: 77
+        height: 118
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cec97a05e840a4b30800000000000000
+      internalID: 4272232205799365868
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AIEnemy_5
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 724
+        width: 77
+        height: 119
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c94d750f5d7c7e7f0800000000000000
+      internalID: -583277905046940516
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AIEnemy_6
+      rect:
+        serializedVersion: 2
+        x: 226
+        y: 724
+        width: 77
+        height: 120
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0ffe20d4dff40b130800000000000000
+      internalID: 3580449653096902640
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AIEnemy_7
+      rect:
+        serializedVersion: 2
+        x: 401
+        y: 724
+        width: 77
+        height: 120
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3efba5fb363ee6b00800000000000000
+      internalID: 823845799407042531
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AIEnemy_8
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 724
+        width: 77
+        height: 119
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c75e29c90710ef100800000000000000
+      internalID: 143553821297272188
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AIEnemy_9
+      rect:
+        serializedVersion: 2
+        x: 751
+        y: 724
+        width: 91
+        height: 119
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b1db5c54e2c8f9680800000000000000
+      internalID: -8746117820963242725
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AIEnemy_10
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 574
+        width: 91
+        height: 119
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f867f9cca6fa67050800000000000000
+      internalID: 5798014443520489103
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AIEnemy_11
+      rect:
+        serializedVersion: 2
+        x: 222
+        y: 574
+        width: 100
+        height: 119
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 539dbe2c93e90d110800000000000000
+      internalID: 1283699864721152309
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AIEnemy_12
+      rect:
+        serializedVersion: 2
+        x: 397
+        y: 574
+        width: 100
+        height: 119
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 345578743c2b97220800000000000000
+      internalID: 2484213221259957571
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AIEnemy_13
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 574
+        width: 91
+        height: 119
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7fa00c1aa3819cfb0800000000000000
+      internalID: -4627140502045586697
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AIEnemy_14
+      rect:
+        serializedVersion: 2
+        x: 751
+        y: 574
+        width: 77
+        height: 119
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 18e0fafdfb4d15fd0800000000000000
+      internalID: -2354867209581425023
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AIEnemy_15
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 424
+        width: 77
+        height: 119
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4ec8c95726d8b9890800000000000000
+      internalID: -7450205704534848284
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AIEnemy_16
+      rect:
+        serializedVersion: 2
+        x: 226
+        y: 424
+        width: 77
+        height: 120
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6b204d7ca75588880800000000000000
+      internalID: -8608536701891771722
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AIEnemy_17
+      rect:
+        serializedVersion: 2
+        x: 387
+        y: 424
+        width: 93
+        height: 133
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bc619176660b51c90800000000000000
+      internalID: -7199654475419019573
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AIEnemy_18
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 424
+        width: 93
+        height: 141
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 91708a00467e7ffc0800000000000000
+      internalID: -3461043371917179111
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AIEnemy_19
+      rect:
+        serializedVersion: 2
+        x: 759
+        y: 424
+        width: 111
+        height: 120
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ae94fe6ede01e1450800000000000000
+      internalID: 6061300762455001578
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AIEnemy_20
+      rect:
+        serializedVersion: 2
+        x: 59
+        y: 274
+        width: 105
+        height: 76
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3d7eab43c379dfa80800000000000000
+      internalID: -8431416642529204269
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AIEnemy_21
+      rect:
+        serializedVersion: 2
+        x: 231
+        y: 274
+        width: 111
+        height: 54
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 963e21c0e66c69070800000000000000
+      internalID: 8112889954705793897
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AIEnemy_22
+      rect:
+        serializedVersion: 2
+        x: 406
+        y: 274
+        width: 110
+        height: 54
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 858db9e4849d9fca0800000000000000
+      internalID: -5982511725405284264
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AIEnemy_23
+      rect:
+        serializedVersion: 2
+        x: 519
+        y: 285
+        width: 4
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ef93150024415fa80800000000000000
+      internalID: -8433812453475665410
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AIEnemy_24
+      rect:
+        serializedVersion: 2
+        x: 581
+        y: 274
+        width: 114
+        height: 54
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5ffd61a43172a82b0800000000000000
+      internalID: -5581605824371433483
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AIEnemy_25
+      rect:
+        serializedVersion: 2
+        x: 756
+        y: 274
+        width: 116
+        height: 54
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 403e81f03a648c920800000000000000
+      internalID: 3010734017044079364
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AIEnemy_26
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 124
+        width: 113
+        height: 54
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 83e3edd5e446001f0800000000000000
+      internalID: -1080753622823846344
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AIEnemy_27
+      rect:
+        serializedVersion: 2
+        x: 231
+        y: 124
+        width: 113
+        height: 54
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b2cc068a84ef6cb80800000000000000
+      internalID: -8374726869032842197
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AIEnemy_28
+      rect:
+        serializedVersion: 2
+        x: 406
+        y: 124
+        width: 118
+        height: 54
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9fd1b1d7150708390800000000000000
+      internalID: -7818125457821590023
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

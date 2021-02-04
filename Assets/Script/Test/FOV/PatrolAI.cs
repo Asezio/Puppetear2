@@ -96,7 +96,7 @@ public class PatrolAI : AIBase
                 break;
 
             case State.Moving:
-                Debug.Log("move");
+                //Debug.Log("move");
 
                 if (waypointList.Length != 0)
                 {

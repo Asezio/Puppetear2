@@ -93,12 +93,12 @@ public class AIBase : MonoBehaviour
 
     protected virtual void AIFlip()
     {
-        if (lastMoveDir.x < 0)
+        if (lastMoveDir.x > 0)
         {
             sr.flipX = true;
         }
 
-        if (lastMoveDir.x > 0)
+        if (lastMoveDir.x < 0)
         {
             sr.flipX = false;
         }

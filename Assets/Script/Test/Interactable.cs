@@ -15,7 +15,7 @@ public class Interactable : MonoBehaviour
     {
         sr = GetComponent<SpriteRenderer>();
         defaultMaterial = sr.material;     
-        TextUI.SetActive(false);
+        //TextUI.SetActive(false);
     }
 
     //碰到玩家时，给outline
