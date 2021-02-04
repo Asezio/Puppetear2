@@ -25,9 +25,4 @@ public class TaskManager : MonoBehaviour
         DontDestroyOnLoad(gameObject);
     }
 
-    public void UpdateTaskList(int taskNumber)
-    {
-        taskArray[taskNumber - 1].transform.GetChild(1).GetComponent<Text>().text = Task.TaskState.Finished.ToString();
-        taskArray[taskNumber - 1].transform.GetChild(1).GetComponent<Text>().color = Color.green;
-    }
 }
