@@ -18,7 +18,7 @@ public class Weapon1 : WeaponBase
         Flip();
         if (canAttack == true && GameObject.Find("UI_Weapon1").GetComponent<UIweapon>().isReady == true)
         {
-            if (Input.GetMouseButtonDown(0) || Input.GetButtonDown("Interact"))
+            if (Input.GetButtonDown("Interact"))
             {
                 Debug.Log("Attack");
                 Attack();

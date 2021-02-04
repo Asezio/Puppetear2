@@ -68,7 +68,7 @@ public class WeaponBase : MonoBehaviour
             used.GetComponent<SpriteRenderer>().sortingOrder = GetComponentInParent<SpriteRenderer>().sortingOrder;
             used.GetComponent<ItemMoveable>().Stick();
             used.GetComponent<ItemMoveable>().startDetect = true;
-            if (Input.GetButtonDown("Interact") || Input.GetMouseButtonDown(0))
+            if (Input.GetButtonDown("Interact"))
             {
                 if(used.GetComponent<ItemMoveable>().detected == false)
                 {
@@ -104,7 +104,7 @@ public class WeaponBase : MonoBehaviour
             Vector3 leavePosition = new Vector3(usedPos.position.x, used.transform.position.y - 0.2f, usedPos.position.z);
             GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>().position =new Vector3 (usedPos.position.x, used.transform.position.y +0.5f, usedPos.position.z);
             used.GetComponent<Interactable>().MiaoBian();           
-            if (Input.GetButtonDown("Interact") || Input.GetMouseButtonDown(0))
+            if (Input.GetButtonDown("Interact"))
             {
                 isHiden = false;
                 GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>().position = leavePosition;
@@ -167,7 +167,7 @@ public class WeaponBase : MonoBehaviour
                             canAttack = false;
                         }
 
-                        if (Input.GetButtonDown("Interact") || Input.GetMouseButtonDown(0))
+                        if (Input.GetButtonDown("Interact") )
                         {
                             if (obj.tag == ("Item"))//拾取道具
                             {
