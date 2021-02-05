@@ -114,6 +114,7 @@ public class WeaponBase : MonoBehaviour
 
         else if (isCarrying == false && isHiden == false)
         {
+            canAttack = true;
             Collider2D[] hitThings = Physics2D.OverlapCircleAll(attackPoint.position, DetectRange, thinglayers);
             //Debug.Log(hitEnemies.Length);
             if (hitThings.Length > 0)
@@ -221,7 +222,7 @@ public class WeaponBase : MonoBehaviour
                 }
             }
         }
-
+        Debug.Log(canAttack);
     }
 
     protected void Attack()
@@ -274,18 +275,25 @@ public class WeaponBase : MonoBehaviour
             {
                 Boss boss = other.GetComponent<Boss>();
                 Boss.health--;
+                Boss.isChanged = true;
                 if (Boss.health == 2)
                 {
+                    other.GetComponent<EnemyBase>().Hurt();
                     other.transform.position = boss.waypointList2[0];
                 }
                 else if (Boss.health == 1)
                 {
+                    other.GetComponent<EnemyBase>().Hurt();
                     other.transform.position = boss.waypointList3[0];
                 }
-
+                else if (Boss.health == 0)
+                {
+                    other.GetComponent<EnemyBase>().Die();
+                }
             }
 
         }
+        
     }
 
     protected void Flip()

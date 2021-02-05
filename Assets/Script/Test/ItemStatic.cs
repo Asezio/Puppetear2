@@ -47,4 +47,9 @@ public class ItemStatic : ItemBase
         gameObject.GetComponentInChildren<OpenDoor>().canOpen = true;
         //Debug.Log("Kere");
     }
+
+    public void DrinkerBreaker()
+    {
+        //gameObject.GetComponentInChildren<>
+    }
 }

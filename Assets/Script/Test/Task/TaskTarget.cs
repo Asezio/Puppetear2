@@ -32,7 +32,7 @@ public class TaskTarget : MonoBehaviour
 
     private void Update()
     {
-        UpdateTask(nonTargetTask,nonTargetFinAmount,nonTargetAmount);
+        UpdateTask(nonTargetTask, nonTargetFinAmount, nonTargetAmount);
         UpdateTask(sleepyTask, sleepyFinAmount, sleepyAmount);
         UpdateTask(poisonTask, poisonFinAmount, poisonAmount);
         UpdateTask(bossTask, bossFinAmount, bossAmount);
@@ -45,11 +45,15 @@ public class TaskTarget : MonoBehaviour
 
     public void UpdateTask(GameObject task, int finish, int require)
     {
-        task.transform.GetChild(2).GetComponent<Text>().text = finish.ToString();
+        if (task.transform.GetChild(2).GetComponent<Text>() != null)
+        {
+            task.transform.GetChild(2).GetComponent<Text>().text = finish.ToString();
+        }
+
 
         if (finish == require)
         {
-            for (int i = 0; i < 3; i++)
+            for (int i = 0; i < 4; i++)
             {
                 task.transform.GetChild(i).GetComponent<Text>().color = Color.green;
             }

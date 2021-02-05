@@ -283,6 +283,7 @@ GameObject:
   - component: {fileID: 3876941235940676004}
   - component: {fileID: 3876941235940676003}
   - component: {fileID: 3488257727710644671}
+  - component: {fileID: 8303043597333259311}
   m_Layer: 12
   m_Name: Chara_Player
   m_TagString: Player
@@ -457,6 +458,26 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &8303043597333259311
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3876941235940676002}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1b63df9cfaa89a4fa1cdef2dbe7f8c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nonTargetAmount: 0
+  nonTargetTask: {fileID: 0}
+  sleepyAmount: 0
+  sleepyTask: {fileID: 0}
+  poisonAmount: 0
+  poisonTask: {fileID: 0}
+  bossAmount: 0
+  bossTask: {fileID: 0}
 --- !u!1 &3876941236333852813
 GameObject:
   m_ObjectHideFlags: 0
@@ -484,7 +505,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3876941236333852813}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.4829998, z: -10}
+  m_LocalPosition: {x: 0, y: 0.48300004, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 3876941235748262425}

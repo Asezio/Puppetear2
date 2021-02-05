@@ -216,6 +216,10 @@ public class ItemMoveable : ItemBase
             used.GetComponent<ItemStatic>().FBIOpenTheDoor();
             //Debug.Log("Here");
         }
+        else if (number == 3)
+        {
+
+        }
     }
 
     public void Destroy()
