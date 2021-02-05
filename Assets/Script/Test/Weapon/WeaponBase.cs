@@ -278,13 +278,18 @@ public class WeaponBase : MonoBehaviour
                 Boss.isChanged = true;
                 if (Boss.health == 2)
                 {
+                    other.GetComponent<EnemyBase>().Hurt();
                     other.transform.position = boss.waypointList2[0];
                 }
                 else if (Boss.health == 1)
                 {
+                    other.GetComponent<EnemyBase>().Hurt();
                     other.transform.position = boss.waypointList3[0];
                 }
-
+                else if (Boss.health == 0)
+                {
+                    other.GetComponent<EnemyBase>().Die();
+                }
             }
 
         }

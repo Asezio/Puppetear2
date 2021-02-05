@@ -24,6 +24,10 @@ public class EnemyBase : MonoBehaviour
 
     }
 
+    public void Hurt()
+    {
+        UITimeBar.timeLeft = GameObject.Find("TimeLeft").GetComponent<UITimeBar>().timeMax;
+    }
 
     IEnumerator TimeRefresh()
     {
