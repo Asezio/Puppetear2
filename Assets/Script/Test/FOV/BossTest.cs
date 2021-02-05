@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Boss : AIBase
+public class BossTest : AIBase
 {
     [Header("Waypoints1 Setting")]
     [SerializeField] private Vector3[] waypointList1;
@@ -244,5 +244,4 @@ public class Boss : AIBase
     {
         Gizmos.DrawWireSphere(transform.position, detectRange);
     }
-
 }
