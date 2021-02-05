@@ -49,7 +49,7 @@ public class TaskTarget : MonoBehaviour
 
         if (finish == require)
         {
-            for (int i = 0; i < 3; i++)
+            for (int i = 0; i < 4; i++)
             {
                 task.transform.GetChild(i).GetComponent<Text>().color = Color.green;
             }
