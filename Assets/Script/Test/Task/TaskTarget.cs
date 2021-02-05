@@ -45,12 +45,9 @@ public class TaskTarget : MonoBehaviour
 
     public void UpdateTask(GameObject task, int finish, int require)
     {
-        if (task.transform.GetChild(2).GetComponent<Text>() != null)
-        {
-            task.transform.GetChild(2).GetComponent<Text>().text = finish.ToString();
-        }
 
-
+        task.transform.GetChild(2).GetComponent<Text>().text = finish.ToString();
+        
         if (finish == require)
         {
             for (int i = 0; i < 4; i++)

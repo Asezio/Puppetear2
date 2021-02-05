@@ -270,6 +270,11 @@ public class WeaponBase : MonoBehaviour
                 {
                     TaskTarget.sleepyFinAmount++;
                 }
+
+                if (other.GetComponent<DoorKeeper>() != null)
+                {
+                    TaskTarget2.doorKeeperFinAmount++;
+                }
             }
             else
             {
