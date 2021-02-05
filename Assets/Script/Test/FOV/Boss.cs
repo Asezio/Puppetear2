@@ -7,20 +7,14 @@ public class Boss : AIBase
     [Header("Waypoints1 Setting")]
     [SerializeField] private Vector3[] waypointList1;
     [SerializeField] private float[] waitTimeList1;
-    private float waitTimer1;
-    private int wayPointIndex1;
 
     [Header("Waypoints2 Setting")]
     public Vector3[] waypointList2;
     [SerializeField] private float[] waitTimeList2;
-    private float waitTimer2;
-    private int wayPointIndex2;
 
     [Header("Waypoints3 Setting")]
     public Vector3[] waypointList3;
     [SerializeField] private float[] waitTimeList3;
-    private float waitTimer3;
-    private int wayPointIndex3;
 
     [Header("Detect Setting")]
     [SerializeField] private float detectRange;
@@ -36,6 +30,11 @@ public class Boss : AIBase
     [Header("Health")]
     public static int health = 3;
 
+    private float waitTimer;
+    private int wayPointIndex;
+
+    public static bool isChanged = true;
+
     public enum State
     {
         Waiting,
@@ -44,78 +43,48 @@ public class Boss : AIBase
         WaitMachine,
     }
 
-    private void InitWaypoint(out float waittimerr, float[] waittimelist, out int waypointindex)
-    {
-        if (waittimelist.Length != 0)
-        {
-            waittimerr = waittimelist[0];
-        }
-        else
-        {
-            waittimerr = 0;
-        }
-
-        waypointindex = 0;
-    }
-
-    protected override void Start()
-    {
-        base.Start();
-
-        //InitWaypoint(out waitTimer1, waitTimeList1, out wayPointIndex1);
-        //InitWaypoint(out waitTimer2, waitTimeList2, out wayPointIndex2);
-        //InitWaypoint(out waitTimer3, waitTimeList3, out wayPointIndex3);
-        if (waitTimeList1.Length != 0)
-        {
-            waitTimer1 = waitTimeList1[0];
-        }
-        else
-        {
-            waitTimer1 = 0;
-        }
-
-        if (waitTimeList2.Length != 0)
-        {
-            waitTimer2 = waitTimeList1[0];
-        }
-        else
-        {
-            waitTimer2 = 0;
-        }
-
-        wayPointIndex2 = 0;
-
-        if (waitTimeList3.Length != 0)
-        {
-            waitTimer3 = waitTimeList1[0];
-        }
-        else
-        {
-            waitTimer3 = 0;
-        }
-
-        wayPointIndex3 = 0;
-
-    }
-
-
     protected override void Update()
     {
         base.Update();
 
         if (health == 3)
         {
-            HandleMovement(waypointList1, waitTimeList1, waitTimer1, wayPointIndex1);
+            if (isChanged == true)
+            {
+                if (waitTimeList1.Length != 0)
+                {
+                    waitTimer = waitTimeList1[0];
+                }
+            }
+            isChanged = false;
+            HandleMovement(waypointList1, waitTimeList1);
         }
 
         if (health == 2)
         {
-            HandleMovement(waypointList2, waitTimeList2, waitTimer2, wayPointIndex2);
+            if (isChanged == true)
+            {
+                if (waitTimeList2.Length != 0)
+                {
+                    waitTimer = waitTimeList2[0];
+                }
+            }
+            isChanged = false;
+
+            HandleMovement(waypointList2, waitTimeList2);
         }
 
         if (health == 1)
         {
-            HandleMovement(waypointList3, waitTimeList3, waitTimer3, wayPointIndex3);
+            if (isChanged == true)
+            {
+                if (waitTimeList3.Length != 0)
+                {
+                    waitTimer = waitTimeList3[0];
+                }
+            }
+            isChanged = false;
+            HandleMovement(waypointList3, waitTimeList3);
         }
 
         if (health == 0)
@@ -123,10 +92,21 @@ public class Boss : AIBase
             TaskTarget.bossFinAmount++;
             Die();
         }
-
     }
 
-    private void HandleMovement(Vector3[] waypointList, float[] waitTimeList, float waitTimer, int wayPointIndex)
+    private void InitFirstChange(bool isFirChanged, float[] waitList)
+    {
+        if (isFirChanged == true)
+        {
+            if (waitList.Length!=0)
+            {
+                waitTimer = waitList[0];
+            }           
+        }
+        isFirChanged = false;
+    }
+
+    private void HandleMovement(Vector3[] waypointList, float[] waitTimeList)
     {
         Collider2D[] hitThing = Physics2D.OverlapCircleAll(transform.position, detectRange, thingLayers);
         switch (state)
@@ -244,5 +224,4 @@ public class Boss : AIBase
     {
         Gizmos.DrawWireSphere(transform.position, detectRange);
     }
-
 }

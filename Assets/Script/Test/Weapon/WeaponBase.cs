@@ -275,6 +275,7 @@ public class WeaponBase : MonoBehaviour
             {
                 Boss boss = other.GetComponent<Boss>();
                 Boss.health--;
+                Boss.isChanged = true;
                 if (Boss.health == 2)
                 {
                     other.transform.position = boss.waypointList2[0];
