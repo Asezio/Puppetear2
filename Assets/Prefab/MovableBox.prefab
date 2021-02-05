@@ -10,9 +10,13 @@ GameObject:
   m_Component:
   - component: {fileID: 2230365607716106515}
   - component: {fileID: 509717718134453907}
-  m_Layer: 0
+  - component: {fileID: 4524282860088343509}
+  - component: {fileID: 4625570651871039136}
+  - component: {fileID: 4097429828582739757}
+  - component: {fileID: 24788352994277833}
+  m_Layer: 9
   m_Name: MovableBox
-  m_TagString: Untagged
+  m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -81,3 +85,76 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &4524282860088343509
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4681518261830547238}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b0548ff39049d547a0f8bd9ed04bc6b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMaterial: {fileID: 0}
+  defaultMaterial: {fileID: 0}
+  textPosition: {fileID: 0}
+  TextUI: {fileID: 0}
+--- !u!114 &4625570651871039136
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4681518261830547238}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e54910f5c1110b44a4e6e84092f86d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sr: {fileID: 0}
+  targetName: 
+  eventNumber: 0
+  itemSlayer:
+    serializedVersion: 2
+    m_Bits: 0
+  detected: 0
+  isStick: 0
+  duration: 1
+  offsetX: 0
+  detectRange: 0
+  startDetect: 0
+--- !u!114 &4097429828582739757
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4681518261830547238}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bab044239623587488fdb2181276f4e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!68 &24788352994277833
+EdgeCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4681518261830547238}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_EdgeRadius: 0
+  m_Points:
+  - {x: 0.0005264255, y: -0.09100177}
+  - {x: 1.6348615, y: 0.73520005}
+  - {x: 0.07392305, y: 1.4467764}
+  - {x: -1.6608028, y: 0.6433098}
+  - {x: -0.09446109, y: -0.091002546}
