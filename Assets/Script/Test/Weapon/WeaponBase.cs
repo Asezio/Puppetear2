@@ -53,7 +53,7 @@ public class WeaponBase : MonoBehaviour
         isHiden = false;
         canAttack = true;
         isCarrying = false;
-    
+
     }
 
 
@@ -63,14 +63,14 @@ public class WeaponBase : MonoBehaviour
     {
         if (isCarrying == true)
         {
-            canAttack = false;           
+            canAttack = false;
             used.GetComponent<SortingOrder>().enabled = false;
             used.GetComponent<SpriteRenderer>().sortingOrder = GetComponentInParent<SpriteRenderer>().sortingOrder;
             used.GetComponent<ItemMoveable>().Stick();
             used.GetComponent<ItemMoveable>().startDetect = true;
             if (Input.GetButtonDown("Interact"))
             {
-                if(used.GetComponent<ItemMoveable>().detected == false)
+                if (used.GetComponent<ItemMoveable>().detected == false)
                 {
                     if (used.GetComponent<ItemMoveable>().CanDrop() == true)
                     {
@@ -102,8 +102,8 @@ public class WeaponBase : MonoBehaviour
             isCarrying = false;
             Transform usedPos = used.GetComponentInChildren<Transform>();
             Vector3 leavePosition = new Vector3(usedPos.position.x, used.transform.position.y - 0.2f, usedPos.position.z);
-            GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>().position =new Vector3 (usedPos.position.x, used.transform.position.y +0.5f, usedPos.position.z);
-            used.GetComponent<Interactable>().MiaoBian();           
+            GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>().position = new Vector3(usedPos.position.x, used.transform.position.y + 0.5f, usedPos.position.z);
+            used.GetComponent<Interactable>().MiaoBian();
             if (Input.GetButtonDown("Interact"))
             {
                 isHiden = false;
@@ -148,8 +148,8 @@ public class WeaponBase : MonoBehaviour
                 //    canAttack = true;
                 //}
 
-                if ((playerTrans.position.x < obj.transform.position.x && playerSr.flipX == true )
-                    || (playerTrans.position.x > obj.transform.position.x && playerSr.flipX == false ))
+                if ((playerTrans.position.x < obj.transform.position.x && playerSr.flipX == true)
+                    || (playerTrans.position.x > obj.transform.position.x && playerSr.flipX == false))
                 {
                     //Debug.Log(obj.name);
                     //当前物体描边
@@ -167,7 +167,7 @@ public class WeaponBase : MonoBehaviour
                             canAttack = false;
                         }
 
-                        if (Input.GetButtonDown("Interact") )
+                        if (Input.GetButtonDown("Interact"))
                         {
                             if (obj.tag == ("Item"))//拾取道具
                             {
@@ -185,12 +185,12 @@ public class WeaponBase : MonoBehaviour
                             else if (obj.tag == "ItemInteractable")
                             {
                                 //Debug.Log("1");
-                                obj.GetComponent<ItemStatic>().switchflag=true;
+                                obj.GetComponent<ItemStatic>().switchflag = true;
                             }
                         }
-                    
 
-                    
+
+
                         //anim.SetTrigger("Interact");
                         //obj.GetComponent<Interactable>().ExitMiaobian();
                         //obj.GetComponent<EnemyBase>().Die();
@@ -221,7 +221,7 @@ public class WeaponBase : MonoBehaviour
                 }
             }
         }
-        
+
     }
 
     protected void Attack()
@@ -256,7 +256,35 @@ public class WeaponBase : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Enemy"))
         {
-            other.GetComponent<EnemyBase>().Die();
+            if (other.GetComponent<Boss>() == null)
+            {
+                other.GetComponent<EnemyBase>().Die();
+                if (other.GetComponent<PatrolAI>().isTarget == false)
+                {
+                    TaskTarget.nonTargetFinAmount++;
+                }
+
+                //sleepytask + 1
+                if (other.GetComponent<SleepyAI>() != null)
+                {
+                    TaskTarget.sleepyFinAmount++;
+                }
+            }
+            else
+            {
+                Boss boss = other.GetComponent<Boss>();
+                Boss.health--;
+                if (Boss.health == 2)
+                {
+                    other.transform.position = boss.waypointList2[0];
+                }
+                else if (Boss.health == 1)
+                {
+                    other.transform.position = boss.waypointList3[0];
+                }
+
+            }
+
         }
     }
 

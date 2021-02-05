@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 2310751863472020314}
   - component: {fileID: 2310751863472020315}
   m_Layer: 8
-  m_Name: AIEnemy_0
+  m_Name: NonTargetAI
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
