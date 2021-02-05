@@ -114,6 +114,7 @@ public class WeaponBase : MonoBehaviour
 
         else if (isCarrying == false && isHiden == false)
         {
+            canAttack = true;
             Collider2D[] hitThings = Physics2D.OverlapCircleAll(attackPoint.position, DetectRange, thinglayers);
             //Debug.Log(hitEnemies.Length);
             if (hitThings.Length > 0)
@@ -221,7 +222,7 @@ public class WeaponBase : MonoBehaviour
                 }
             }
         }
-
+        Debug.Log(canAttack);
     }
 
     protected void Attack()
@@ -286,6 +287,7 @@ public class WeaponBase : MonoBehaviour
             }
 
         }
+        
     }
 
     protected void Flip()
