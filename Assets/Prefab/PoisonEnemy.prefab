@@ -92,7 +92,7 @@ GameObject:
   - component: {fileID: 4484886503960730186}
   - component: {fileID: 4227388512124850326}
   - component: {fileID: 1337390493089694208}
-  - component: {fileID: 4415403628678913386}
+  - component: {fileID: 2533136414626224349}
   - component: {fileID: 3705108179096775853}
   - component: {fileID: 3308515414291408423}
   - component: {fileID: 1369251002216124209}
@@ -184,7 +184,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 0
   waitTime: 0
---- !u!114 &4415403628678913386
+--- !u!114 &2533136414626224349
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -193,7 +193,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 6070878073007790167}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bab044239623587488fdb2181276f4e7, type: 3}
+  m_Script: {fileID: 11500000, guid: c227734c7965e2849b0769ee2711437e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &3705108179096775853
@@ -210,8 +210,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   outlineMaterial: {fileID: 2100000, guid: 6843ad5bcc7ea3a4e9e328856c69a8a3, type: 2}
   defaultMaterial: {fileID: 0}
-  textPosition: {fileID: 0}
-  TextUI: {fileID: 0}
 --- !u!114 &3308515414291408423
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -276,7 +274,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1

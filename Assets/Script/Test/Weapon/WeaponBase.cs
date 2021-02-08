@@ -104,10 +104,12 @@ public class WeaponBase : MonoBehaviour
             Vector3 leavePosition = new Vector3(usedPos.position.x, used.transform.position.y - 0.2f, usedPos.position.z);
             GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>().position = new Vector3(usedPos.position.x, used.transform.position.y + 0.5f, usedPos.position.z);
             used.GetComponent<Interactable>().MiaoBian();
+            GetComponentInParent<CapsuleCollider2D>().enabled = false;
             if (Input.GetButtonDown("Interact"))
             {
                 isHiden = false;
                 GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>().position = leavePosition;
+                GetComponentInParent<CapsuleCollider2D>().enabled = true;
             }
 
         }
@@ -222,7 +224,7 @@ public class WeaponBase : MonoBehaviour
                 }
             }
         }
-        Debug.Log(canAttack);
+        //Debug.Log(canAttack);
     }
 
     protected void Attack()

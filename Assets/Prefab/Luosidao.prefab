@@ -11,12 +11,12 @@ GameObject:
   - component: {fileID: 2103129456797240892}
   - component: {fileID: 7546776687873315149}
   - component: {fileID: 6676578412695266231}
-  - component: {fileID: 8876342891725196094}
+  - component: {fileID: 3624750125248112934}
   - component: {fileID: 1151256191875568867}
   - component: {fileID: 5275759587467620974}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Luosidao
-  m_TagString: Untagged
+  m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -111,7 +111,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 5, y: 4.28}
   m_EdgeRadius: 0
---- !u!114 &8876342891725196094
+--- !u!114 &3624750125248112934
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -120,7 +120,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 121190307136803433}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bab044239623587488fdb2181276f4e7, type: 3}
+  m_Script: {fileID: 11500000, guid: c227734c7965e2849b0769ee2711437e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &1151256191875568867
@@ -135,7 +135,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e54910f5c1110b44a4e6e84092f86d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sr: {fileID: 0}
   targetName: electricBox
   eventNumber: 2
   itemSlayer:
@@ -143,9 +142,6 @@ MonoBehaviour:
     m_Bits: 2048
   detected: 0
   isStick: 0
-  duration: 0.3
-  offsetX: 0.1
-  detectRange: 0.2
   startDetect: 0
 --- !u!114 &5275759587467620974
 MonoBehaviour:
@@ -161,5 +157,3 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   outlineMaterial: {fileID: 2100000, guid: 6843ad5bcc7ea3a4e9e328856c69a8a3, type: 2}
   defaultMaterial: {fileID: 0}
-  textPosition: {fileID: 0}
-  TextUI: {fileID: 0}

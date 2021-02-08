@@ -13,10 +13,10 @@ public class ItemMoveable : ItemBase
 
     public bool detected;
     public bool isStick;
-    public float duration;
+    private float duration;
     private float raycastDistance;
-    public float offsetX;
-    public float detectRange;
+    private float offsetX;
+    private float detectRange;
     public bool startDetect;
 
     protected GameObject test;
@@ -35,6 +35,8 @@ public class ItemMoveable : ItemBase
         raycastDistance = targetTrans.position.y - playerTrans.position.y;
         startDetect = false;
         detected = false;
+        offsetX = 0.1f;
+        detectRange = 0.2f;
 
         test = GameObject.Find("FirstAttached");
     }
@@ -64,12 +66,14 @@ public class ItemMoveable : ItemBase
         Vector3 dropPosition = new Vector3(targetTrans.position.x, playerTrans.position.y, targetTrans.position.z);
         Tweener moveTween = transform.DOMove(dropPosition, duration);
         //gameObject.GetComponent<Collider2D>().enabled = true;
-        //Invoke("ChangeStartmoveTrue", duration);       
+        //Invoke("ChangeStartmoveTrue", duration);
+        StartCoroutine(ChangeStickFalse());
     }
 
-    void ChangeStickTrue()
+    IEnumerator ChangeStickFalse()
     {
-        isStick = true;
+        yield return new WaitForSeconds(0.3f);
+        isStick = false;
     }
 
     public bool CanDrop()
@@ -136,6 +140,7 @@ public class ItemMoveable : ItemBase
     public void Stick()
     {
         //gameObject.GetComponent<Collider2D>().enabled = false;
+        isStick = true;
         transform.position = targetTrans.position;
         if (GameObject.FindGameObjectWithTag("Player").GetComponent<SpriteRenderer>().flipX == false)
         {

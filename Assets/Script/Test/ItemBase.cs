@@ -5,7 +5,7 @@ using DG.Tweening;
 
 public class ItemBase : MonoBehaviour
 {
-    public SpriteRenderer sr;
+    protected SpriteRenderer sr;
     
     //public bool startmove;
 

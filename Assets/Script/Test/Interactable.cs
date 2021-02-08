@@ -8,14 +8,16 @@ public class Interactable : MonoBehaviour
     SpriteRenderer sr;
     public Material outlineMaterial;
     public Material defaultMaterial;
-    public Transform textPosition;
+    private Transform textPosition;
 
-    public GameObject TextUI;
+    private GameObject TextUI;
     void Awake()
     {
         sr = GetComponent<SpriteRenderer>();
-        defaultMaterial = sr.material;     
+        defaultMaterial = sr.material;
         //TextUI.SetActive(false);
+        textPosition = GameObject.Find("TextPosition").GetComponent<Transform>();
+        TextUI = GameObject.Find("TextUI");
     }
 
     //碰到玩家时，给outline

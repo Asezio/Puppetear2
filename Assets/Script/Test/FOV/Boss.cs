@@ -171,7 +171,10 @@ public class Boss : AIBase
                     {
                         //Flip();
                         // Go to next waypoint
-                        waitTimer = waitTimeList[wayPointIndex];
+
+
+
+
                         wayPointIndex = (wayPointIndex + 1) % waypointList.Length;
                         state = State.Waiting;
                     }

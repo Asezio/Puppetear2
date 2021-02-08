@@ -10,11 +10,11 @@ GameObject:
   m_Component:
   - component: {fileID: 620809511658192642}
   - component: {fileID: 620809511658192643}
-  - component: {fileID: 620809511658192645}
-  - component: {fileID: 620809511658192640}
+  - component: {fileID: 1344833269329837675}
   - component: {fileID: 620809511658192641}
   - component: {fileID: 620809511658192654}
-  m_Layer: 12
+  - component: {fileID: 1565687309046530390}
+  m_Layer: 9
   m_Name: Poison
   m_TagString: Item
   m_Icon: {fileID: 0}
@@ -75,7 +75,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 17
   m_Sprite: {fileID: 21300000, guid: 24738435a015e3c4fb27a27a57a10789, type: 3}
-  m_Color: {r: 0, g: 0.3207547, b: 0.06853582, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -85,7 +85,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 1
---- !u!114 &620809511658192645
+--- !u!114 &1344833269329837675
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -94,40 +94,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 620809511658192655}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bab044239623587488fdb2181276f4e7, type: 3}
+  m_Script: {fileID: 11500000, guid: c227734c7965e2849b0769ee2711437e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!60 &620809511658192640
-PolygonCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 620809511658192655}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0}
-    oldSize: {x: 0.4, y: 0.4}
-    newSize: {x: 1, y: 1}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  m_Points:
-    m_Paths:
-    - - {x: -0.2094121, y: 0.011274338}
-      - {x: 0.43772447, y: 0.0762167}
-      - {x: 0.18880928, y: 0.260005}
-      - {x: 0.18598092, y: 0.2600999}
-      - {x: 0.02145958, y: 0.23950887}
-      - {x: -0.49379265, y: 0.18554115}
 --- !u!114 &620809511658192641
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -140,7 +109,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e54910f5c1110b44a4e6e84092f86d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sr: {fileID: 0}
   targetName: drinker
   eventNumber: 1
   itemSlayer:
@@ -148,9 +116,6 @@ MonoBehaviour:
     m_Bits: 2048
   detected: 0
   isStick: 0
-  duration: 0.3
-  offsetX: 0.1
-  detectRange: 0.2
   startDetect: 0
 --- !u!114 &620809511658192654
 MonoBehaviour:
@@ -166,5 +131,29 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   outlineMaterial: {fileID: 2100000, guid: 6843ad5bcc7ea3a4e9e328856c69a8a3, type: 2}
   defaultMaterial: {fileID: 0}
-  textPosition: {fileID: 0}
-  TextUI: {fileID: 0}
+--- !u!61 &1565687309046530390
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 620809511658192655}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.007095933, y: 0.060447693}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0}
+    oldSize: {x: 0.4, y: 0.4}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.18712354, y: 0.120895386}
+  m_EdgeRadius: 0

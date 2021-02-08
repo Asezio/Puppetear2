@@ -11,7 +11,9 @@ GameObject:
   - component: {fileID: 6887526647429686380}
   - component: {fileID: 170851272882484217}
   - component: {fileID: 2392294505579480419}
-  - component: {fileID: 2374526526050836332}
+  - component: {fileID: 2248297769182172431}
+  - component: {fileID: 2719136297244820155}
+  - component: {fileID: 6457838442396348705}
   m_Layer: 0
   m_Name: Shovel
   m_TagString: Untagged
@@ -93,7 +95,7 @@ EdgeCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -111,7 +113,7 @@ EdgeCollider2D:
   - {x: 0.15253639, y: 0.23762894}
   - {x: 0.09375191, y: 0.30508232}
   - {x: -0.06858063, y: 0.07905769}
---- !u!114 &2374526526050836332
+--- !u!114 &2248297769182172431
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -120,6 +122,40 @@ MonoBehaviour:
   m_GameObject: {fileID: 8218551300976219106}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bab044239623587488fdb2181276f4e7, type: 3}
+  m_Script: {fileID: 11500000, guid: c227734c7965e2849b0769ee2711437e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &2719136297244820155
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8218551300976219106}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e54910f5c1110b44a4e6e84092f86d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetName: drinker
+  eventNumber: 3
+  itemSlayer:
+    serializedVersion: 2
+    m_Bits: 1024
+  detected: 0
+  isStick: 0
+  startDetect: 0
+--- !u!114 &6457838442396348705
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8218551300976219106}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b0548ff39049d547a0f8bd9ed04bc6b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMaterial: {fileID: 2100000, guid: 6843ad5bcc7ea3a4e9e328856c69a8a3, type: 2}
+  defaultMaterial: {fileID: 0}

@@ -44,7 +44,7 @@ GameObject:
   - component: {fileID: 4708516407049316378}
   - component: {fileID: 4708516407049316379}
   - component: {fileID: 4708516407049316452}
-  m_Layer: 13
+  m_Layer: 10
   m_Name: HideBox
   m_TagString: Hide
   m_Icon: {fileID: 0}
@@ -171,7 +171,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e1f9fe6c03bb3b74db07b0d5ea750883, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sr: {fileID: 0}
   itemName: 
   isPoisoned: 0
   isAvailable: 0
@@ -190,5 +189,3 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   outlineMaterial: {fileID: 2100000, guid: 6843ad5bcc7ea3a4e9e328856c69a8a3, type: 2}
   defaultMaterial: {fileID: 0}
-  textPosition: {fileID: 0}
-  TextUI: {fileID: 0}
