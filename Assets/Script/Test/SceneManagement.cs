@@ -20,7 +20,20 @@ public class SceneManagement : MonoBehaviour
         winPanel.SetActive(false);
         losePanel.SetActive(false);
         count = player.GetComponent<Points>().sp.scene;
+        if (GameObject.Find("CanvasTask2") != null)
+        {
+            player.GetComponent<Points>().Reset();
+            count = player.GetComponent<Points>().sp.scene;
+        }
+
     }
+    //void Start()
+    //{
+    //    if (GameObject.Find("CanvasTask2") != null)
+    //    {
+    //        player.GetComponent<Points>().Reset();
+    //    }
+    //}
     // Update is called once per frame
     void Update()
     {

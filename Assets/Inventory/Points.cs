@@ -47,10 +47,13 @@ public class Points : MonoBehaviour
 
     public void Reset()
     {
+        sp.skillPoint = 0;
         sp.currentPoint = 0;
         sp.levelPoint = 0;
         sp.levelTime = 0f;
         sp.totalTime = 0f;
+        sp.upgradePoint = 0;
+        sp.scene = 1;
     }
 
     public void PassGame()
