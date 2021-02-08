@@ -21,6 +21,7 @@ public class ItemMoveable : ItemBase
 
     protected GameObject test;
     protected GameObject used;
+    private GameObject player;
 
     protected List<float> itemSList;
     protected Dictionary<float, GameObject> itemSDic;
@@ -30,6 +31,7 @@ public class ItemMoveable : ItemBase
         base.Awake();
         targetTrans = GameObject.Find("ItemPoint").GetComponent<Transform>();
         playerTrans = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
+        player = GameObject.FindGameObjectWithTag("Player");
         isStick = false;
         duration = 0.5f;
         raycastDistance = targetTrans.position.y - playerTrans.position.y;
@@ -184,9 +186,10 @@ public class ItemMoveable : ItemBase
             //当前物体描边
             if (obj.GetComponent<ItemStatic>().itemName == gameObject.GetComponent<ItemMoveable>().targetName)
             {
-                //Debug.Log(obj.name);
+                Debug.Log(obj.name);
                 detected = true;
                 obj.GetComponent<Interactable>().MiaoBian();
+                player.GetComponent<SignText>().Interact();
                 used = obj;
             }
 

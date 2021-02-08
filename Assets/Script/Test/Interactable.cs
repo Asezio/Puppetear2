@@ -25,8 +25,9 @@ public class Interactable : MonoBehaviour
     {
       
             sr.material = outlineMaterial;
-            TextUI.transform.position = textPosition.position;       
-            TextChange();
+            TextUI.transform.position = textPosition.position;
+            TextUI.SetActive(true);
+        //TextChange();
     }
 
     public void ExitMiaobian()
@@ -45,7 +46,7 @@ public class Interactable : MonoBehaviour
         {
             Text text = TextUI.GetComponent<Text>();
             text.text = "Press E to Kill";
-            TextUI.SetActive(true);
+            
         }
 
         

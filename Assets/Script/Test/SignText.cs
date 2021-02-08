@@ -9,7 +9,7 @@ public class SignText : MonoBehaviour
     public Transform textPosition;
     public Text textUI;
 
-    private void Update()
+    void Update()
     {
         textUI.transform.position = textPosition.position;
     }
@@ -18,18 +18,28 @@ public class SignText : MonoBehaviour
     public void KillText()
     {
         textUI.text = "E to Kill";
+        
     }
 
     //Hide in box
     public void Hide()
     {
         textUI.text = "E to Hide";
+        
+        Debug.Log("Hiding");
+    }
+
+    public void ExitHiding()
+    {
+        textUI.text = "E to Exit Hiding";
+        
     }
 
     //Pick up interactive items
     public void Pickup()
     {
         textUI.text = "E to Pickup";
+        
     }
 
     //Interact items

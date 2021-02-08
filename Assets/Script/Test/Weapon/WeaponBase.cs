@@ -107,6 +107,7 @@ public class WeaponBase : MonoBehaviour
             GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>().position = new Vector3(usedPos.position.x, used.transform.position.y + 0.5f, usedPos.position.z);
             used.GetComponent<Interactable>().MiaoBian();
             GetComponentInParent<CapsuleCollider2D>().enabled = false;
+            player.GetComponent<SignText>().ExitHiding();
             if (Input.GetButtonDown("Interact"))
             {
                 isHiden = false;
@@ -166,6 +167,7 @@ public class WeaponBase : MonoBehaviour
                     test = obj;
                     if (obj.tag == "Enemy")
                     {
+                        //obj.GetComponent<Interactable>().
                         player.GetComponent<SignText>().KillText();
                         canAttack = true;
                     }
@@ -174,33 +176,44 @@ public class WeaponBase : MonoBehaviour
                         canAttack = false;
                     }
 
-                    if (obj.tag == "Interactable")
+                    if (obj.tag == "Hide")
                     {
-                        if (obj.GetComponent<DoorTrigger>()!= null)//门
+                        //Debug.Log("hIDING");
+                        player.GetComponent<SignText>().Hide();
+                    }
+
+                    else if (obj.tag == "Item")
+                    {
+                        player.GetComponent<SignText>().Pickup();
+                    }
+
+                    else if (obj.tag == "Interactable")
+                    {
+                        if (obj.GetComponent<DoorTrigger>() != null)//门
                         {
-                            
+                            player.GetComponent<SignText>().NeedItem();
                         }
-                        
+
                         else if (obj.GetComponent<Machine1>() != null)//机器
                         {
-
+                            player.GetComponent<SignText>().NeedItem();
                         }
 
                         else if (obj.GetComponent<ElectricBox>() != null)//电箱
                         {
-
+                            player.GetComponent<SignText>().NeedItem();
                         }
 
                         else if (obj.GetComponent<Drinker>() != null)//饮水机
                         {
-
+                            player.GetComponent<SignText>().NeedItem();
                         }
 
                         else if (obj.GetComponent<ItemStatic>().itemName == "electricBox")//左下开关
                         {
-
+                            player.GetComponent<SignText>().NeedItem();
                         }
-                       
+
                     }
 
 
