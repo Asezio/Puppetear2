@@ -63,9 +63,9 @@ public class Boss : AIBase
 
         if (health == 2)
         {
-            wayPointIndex = 0;
             if (isChanged == true)
             {
+                wayPointIndex = 0;
                 if (waitTimeList2.Length != 0)
                 {
                     waitTimer = waitTimeList2[0];
@@ -78,9 +78,9 @@ public class Boss : AIBase
 
         if (health == 1)
         {
-            wayPointIndex = 0;
             if (isChanged == true)
             {
+                wayPointIndex = 0;
                 if (waitTimeList3.Length != 0)
                 {
                     waitTimer = waitTimeList3[0];
