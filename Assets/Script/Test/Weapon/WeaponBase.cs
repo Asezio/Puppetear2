@@ -187,29 +187,14 @@ public class WeaponBase : MonoBehaviour
                         player.GetComponent<SignText>().Pickup();
                     }
 
-                    else if (obj.tag == "Interactable")
+                    else if (obj.tag == "ItemInteractable")
                     {
-                        if (obj.GetComponent<DoorTrigger>() != null)//门
+                        if (obj.GetComponent<Machine1>() != null)//机器
                         {
-                            player.GetComponent<SignText>().NeedItem();
+                            player.GetComponent<SignText>().Interact();
                         }
 
-                        else if (obj.GetComponent<Machine1>() != null)//机器
-                        {
-                            player.GetComponent<SignText>().NeedItem();
-                        }
-
-                        else if (obj.GetComponent<ElectricBox>() != null)//电箱
-                        {
-                            player.GetComponent<SignText>().NeedItem();
-                        }
-
-                        else if (obj.GetComponent<Drinker>() != null)//饮水机
-                        {
-                            player.GetComponent<SignText>().NeedItem();
-                        }
-
-                        else if (obj.GetComponent<ItemStatic>().itemName == "electricBox")//左下开关
+                        else
                         {
                             player.GetComponent<SignText>().NeedItem();
                         }

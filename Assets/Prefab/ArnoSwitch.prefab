@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 2183348041238670862}
   - component: {fileID: -7493286103169607724}
   - component: {fileID: 7117333074932448852}
-  m_Layer: 10
+  m_Layer: 11
   m_Name: ArnoSwitch
   m_TagString: ItemInteractable
   m_Icon: {fileID: 0}
