@@ -26,6 +26,7 @@ public class TaskTarget : MonoBehaviour
 
     private void Start()
     {
+        nonTargetFinAmount = 0;
         SetTask(nonTargetTask, nonTargetAmount);
         SetTask(sleepyTask, sleepyAmount);
         SetTask(poisonTask, poisonAmount);
