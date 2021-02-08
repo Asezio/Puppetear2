@@ -21,6 +21,9 @@ public class Points : MonoBehaviour
             sp.skillPoint++;
             totalPoints -= lvUpNeedPoints;
         }
+
+        sp.totalTime += Time.deltaTime;
+
     }
     public void AddPoints(int num)
     {

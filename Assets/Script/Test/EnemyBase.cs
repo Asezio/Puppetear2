@@ -8,7 +8,6 @@ public class EnemyBase : MonoBehaviour
     protected SpriteRenderer sr;
     public float waitTime;
 
-
     // Start is called before the first frame update
     void Awake()
     {
@@ -21,7 +20,6 @@ public class EnemyBase : MonoBehaviour
         UITimeBar.timeLeft = GameObject.Find("TimeLeft").GetComponent<UITimeBar>().timeMax;
         Destroy(gameObject,0.2f);
         Destroy(GetComponent<AIBase>().fieldOfView.gameObject,0.2f);
-
     }
 
     public void Hurt()

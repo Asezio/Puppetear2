@@ -18,6 +18,7 @@ public class AIBase : MonoBehaviour
     [Header("Player Setting")]
     [SerializeField] protected Transform player;
     [SerializeField] protected LayerMask playerLayer;
+    [SerializeField] private GameObject canvas;
 
     [Header("Is Target")]
     public bool isTarget; 
@@ -27,6 +28,7 @@ public class AIBase : MonoBehaviour
     private void Awake()
     {
         sr = GetComponent<SpriteRenderer>();
+        canvas = GameObject.Find("Canvas");
     }
 
     protected virtual void Start()
@@ -70,6 +72,7 @@ public class AIBase : MonoBehaviour
                 if (raycastHit2D.collider != null)
                 {
                     Debug.Log(raycastHit2D.collider.name);
+                    //canvas.GetComponent<SceneManagement>().Restart();
                 }
             }
         }

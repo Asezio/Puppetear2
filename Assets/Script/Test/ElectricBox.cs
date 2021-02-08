@@ -4,15 +4,11 @@ using UnityEngine;
 
 public class ElectricBox : MonoBehaviour
 {
+    public GameObject doorUnderCtrl;
+    public float lastTime;
     // Start is called before the first frame update
-    void Start()
+public void ForceOpen()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        doorUnderCtrl.GetComponent<OpenDoor>().ForceOpen(lastTime);  
     }
 }

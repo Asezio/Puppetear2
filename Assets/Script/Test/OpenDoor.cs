@@ -37,7 +37,7 @@ public class OpenDoor : MonoBehaviour
     public void ForceOpen(float time)
     {
         OpenTheDoor();
-        GetComponent<BoxCollider2D>().enabled = false;
+        //GetComponent<BoxCollider2D>().enabled = false;
         StartCoroutine(DelayClose(time));
     }
 
@@ -45,7 +45,7 @@ public class OpenDoor : MonoBehaviour
     {
         yield return new WaitForSeconds(time);
         CloseTheDoor();
-        GetComponent<BoxCollider2D>().enabled = true;
+        //GetComponent<BoxCollider2D>().enabled = true;
     }
 
     void OnTriggerEnter2D(Collider2D other)

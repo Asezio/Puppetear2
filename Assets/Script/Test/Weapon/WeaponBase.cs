@@ -151,9 +151,9 @@ public class WeaponBase : MonoBehaviour
                 //    canAttack = true;
                 //}
 
-                if ((playerTrans.position.x < obj.transform.position.x && playerSr.flipX == true)
-                    || (playerTrans.position.x > obj.transform.position.x && playerSr.flipX == false))
-                {
+                //if ((playerTrans.position.x < obj.transform.position.x && playerSr.flipX == true)
+                //    || (playerTrans.position.x > obj.transform.position.x && playerSr.flipX == false))
+                //{
                     //Debug.Log(obj.name);
                     //当前物体描边
                     if (obj.GetComponent<ItemStatic>() == null || obj.GetComponent<ItemStatic>().isAvailable == true)
@@ -187,8 +187,22 @@ public class WeaponBase : MonoBehaviour
 
                             else if (obj.tag == "ItemInteractable")
                             {
-                                //if(obj.GetComponent<> )
-                                obj.GetComponent<ItemStatic>().switchflag = true;
+                                if(obj.GetComponent<ItemStatic>().isAvailable == true)
+                                {
+                                    if (obj.GetComponent<ElectricBox>() != null)
+                                    {
+                                        obj.GetComponent<ElectricBox>().ForceOpen();
+                                        obj.GetComponent<ItemStatic>().isAvailable = false;
+                                    }
+                                    else if (obj.GetComponent<Machine1>() != null)
+                                    {
+                                        obj.GetComponent<ItemStatic>().switchflag = true;
+                                    }
+                                }
+                                else
+                                {
+                                    //显示交互失败的UI
+                                }
                             }
                         }
 
@@ -204,7 +218,7 @@ public class WeaponBase : MonoBehaviour
 
                     }
 
-                }
+                //}
 
 
                 //重置字典与列表

@@ -7,9 +7,14 @@ using UnityEngine;
 public class SkillPoints : ScriptableObject
 {
     
-    public int currentPoint;
-    public int skillPoint;
+    public int currentPoint = 0;
+    public int levelPoint = 0;
+    public int bestScore = 0;
+
+    public int skillPoint = 0;
+
+    public float totalTime = 0f;
+    public float levelTime = 0f;
+
     //public int hintPoint;
-
-
 }

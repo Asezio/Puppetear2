@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 4340130743017094307}
   - component: {fileID: 4020824406103527367}
   - component: {fileID: 1060084580526892796}
+  - component: {fileID: 8873358609897887049}
   m_Layer: 11
   m_Name: ElectricBox
   m_TagString: ItemInteractable
@@ -154,6 +155,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   outlineMaterial: {fileID: 2100000, guid: 6843ad5bcc7ea3a4e9e328856c69a8a3, type: 2}
   defaultMaterial: {fileID: 0}
+--- !u!114 &8873358609897887049
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5910678897868910989}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7db83d6dfcef20f44b8d1554240eefff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  doorUnderCtrl: {fileID: 0}
+  lastTime: 3
 --- !u!1 &6611075572562912747
 GameObject:
   m_ObjectHideFlags: 0
