@@ -50,12 +50,12 @@ public class Interactable : MonoBehaviour
 
         
         //if ((this.tag == "Item") && (GameObject.Find("Weapon2").GetComponent<Weapon2>().enabled == true))
-        if(this.tag == "Item")
-        {
-            Text text = TextUI.GetComponent<Text>();
-            text.text = "Left Click to use";
-            TextUI.SetActive(true);
-        }
+        //if(this.tag == "Item")
+        //{
+        //    Text text = TextUI.GetComponent<Text>();
+        //    text.text = "Left Click to use";
+        //    TextUI.SetActive(true);
+        //}
     }
 
 
