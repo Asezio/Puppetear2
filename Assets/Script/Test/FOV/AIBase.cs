@@ -57,6 +57,7 @@ public class AIBase : MonoBehaviour
 
         //Show the move direction
         Debug.DrawLine(transform.position, transform.position + GetAimDir() * 0.5f);
+
     }
 
     protected virtual void FindTargetPlayer()
