@@ -6,7 +6,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "New Skill",menuName ="Inventory/New Skill")]
 public class SkillPoints : ScriptableObject
 {
-    
+    public int upgradePoint = 0;
     public int currentPoint = 0;
     public int levelPoint = 0;
     public int bestScore = 0;

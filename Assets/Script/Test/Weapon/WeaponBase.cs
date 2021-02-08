@@ -26,6 +26,7 @@ public class WeaponBase : MonoBehaviour
 
     protected GameObject test;
     public GameObject used;//捡取的道具或隐藏点
+    private GameObject player;
 
     //protected GameObject[] enemyArr;
     protected List<float> thingList;
@@ -41,6 +42,7 @@ public class WeaponBase : MonoBehaviour
         playerTrans = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
         playerSr = GameObject.FindGameObjectWithTag("Player").GetComponent<SpriteRenderer>();
         coll2D = GetComponent<PolygonCollider2D>();
+        player = GameObject.FindGameObjectWithTag("Player");
 
         test = GameObject.Find("FirstAttached");
 
@@ -163,6 +165,7 @@ public class WeaponBase : MonoBehaviour
                         test = obj;
                         if (obj.tag == "Enemy")
                         {
+                            player.GetComponent<SignText>().KillText();
                             canAttack = true;
                         }
                         else

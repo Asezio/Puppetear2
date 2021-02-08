@@ -19,6 +19,8 @@ public class UIPoints : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        currentScore = GameObject.FindGameObjectWithTag("Player").GetComponent<Points>().sp.currentPoint;
+        currentSP = GameObject.FindGameObjectWithTag("Player").GetComponent<Points>().sp.skillPoint;
         ScoreText.text= "Score: " + currentScore.ToString();
         SPText.text = "Skill Points: " + currentSP.ToString();
     }

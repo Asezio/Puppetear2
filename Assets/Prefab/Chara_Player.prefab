@@ -278,6 +278,7 @@ GameObject:
   - component: {fileID: 3876941235940676007}
   - component: {fileID: 3876941235940676006}
   - component: {fileID: 3876941235940676005}
+  - component: {fileID: 3266505525341721334}
   - component: {fileID: 5973238686714684768}
   - component: {fileID: 7548549607913931008}
   - component: {fileID: 3876941235940676004}
@@ -378,6 +379,20 @@ CapsuleCollider2D:
   m_Offset: {x: 0.015869893, y: 0.095053114}
   m_Size: {x: 0.4173025, y: 0.176261}
   m_Direction: 1
+--- !u!114 &3266505525341721334
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3876941235940676002}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f1332ea7e3d9624197b9b7aa4ffa80b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textPosition: {fileID: 5268630361600112544}
+  textUI: {fileID: 0}
 --- !u!114 &5973238686714684768
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -478,6 +493,7 @@ MonoBehaviour:
   poisonTask: {fileID: 0}
   bossAmount: 0
   bossTask: {fileID: 0}
+  isLevelPass: 0
 --- !u!1 &3876941236333852813
 GameObject:
   m_ObjectHideFlags: 0
