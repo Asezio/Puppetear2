@@ -262,7 +262,7 @@ public class WeaponBase : MonoBehaviour
             if (other.GetComponent<Boss>() == null)
             {
                 other.GetComponent<EnemyBase>().Die();
-                if (other.GetComponent<PatrolAI>().isTarget == false)
+                if (other.GetComponent<AIBase>().isTarget == false)
                 {
                     TaskTarget.nonTargetFinAmount++;
                 }

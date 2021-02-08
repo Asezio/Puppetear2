@@ -45,6 +45,7 @@ public class PatrolAI : AIBase
         base.Update();
 
         HandleMovement();
+
     }
 
     private void HandleMovement()
@@ -58,9 +59,9 @@ public class PatrolAI : AIBase
                     //if there's a drinker, stop and drink water.
                     if (thing.GetComponent<Drinker>() != null)
                     {
-                        Debug.Log("hit drinker");
+                        //Debug.Log("hit drinker");
                         // drink animation
-                        fieldOfView.gameObject.SetActive(false);
+                        //fieldOfView.gameObject.SetActive(false);
 
                         if (thing.GetComponent<Drinker>().isPoisoned == true)
                         {
@@ -70,13 +71,13 @@ public class PatrolAI : AIBase
                     }
 
                     //go and check the electric box
-                    if (thing.gameObject.tag == "electricBox")
-                    {
-                        Debug.Log("Electric Box");
-                        fieldOfView.gameObject.SetActive(false);
-                    }
+                    //    if (thing.gameObject.tag == "electricBox")
+                    //    {
+                    //        Debug.Log("Electric Box");
+                    //        fieldOfView.gameObject.SetActive(false);
+                    //    }
 
-                    if (thing.GetComponent<Machine1>() != null)  
+                    if (thing.GetComponent<Machine1>() != null)
                     {
                         if (thing.GetComponent<Machine1>().isActive == true)
                         {
