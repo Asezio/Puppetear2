@@ -137,8 +137,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   outlineMaterial: {fileID: 2100000, guid: 6843ad5bcc7ea3a4e9e328856c69a8a3, type: 2}
   defaultMaterial: {fileID: 0}
-  textPosition: {fileID: 0}
-  TextUI: {fileID: 0}
 --- !u!114 &4985586980342279751
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -152,10 +150,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetName: ArnoSwitch
-  eventNumber: 0
+  eventNumber: 2
   itemSlayer:
     serializedVersion: 2
-    m_Bits: 2048
+    m_Bits: 3072
   detected: 0
   isStick: 0
   startDetect: 0

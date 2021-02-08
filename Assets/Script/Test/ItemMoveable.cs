@@ -214,7 +214,7 @@ public class ItemMoveable : ItemBase
         {
             used.GetComponent<ItemStatic>().isPoisoned = true;
             //used.GetComponent<ItemStatic>().Destroy();
-            used.GetComponent<SpriteRenderer>().color=new Color32(0,255,25,255);
+            used.GetComponent<SpriteRenderer>().color = new Color32(0,255,25,255);
         }
         else if (number == 2)
         {
@@ -223,7 +223,7 @@ public class ItemMoveable : ItemBase
         }
         else if (number == 3)
         {
-
+            used.GetComponentInChildren<DrinkerBreak>().Active();           
         }
     }
 

@@ -16,4 +16,6 @@ public class Drinker : MonoBehaviour
     {
         isPoisoned = GetComponent<ItemStatic>().isPoisoned;
     }
+
+    
 }
