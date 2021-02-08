@@ -10,13 +10,18 @@ public class FOV : MonoBehaviour
     private float startingAngle;
     private float fov;
     private float viewDistance;
+    private float waveSpeed;
+
 
     private void Start()
     {
         mesh = new Mesh();
         GetComponent<MeshFilter>().mesh = mesh;
         origin = Vector3.zero;
-       
+        Bounds bounds = new Bounds(mesh.bounds.center, mesh.bounds.size + new Vector3(waveSpeed, waveSpeed, waveSpeed));
+        
+
+        
 
     }
 
@@ -68,6 +73,8 @@ public class FOV : MonoBehaviour
         mesh.vertices = vertices;
         mesh.uv = uv;
         mesh.triangles = triangles;
+
+        mesh.bounds = new Bounds(origin, Vector3.one * 1000f);
     }
     
     public void SetOrigin(Vector3 origin)
@@ -107,4 +114,5 @@ public class FOV : MonoBehaviour
         float angleRad = angle * (Mathf.PI / 180f);
         return new Vector3(Mathf.Cos(angleRad), Mathf.Sin(angleRad));
     }
+
 }
