@@ -53,7 +53,6 @@ public class Boss : AIBase
             {
                 if (waitTimeList1.Length != 0)
                 {
-                    wayPointIndex = 0;
                     waitTimer = waitTimeList1[0];
                 }
             }
@@ -67,7 +66,6 @@ public class Boss : AIBase
             {
                 if (waitTimeList2.Length != 0)
                 {
-                    wayPointIndex = 0;
                     waitTimer = waitTimeList2[0];
                 }
             }
@@ -82,7 +80,6 @@ public class Boss : AIBase
             {
                 if (waitTimeList3.Length != 0)
                 {
-                    wayPointIndex = 0;
                     waitTimer = waitTimeList3[0];
                 }
             }
