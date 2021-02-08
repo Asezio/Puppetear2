@@ -24,8 +24,11 @@ public class SceneManagement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //Debug.Log("1");
+        //Debug.Log(UITimeBar.timeLeft);
         if (UITimeBar.timeLeft <= 0)
         {
+            //Debug.Log("12");
             LosePanel();
         }
     }

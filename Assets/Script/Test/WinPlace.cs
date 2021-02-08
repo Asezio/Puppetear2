@@ -13,18 +13,35 @@ public class WinPlace : MonoBehaviour
     }
     void OnTriggerEnter2D(Collider2D other)
     {
-        Debug.Log("1");
+        //Debug.Log("1");
         //&& player.GetComponent<TaskTarget>().isLevelPass == true
-        if (other.tag == ("Player"))
+        if (player.GetComponent<Points>().sp.scene == 1)
         {
-            Debug.Log("2");
-            canvas.GetComponent<SceneManagement>().WinPanel();
-            player.GetComponent<CapsuleCollider2D>().enabled = false;
+            if (other.tag == ("Player"))
+            {
+                //Debug.Log("2");
+                canvas.GetComponent<SceneManagement>().NextLevel();
+                //player.GetComponent<CapsuleCollider2D>().enabled = false;
+            }
+            else
+            {
+                //UI
+            }
         }
         else
         {
-            //UI
+            if (other.tag == ("Player") && player.GetComponent<TaskTarget>().isLevelPass == true)
+            {
+                //Debug.Log("2");
+                canvas.GetComponent<SceneManagement>().WinPanel();
+                player.GetComponent<CapsuleCollider2D>().enabled = false;
+            }
+            else
+            {
+                //UI
+            }
         }
+        
     }
     void OnTriggerStay2D(Collider2D other)
     {

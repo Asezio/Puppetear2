@@ -160,6 +160,7 @@ public class WeaponBase : MonoBehaviour
                     //当前物体描边
                 if (obj.GetComponent<ItemStatic>() == null || obj.GetComponent<ItemStatic>().isAvailable == true)
                 {
+                    Debug.Log(obj.name);
                     obj.GetComponent<Interactable>().MiaoBian();
                     //将检测物体设置为当前选中物体
                     test = obj;
