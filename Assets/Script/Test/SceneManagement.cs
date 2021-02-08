@@ -5,13 +5,13 @@ using UnityEngine.SceneManagement;
 
 public class SceneManagement : MonoBehaviour
 {
-    private int count = 0;
+    public int count = 1;
     // Start is called before the first frame update
 
     // Update is called once per frame
     void Update()
     {
-        if (UITimeBar.timeLeft<=0)
+        if (UITimeBar.timeLeft <= 0)
         {
             Restart();
         }
