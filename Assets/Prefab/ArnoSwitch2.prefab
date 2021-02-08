@@ -71,7 +71,7 @@ GameObject:
   - component: {fileID: 8310555900278988982}
   - component: {fileID: 8438538485790464364}
   - component: {fileID: 1142807433463738604}
-  m_Layer: 10
+  m_Layer: 11
   m_Name: ArnoSwitch2
   m_TagString: ItemInteractable
   m_Icon: {fileID: 0}

@@ -249,7 +249,7 @@ GameObject:
   - component: {fileID: 4395354454177138630}
   m_Layer: 11
   m_Name: drinker
-  m_TagString: Item
+  m_TagString: ItemInteractable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

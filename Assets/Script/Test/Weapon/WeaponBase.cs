@@ -158,56 +158,80 @@ public class WeaponBase : MonoBehaviour
                 //{
                     //Debug.Log(obj.name);
                     //当前物体描边
-                    if (obj.GetComponent<ItemStatic>() == null || obj.GetComponent<ItemStatic>().isAvailable == true)
+                if (obj.GetComponent<ItemStatic>() == null || obj.GetComponent<ItemStatic>().isAvailable == true)
+                {
+                    obj.GetComponent<Interactable>().MiaoBian();
+                    //将检测物体设置为当前选中物体
+                    test = obj;
+                    if (obj.tag == "Enemy")
                     {
-                        obj.GetComponent<Interactable>().MiaoBian();
-                        //将检测物体设置为当前选中物体
-                        test = obj;
-                        if (obj.tag == "Enemy")
+                        player.GetComponent<SignText>().KillText();
+                        canAttack = true;
+                    }
+                    else
+                    {
+                        canAttack = false;
+                    }
+
+                    if (obj.tag == "Interactable")
+                    {
+                        if (obj.GetComponent<DoorTrigger>()!= null)//门
                         {
-                            player.GetComponent<SignText>().KillText();
-                            canAttack = true;
+                            
                         }
-                        else
+                        
+                        else if (obj.GetComponent<Machine1>() != null)//机器
                         {
-                            canAttack = false;
+
                         }
 
-                        if (Input.GetButtonDown("Interact"))
+                        else if (obj.GetComponent<ElectricBox>() != null)//电箱
                         {
-                            if (obj.tag == ("Item"))//拾取道具
-                            {
-                                isCarrying = true;
-                                used = obj;
-                                //obj.GetComponent<ItemBase>().MoveTo();
-                            }
 
-                            else if (obj.tag == "Hide")//Hide
-                            {
-                                isHiden = true;
-                                used = obj;
-                            }
-
-                            else if (obj.tag == "ItemInteractable")
-                            {
-                                if(obj.GetComponent<ItemStatic>().isAvailable == true)
-                                {
-                                    if (obj.GetComponent<ElectricBox>() != null)
-                                    {
-                                        obj.GetComponent<ElectricBox>().ForceOpen();
-                                        obj.GetComponent<ItemStatic>().isAvailable = false;
-                                    }
-                                    else if (obj.GetComponent<Machine1>() != null)
-                                    {
-                                        obj.GetComponent<ItemStatic>().switchflag = true;
-                                    }
-                                }
-                                else
-                                {
-                                    //显示交互失败的UI
-                                }
-                            }
                         }
+
+                        else if (obj.GetComponent<Drinker>() != null)//饮水机
+                        {
+
+                        }
+
+                        else if (obj.GetComponent<ItemStatic>().itemName == "electricBox")//左下开关
+                        {
+
+                        }
+                       
+                    }
+
+
+                    if (Input.GetButtonDown("Interact"))
+                    {
+                        if (obj.tag == ("Item"))//拾取道具
+                        {
+                            isCarrying = true;
+                            used = obj;
+                            //obj.GetComponent<ItemBase>().MoveTo();
+                        }
+
+                        else if (obj.tag == "Hide")//Hide
+                        {
+                            isHiden = true;
+                            used = obj;
+                        }
+
+                        else if (obj.tag == "ItemInteractable")
+                        {
+                            if (obj.GetComponent<ElectricBox>() != null)
+                            {
+                                obj.GetComponent<ElectricBox>().ForceOpen();
+                                obj.GetComponent<ItemStatic>().isAvailable = false;
+                            }
+                            else if (obj.GetComponent<Machine1>() != null)
+                            {
+                                obj.GetComponent<ItemStatic>().switchflag = true;
+                            }
+                           
+                        }
+                    }
 
 
 
@@ -219,7 +243,7 @@ public class WeaponBase : MonoBehaviour
                         //测试物体失去目标，将其指定为初始物体
                         //test = GameObject.Find("FirstAttached");
 
-                    }
+                }
 
                 //}
 

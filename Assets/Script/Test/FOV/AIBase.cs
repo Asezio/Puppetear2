@@ -18,7 +18,7 @@ public class AIBase : MonoBehaviour
     [Header("Player Setting")]
     [SerializeField] protected Transform player;
     [SerializeField] protected LayerMask playerLayer;
-    [SerializeField] private GameObject canvas;
+    private GameObject canvas;
 
     [Header("Is Target")]
     public bool isTarget; 
@@ -73,7 +73,8 @@ public class AIBase : MonoBehaviour
                 if (raycastHit2D.collider != null)
                 {
                     Debug.Log(raycastHit2D.collider.name);
-                    //canvas.GetComponent<SceneManagement>().Restart();
+                    player.gameObject.GetComponent<CapsuleCollider2D>().enabled = false;
+                    canvas.GetComponent<SceneManagement>().LosePanel();
                 }
             }
         }
