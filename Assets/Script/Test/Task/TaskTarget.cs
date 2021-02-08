@@ -20,6 +20,8 @@ public class TaskTarget : MonoBehaviour
     public int bossAmount;
     public static int bossFinAmount;
     public GameObject bossTask;
+  
+    public bool isLevelPass = false;
 
 
     private void Start()
@@ -36,6 +38,14 @@ public class TaskTarget : MonoBehaviour
         UpdateTask(sleepyTask, sleepyFinAmount, sleepyAmount);
         UpdateTask(poisonTask, poisonFinAmount, poisonAmount);
         UpdateTask(bossTask, bossFinAmount, bossAmount);
+
+        if (nonTargetAmount<=nonTargetFinAmount &&
+            sleepyAmount<=sleepyFinAmount &&
+            poisonAmount<=poisonFinAmount &&
+            bossAmount<=bossFinAmount)
+        {
+            isLevelPass = true;
+        }
     }
 
     public void SetTask(GameObject task, int require)
@@ -47,7 +57,7 @@ public class TaskTarget : MonoBehaviour
     {
 
         task.transform.GetChild(2).GetComponent<Text>().text = finish.ToString();
-        
+
         if (finish == require)
         {
             for (int i = 0; i < 4; i++)
