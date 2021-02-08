@@ -19,7 +19,11 @@ public class SortingOrder : MonoBehaviour
     protected void OrderInLayer()//改变角色层级
     {
         float y = trans.position.y * (-10);
-        sr.sortingOrder = Mathf.RoundToInt(y);
+        if (y < 0)
+        {
+            y =0f;
+        }
+        sr.sortingOrder = Mathf.RoundToInt(y);           
     }
 
 }

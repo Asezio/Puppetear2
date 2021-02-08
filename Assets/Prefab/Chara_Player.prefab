@@ -116,7 +116,7 @@ MonoBehaviour:
   isReady: 0
   thinglayers:
     serializedVersion: 2
-    m_Bits: 1792
+    m_Bits: 2816
   attackPoint: {fileID: 5268630362424450624}
   used: {fileID: 0}
 --- !u!1 &2431098362336691156

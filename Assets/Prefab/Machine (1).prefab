@@ -10,6 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 5707743782658635595}
   - component: {fileID: 5707743782658635588}
+  - component: {fileID: 2361893529597358787}
+  - component: {fileID: -974380463774184903}
+  - component: {fileID: 7806140102561809121}
   - component: {fileID: 3422655113681152674}
   - component: {fileID: 4205999451633466564}
   - component: {fileID: 8336124409526412407}
@@ -86,6 +89,46 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &2361893529597358787
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5707743782658635589}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bab044239623587488fdb2181276f4e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &-974380463774184903
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5707743782658635589}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52f41278e04e5b24d9bc34c79c113b73, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isActive: 0
+  lastTime: 0
+--- !u!114 &7806140102561809121
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5707743782658635589}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b0548ff39049d547a0f8bd9ed04bc6b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMaterial: {fileID: 2100000, guid: 6843ad5bcc7ea3a4e9e328856c69a8a3, type: 2}
+  defaultMaterial: {fileID: 0}
 --- !u!68 &3422655113681152674
 EdgeCollider2D:
   m_ObjectHideFlags: 0
@@ -168,5 +211,3 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   outlineMaterial: {fileID: 2100000, guid: 6843ad5bcc7ea3a4e9e328856c69a8a3, type: 2}
   defaultMaterial: {fileID: 0}
-  textPosition: {fileID: 0}
-  TextUI: {fileID: 0}

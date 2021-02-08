@@ -187,7 +187,7 @@ public class WeaponBase : MonoBehaviour
 
                             else if (obj.tag == "ItemInteractable")
                             {
-                                //Debug.Log("1");
+                                //if(obj.GetComponent<> )
                                 obj.GetComponent<ItemStatic>().switchflag = true;
                             }
                         }

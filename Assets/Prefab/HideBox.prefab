@@ -1,5 +1,57 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &773890650856192654
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2495829509879597809}
+  - component: {fileID: 9013841604568192658}
+  m_Layer: 0
+  m_Name: Collider
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2495829509879597809
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 773890650856192654}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4708516407049316383}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!68 &9013841604568192658
+EdgeCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 773890650856192654}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_EdgeRadius: 0
+  m_Points:
+  - {x: -0.48102865, y: 0.18497126}
+  - {x: -0.18737619, y: 0.005179803}
+  - {x: 0.45930013, y: 0.06395094}
+  - {x: 0.2086278, y: 0.25168952}
+  - {x: -0.48177093, y: 0.18497133}
 --- !u!1 &4708516406847463557
 GameObject:
   m_ObjectHideFlags: 0
@@ -44,7 +96,7 @@ GameObject:
   - component: {fileID: 4708516407049316378}
   - component: {fileID: 4708516407049316379}
   - component: {fileID: 4708516407049316452}
-  m_Layer: 10
+  m_Layer: 11
   m_Name: HideBox
   m_TagString: Hide
   m_Icon: {fileID: 0}
@@ -63,6 +115,7 @@ Transform:
   m_LocalScale: {x: 1.5, y: 1.5, z: 1}
   m_Children:
   - {fileID: 4708516406847463556}
+  - {fileID: 2495829509879597809}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -153,12 +206,13 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: -0.2094121, y: 0.011274338}
-      - {x: 0.43772447, y: 0.0762167}
-      - {x: 0.18880928, y: 0.260005}
-      - {x: 0.18598092, y: 0.2600999}
-      - {x: 0.02145958, y: 0.23950887}
-      - {x: -0.49379265, y: 0.18554115}
+    - - {x: -0.1762121, y: -0.0053256354}
+      - {x: 0.4566958, y: 0.07384531}
+      - {x: 0.45915198, y: 0.17463359}
+      - {x: 0.45632362, y: 0.7130425}
+      - {x: 0.16137372, y: 0.8940228}
+      - {x: -0.47738498, y: 0.82096404}
+      - {x: -0.47956404, y: 0.18079829}
 --- !u!114 &4708516407049316379
 MonoBehaviour:
   m_ObjectHideFlags: 0
