@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 73f3db447c247754ea7281b3017171f3, type: 3}
   m_Name: Chara
   m_EditorClassIdentifier: 
-  scene: 2
-  upgradePoint: 1437
-  currentPoint: 1437
-  levelPoint: 1108
+  scene: 1
+  upgradePoint: 0
+  currentPoint: 0
+  levelPoint: 0
   bestScore: 0
   skillPoint: 0
-  totalTime: 319.15842
-  levelTime: 285.1743
+  totalTime: 0
+  levelTime: 0
