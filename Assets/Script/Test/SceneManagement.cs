@@ -68,7 +68,7 @@ public class SceneManagement : MonoBehaviour
     }
     public void LosePanel()
     {
-        //losePanel.SetActive(true);
+        losePanel.SetActive(true);
     }
     public void NewGame()
     {

@@ -45,11 +45,13 @@ public class ItemStatic : ItemBase
     public void FBIOpenTheDoor()
     {
         gameObject.GetComponentInChildren<OpenDoor>().canOpen = true;
+        isAvailable = false;
         //Debug.Log("Kere");
     }
 
     public void DrinkerBreaker()
     {
         //gameObject.GetComponentInChildren<>
+        isAvailable = false;
     }
 }
