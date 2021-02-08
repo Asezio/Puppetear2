@@ -20,7 +20,7 @@ public class SceneStart : MonoBehaviour
     public void QuitGame()
     {
         /*将状态设置false才能退出游戏*/
-        UnityEditor.EditorApplication.isPlaying = false;
+        //UnityEditor.EditorApplication.isPlaying = false;
         Application.Quit();
     }
 }

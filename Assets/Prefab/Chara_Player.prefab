@@ -285,6 +285,7 @@ GameObject:
   - component: {fileID: 3876941235940676003}
   - component: {fileID: 3488257727710644671}
   - component: {fileID: 8303043597333259311}
+  - component: {fileID: 4984415377492306415}
   m_Layer: 12
   m_Name: Chara_Player
   m_TagString: Player
@@ -494,6 +495,20 @@ MonoBehaviour:
   bossAmount: 0
   bossTask: {fileID: 0}
   isLevelPass: 0
+--- !u!114 &4984415377492306415
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3876941235940676002}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1fe140c8a428b1f419025616096fcfd1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textPosition: {fileID: 0}
+  textUI: {fileID: 0}
 --- !u!1 &3876941236333852813
 GameObject:
   m_ObjectHideFlags: 0
