@@ -50,11 +50,15 @@ public class AIBase : MonoBehaviour
         if (fieldOfView != null)
         {
             fieldOfView.SetOrigin(transform.position);
-            fieldOfView.SetAimDirection(GetAimDir());
+            fieldOfView.SetAimDirection(GetAimDir());      
         }
 
-        FindTargetPlayer();
-
+        if (fieldOfView.gameObject.activeSelf == true)
+        {
+            FindTargetPlayer();
+        }
+        
+        //FindTargetPlayer();
         //Show the move direction
         Debug.DrawLine(transform.position, transform.position + GetAimDir() * 0.5f);
 
@@ -72,7 +76,7 @@ public class AIBase : MonoBehaviour
                 RaycastHit2D raycastHit2D = Physics2D.Raycast(GetPosition(), dirToPlayer, viewDistance, playerLayer);
                 if (raycastHit2D.collider != null)
                 {
-                    Debug.Log(raycastHit2D.collider.name);
+                    Debug.Log("hit by" + this);
                     //canvas.GetComponent<SceneManagement>().Restart();
                 }
             }

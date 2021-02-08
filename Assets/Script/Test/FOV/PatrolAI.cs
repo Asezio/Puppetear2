@@ -61,7 +61,7 @@ public class PatrolAI : AIBase
                     {
                         //Debug.Log("hit drinker");
                         // drink animation
-                        //fieldOfView.gameObject.SetActive(false);
+                        fieldOfView.gameObject.SetActive(false);
 
                         if (thing.GetComponent<Drinker>().isPoisoned == true)
                         {
