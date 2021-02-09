@@ -17,6 +17,7 @@ public class PatrolAI : AIBase
     [Header("Interactive Machine")]
     [SerializeField] private float machineOffset;
     [SerializeField] private float machineWaitTimer;
+    private float machineWaitMaxTime;
 
     [Header("State")]
     public State state;
@@ -38,6 +39,8 @@ public class PatrolAI : AIBase
         {
             waitTimer = waitTimeList[0];
         }
+
+        machineWaitMaxTime = machineWaitTimer;
     }
 
     protected override void Update()
@@ -112,9 +115,11 @@ public class PatrolAI : AIBase
                     {
                         //Flip();
                         // Go to next waypoint
+                       //isChangeDirection = true;
                         waitTimer = waitTimeList[wayPointIndex];
                         wayPointIndex = (wayPointIndex + 1) % waypointList.Length;
                         state = State.Waiting;
+
                     }
 
                     foreach (var thing in hitThing)
@@ -156,6 +161,7 @@ public class PatrolAI : AIBase
 
                 if (machineWaitTimer <= 0)
                 {
+                    machineWaitTimer = machineWaitMaxTime;
                     state = State.Moving;
                 }
                 break;

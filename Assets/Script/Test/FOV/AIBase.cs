@@ -24,12 +24,22 @@ public class AIBase : MonoBehaviour
     [Header("Is Target")]
     public bool isTarget;
 
+    [Header("Detect Delay Time")]
+    public float delayTime;
+    private float delayMaxTime;
+    //public bool isChangeDirection;
+    //private float changeMaxTime;
+    //public float changeTime;
+
     protected SpriteRenderer sr;
 
     private void Awake()
     {
         sr = GetComponent<SpriteRenderer>();
         canvas = GameObject.Find("Canvas");
+        //changeMaxTime = changeTime;
+        delayTime = 0.2f;
+        delayMaxTime = delayTime;
     }
 
     protected virtual void Start()
@@ -52,16 +62,16 @@ public class AIBase : MonoBehaviour
         //Link FOV on enemy
         if (fieldOfView != null)
         {
-            if (lastMoveDir.x<0)
-            { 
-                fieldOfView.SetOrigin(transform.position + new Vector3(offsetX,0));
+            if (lastMoveDir.x < 0)
+            {
+                fieldOfView.SetOrigin(transform.position + new Vector3(offsetX, 0));
             }
 
-            if (lastMoveDir.x >0)
+            if (lastMoveDir.x > 0)
             {
                 fieldOfView.SetOrigin(transform.position - new Vector3(offsetX, 0));
             }
-           
+
             fieldOfView.SetAimDirection(GetAimDir());
         }
 
@@ -69,6 +79,30 @@ public class AIBase : MonoBehaviour
         {
             FindTargetPlayer();
         }
+
+        //if (fieldOfView.gameObject.activeSelf == true)
+        //{
+        //    if (isChangeDirection == false)
+        //    {
+        //        changeMaxTime = changeTime;
+        //        FindTargetPlayer();
+        //    }
+
+        //    if (isChangeDirection == true)
+        //    {
+        //        changeTime -= Time.deltaTime;
+        //        if (changeTime <= 0)
+        //        {
+        //            changeTime = changeMaxTime;
+        //            FindTargetPlayer();
+        //            isChangeDirection = false;
+
+        //        }
+
+        //    }
+        //}
+
+
 
         //FindTargetPlayer();
         //Show the move direction
@@ -91,10 +125,16 @@ public class AIBase : MonoBehaviour
                     Debug.Log(raycastHit2D.collider.name);
                     if (raycastHit2D.collider.CompareTag("Player"))
                     {
-                        
-                        player.gameObject.GetComponent<CapsuleCollider2D>().enabled = false;
-                        canvas.GetComponent<SceneManagement>().LosePanel();
-                        Debug.Log("hit by" + this);
+                        delayTime -= Time.deltaTime;
+                        if (delayTime <= 0)
+                        {
+
+                            player.gameObject.GetComponent<CapsuleCollider2D>().enabled = false;
+                            canvas.GetComponent<SceneManagement>().LosePanel();
+                            Debug.Log("hit by" + this);
+                            delayTime = delayMaxTime;
+                        }
+
                         //canvas.GetComponent<SceneManagement>().Restart();
 
                     }
