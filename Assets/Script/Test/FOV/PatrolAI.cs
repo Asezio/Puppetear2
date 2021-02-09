@@ -66,9 +66,11 @@ public class PatrolAI : AIBase
                         // drink animation
                         fieldOfView.gameObject.SetActive(false);
 
-                        if (thing.GetComponent<Drinker>().isPoisoned == true)
+                        if (thing.GetComponent<ItemStatic>().isPoisoned == true)
                         {
                             TaskTarget.poisonFinAmount++;
+                            Debug.Log(thing.GetComponent<ItemStatic>().isPoisoned);
+                            thing.GetComponent<ItemStatic>().isPoisoned = false;
                             GetComponent<EnemyBase>().Die();
                         }
                     }
