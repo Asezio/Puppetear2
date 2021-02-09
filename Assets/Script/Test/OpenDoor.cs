@@ -34,11 +34,22 @@ public class OpenDoor : MonoBehaviour
         moveTween.SetEase(Ease.OutQuint);
     }
 
-    public void ForceOpen(float time)
+    public void KeepDoorOpen()
     {
         OpenTheDoor();
-        //GetComponent<BoxCollider2D>().enabled = false;
-        StartCoroutine(DelayClose(time));
+        canOpen = true;
+        GetComponentInParent<BoxCollider2D>().enabled = false;
+    }
+
+    public void ForceOpen(float time)
+    {
+        if(canOpen == false)
+        {
+            OpenTheDoor();
+            //GetComponent<BoxCollider2D>().enabled = false;
+            StartCoroutine(DelayClose(time));
+        }
+
     }
 
     IEnumerator DelayClose(float time)
@@ -50,7 +61,7 @@ public class OpenDoor : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if((other.tag == "Player" && canOpen == true)||other.tag == "Enemy")
+        if(other.tag == "Enemy" && canOpen ==false)
         {
             OpenTheDoor();
         }
@@ -59,7 +70,7 @@ public class OpenDoor : MonoBehaviour
     void OnTriggerExit2D(Collider2D other)
     {
         
-        if ((other.tag == "Player" && canOpen == true) || other.tag == "Enemy")
+        if ( other.tag == "Enemy" && canOpen ==false)
         {
             //Debug.Log("Close");
             CloseTheDoor();

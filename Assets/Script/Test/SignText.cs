@@ -26,7 +26,7 @@ public class SignText : MonoBehaviour
     {
         textUI.text = "E to Hide";
         
-        Debug.Log("Hiding");
+        //Debug.Log("Hiding");
     }
 
     public void ExitHiding()

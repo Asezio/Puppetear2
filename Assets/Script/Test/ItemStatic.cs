@@ -44,7 +44,7 @@ public class ItemStatic : ItemBase
 
     public void FBIOpenTheDoor()
     {
-        gameObject.GetComponentInChildren<OpenDoor>().canOpen = true;
+        gameObject.GetComponentInChildren<OpenDoor>().KeepDoorOpen();
         isAvailable = false;
         //Debug.Log("Kere");
     }

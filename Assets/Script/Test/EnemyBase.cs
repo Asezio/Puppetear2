@@ -8,12 +8,13 @@ public class EnemyBase : MonoBehaviour
     protected SpriteRenderer sr;
     public float waitTime;
     private GameObject player;
-
+    private GameObject bossG;
     // Start is called before the first frame update
     void Awake()
     {
         sr = GetComponent<SpriteRenderer>();
         player = GameObject.FindGameObjectWithTag("Player");
+        bossG = GameObject.Find("Boss");
     }
 
 
@@ -28,6 +29,17 @@ public class EnemyBase : MonoBehaviour
 
     public void Hurt()
     {
+        Boss boss = bossG.GetComponent<Boss>();
+        Boss.health--;
+        Boss.isChanged = true;
+        if (Boss.health == 2)
+        {
+            bossG.transform.position = boss.waypointList2[0];
+        }
+        else if(Boss.health == 1)
+        {
+            bossG.transform.position = boss.waypointList3[0];
+        }
         UITimeBar.timeLeft = GameObject.Find("TimeLeft").GetComponent<UITimeBar>().timeMax;
         int addPoints = Random.Range(150, 201);
         player.GetComponent<Points>().AddPoints(addPoints);

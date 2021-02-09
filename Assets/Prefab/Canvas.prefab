@@ -2102,7 +2102,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeText: {fileID: 389396637732094644}
-  timeMax: 20
+  timeMax: 30
   isActive: 0
 --- !u!1 &389396637422057709
 GameObject:
@@ -4886,7 +4886,7 @@ MonoBehaviour:
     m_LineSpacing: 1
   m_Text: 'Game Over !!
 
-    You Didn''t Complete The Target !!'
+    You Didn''t Complete The Tasks !!'
 --- !u!1 &1705032609450023992
 GameObject:
   m_ObjectHideFlags: 0

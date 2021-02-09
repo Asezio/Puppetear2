@@ -17,7 +17,8 @@ public class MouseTrap : MonoBehaviour
         //Debug.Log(gameObject.name);
         if (other.tag == "Enemy")
         {
-            if (other.name != "Boss")
+            Debug.Log("1");
+            if (other.GetComponent<Boss>()==null)
             {
                 other.GetComponent<EnemyBase>().Die();
             }
@@ -25,6 +26,7 @@ public class MouseTrap : MonoBehaviour
             {
                 if(Boss.health > 1f)
                 {
+                    Debug.Log("2");
                     other.GetComponent<EnemyBase>().Hurt();
                 }
                 else
