@@ -112,9 +112,11 @@ public class PatrolAI : AIBase
                     {
                         //Flip();
                         // Go to next waypoint
+                       //isChangeDirection = true;
                         waitTimer = waitTimeList[wayPointIndex];
                         wayPointIndex = (wayPointIndex + 1) % waypointList.Length;
                         state = State.Waiting;
+
                     }
 
                     foreach (var thing in hitThing)
