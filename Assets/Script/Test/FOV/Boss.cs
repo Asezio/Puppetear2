@@ -43,6 +43,13 @@ public class Boss : AIBase
         WaitMachine,
     }
 
+    protected override void Start()
+    {
+        base.Start();
+        health = 3;
+
+    }
+
     protected override void Update()
     {
         base.Update();
@@ -97,17 +104,6 @@ public class Boss : AIBase
         }
     }
 
-    private void InitFirstChange(bool isFirChanged, float[] waitList)
-    {
-        if (isFirChanged == true)
-        {
-            if (waitList.Length!=0)
-            {
-                waitTimer = waitList[0];
-            }           
-        }
-        isFirChanged = false;
-    }
 
     private void HandleMovement(Vector3[] waypointList, float[] waitTimeList)
     {

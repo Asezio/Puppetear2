@@ -19,10 +19,10 @@ public class WeaponBase : MonoBehaviour
 
 
     protected SpriteRenderer playerSr;
-    protected Animator anim;
+    public Animator anim;
     protected Transform playerTrans;
     public Transform attackPoint;
-    private PolygonCollider2D coll2D;
+    public PolygonCollider2D coll2D;
 
     protected GameObject test;
     public GameObject used;//捡取的道具或隐藏点
@@ -36,13 +36,15 @@ public class WeaponBase : MonoBehaviour
     //protected Dictionary<float, GameObject> itemDic;
 
     // Start is called before the first frame update
-    void Awake()
+    public virtual void Start()
     {
-        anim = GameObject.FindGameObjectWithTag("Player").GetComponent<Animator>();
+       
         playerTrans = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
         playerSr = GameObject.FindGameObjectWithTag("Player").GetComponent<SpriteRenderer>();
-        coll2D = GetComponent<PolygonCollider2D>();
+        //coll2D = GetComponent<PolygonCollider2D>();
+        //coll2D.enabled = false;
         player = GameObject.FindGameObjectWithTag("Player");
+        //anim = GetComponentInParent<Animator>();
 
         test = GameObject.Find("FirstAttached");
 
@@ -161,7 +163,7 @@ public class WeaponBase : MonoBehaviour
                     //当前物体描边
                 if (obj.GetComponent<ItemStatic>() == null || obj.GetComponent<ItemStatic>().isAvailable == true)
                 {
-                    Debug.Log(obj.name);
+                    //Debug.Log(obj.name);
                     obj.GetComponent<Interactable>().MiaoBian();
                     //将检测物体设置为当前选中物体
                     test = obj;
@@ -270,7 +272,8 @@ public class WeaponBase : MonoBehaviour
     protected void Attack()
     {
         //Debug.Log("Attack");
-        anim.SetBool("Attack", true);
+        // anim.SetBool("Attack", true);
+     
         anim.SetTrigger("Interact");
         StartCoroutine(StartAttack());
         GameObject.Find("UI_Weapon1").GetComponent<UIweapon1>().Activate();

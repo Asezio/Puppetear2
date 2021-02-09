@@ -12,6 +12,7 @@ public class AIBase : MonoBehaviour
     [SerializeField] protected float fov = 90f;
     [SerializeField] protected float viewDistance = 50f;
     [SerializeField] protected Vector3 aimDirection;
+    public float offsetX;
     protected Vector3 lastMoveDir;
     public FOV fieldOfView;
 
@@ -21,7 +22,7 @@ public class AIBase : MonoBehaviour
     private GameObject canvas;
 
     [Header("Is Target")]
-    public bool isTarget; 
+    public bool isTarget;
 
     protected SpriteRenderer sr;
 
@@ -40,6 +41,8 @@ public class AIBase : MonoBehaviour
         fieldOfView = Instantiate(pfFieldofView, null).GetComponent<FOV>();
         fieldOfView.SetFoV(fov);
         fieldOfView.SetViewDistance(viewDistance);
+
+        Physics2D.queriesStartInColliders = false;
     }
 
     protected virtual void Update()
@@ -49,15 +52,24 @@ public class AIBase : MonoBehaviour
         //Link FOV on enemy
         if (fieldOfView != null)
         {
-            fieldOfView.SetOrigin(transform.position);
-            fieldOfView.SetAimDirection(GetAimDir());      
+            if (lastMoveDir.x<0)
+            { 
+                fieldOfView.SetOrigin(transform.position + new Vector3(offsetX,0));
+            }
+
+            if (lastMoveDir.x >0)
+            {
+                fieldOfView.SetOrigin(transform.position - new Vector3(offsetX, 0));
+            }
+           
+            fieldOfView.SetAimDirection(GetAimDir());
         }
 
         if (fieldOfView.gameObject.activeSelf == true)
         {
             FindTargetPlayer();
         }
-        
+
         //FindTargetPlayer();
         //Show the move direction
         Debug.DrawLine(transform.position, transform.position + GetAimDir() * 0.5f);
@@ -73,14 +85,20 @@ public class AIBase : MonoBehaviour
             Vector3 dirToPlayer = (player.position - GetPosition()).normalized;
             if (Vector3.Angle(GetAimDir(), dirToPlayer) < fov / 2f)
             {
-                RaycastHit2D raycastHit2D = Physics2D.Raycast(GetPosition(), dirToPlayer, viewDistance, playerLayer);
+                RaycastHit2D raycastHit2D = Physics2D.Raycast(GetPosition(), dirToPlayer, viewDistance);
                 if (raycastHit2D.collider != null)
                 {
                     Debug.Log(raycastHit2D.collider.name);
-                    player.gameObject.GetComponent<CapsuleCollider2D>().enabled = false;
-                    canvas.GetComponent<SceneManagement>().LosePanel();
-                    Debug.Log("hit by" + this);
-                    //canvas.GetComponent<SceneManagement>().Restart();
+                    if (raycastHit2D.collider.CompareTag("Player"))
+                    {
+                        
+                        player.gameObject.GetComponent<CapsuleCollider2D>().enabled = false;
+                        canvas.GetComponent<SceneManagement>().LosePanel();
+                        Debug.Log("hit by" + this);
+                        //canvas.GetComponent<SceneManagement>().Restart();
+
+                    }
+
                 }
             }
         }

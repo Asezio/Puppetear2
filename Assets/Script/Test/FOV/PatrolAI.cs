@@ -66,7 +66,7 @@ public class PatrolAI : AIBase
                         if (thing.GetComponent<Drinker>().isPoisoned == true)
                         {
                             TaskTarget.poisonFinAmount++;
-                            Die();
+                            GetComponent<EnemyBase>().Die();
                         }
                     }
 
@@ -84,7 +84,6 @@ public class PatrolAI : AIBase
                             state = State.MoveToMachine;
                             break;
                         }
-
                     }
                 }
                 waitTimer -= Time.deltaTime;
@@ -162,7 +161,6 @@ public class PatrolAI : AIBase
                 break;
         }
     }
-
 
     void OnDrawGizmosSelected()
     {

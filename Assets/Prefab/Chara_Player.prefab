@@ -117,8 +117,11 @@ MonoBehaviour:
   thinglayers:
     serializedVersion: 2
     m_Bits: 2816
+  anim: {fileID: 3488257727710644671}
   attackPoint: {fileID: 5268630362424450624}
+  coll2D: {fileID: 5268630362371774764}
   used: {fileID: 0}
+  UIweapon1: {fileID: 0}
 --- !u!1 &2431098362336691156
 GameObject:
   m_ObjectHideFlags: 0

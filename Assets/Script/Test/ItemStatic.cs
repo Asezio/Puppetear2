@@ -14,7 +14,7 @@ public class ItemStatic : ItemBase
     //public float waitTime;
     //public float lastTime;
     // Start is called before the first frame update
-    void Awake()
+    protected override void Awake()
     {
         base.Awake();
         isPoisoned = false;

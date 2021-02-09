@@ -10,7 +10,7 @@ public class ItemBase : MonoBehaviour
     //public bool startmove;
 
     // Start is called before the first frame update
-    protected void Awake()
+    protected virtual void Awake()
     {
         sr = GetComponent<SpriteRenderer>();
         

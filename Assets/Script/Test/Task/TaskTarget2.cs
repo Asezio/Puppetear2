@@ -16,6 +16,7 @@ public class TaskTarget2 : MonoBehaviour
 
     private void Start()
     {
+        doorKeeperFinAmount = 0;
         SetTask(doorKeeperTask, doorKeeperAmount);
         SetTask(sewerPassTask, sewerPassAmount);
     }

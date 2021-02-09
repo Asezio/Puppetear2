@@ -4,26 +4,34 @@ using UnityEngine;
 
 public class Weapon1 : WeaponBase
 {
-    // Start is called before the first frame update
-    void Start()
+    public GameObject UIweapon1;
+    public override void Start()
     {
-
-
+        base.Start();
+        UIweapon1 = GameObject.Find("UI_Weapon1");
     }
+
+
 
     // Update is called once per frame
     void Update()
     {
-        DetectThing();       
+        DetectThing();
         Flip();
-        if (canAttack == true && GameObject.Find("UI_Weapon1").GetComponent<UIweapon>().isReady == true)
+
+        if (UIweapon1.GetComponent<UIweapon1>() != null)
         {
-            if (Input.GetButtonDown("Interact"))
+            if (canAttack == true && UIweapon1.GetComponent<UIweapon1>().isReady == true)
             {
-                Debug.Log("Attack");
-                Attack();
+                if (Input.GetButtonDown("Interact"))
+                {
+                    //Debug.Log("Attack");
+
+                    Attack();
+                }
             }
         }
+
     }
 
 
