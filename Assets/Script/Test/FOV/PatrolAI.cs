@@ -17,6 +17,7 @@ public class PatrolAI : AIBase
     [Header("Interactive Machine")]
     [SerializeField] private float machineOffset;
     [SerializeField] private float machineWaitTimer;
+    private float machineWaitMaxTime;
 
     [Header("State")]
     public State state;
@@ -38,6 +39,8 @@ public class PatrolAI : AIBase
         {
             waitTimer = waitTimeList[0];
         }
+
+        machineWaitMaxTime = machineWaitTimer;
     }
 
     protected override void Update()
@@ -158,6 +161,7 @@ public class PatrolAI : AIBase
 
                 if (machineWaitTimer <= 0)
                 {
+                    machineWaitTimer = machineWaitMaxTime;
                     state = State.Moving;
                 }
                 break;
