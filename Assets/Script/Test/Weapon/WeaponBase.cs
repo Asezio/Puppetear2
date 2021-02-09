@@ -331,6 +331,7 @@ public class WeaponBase : MonoBehaviour
                 }
                 else if (Boss.health == 1)
                 {
+                    Boss.health--;
                     other.GetComponent<EnemyBase>().Die();
                 }
             }
