@@ -276,7 +276,7 @@ public class WeaponBase : MonoBehaviour
      
         anim.SetTrigger("Interact");
         StartCoroutine(StartAttack());
-        GameObject.Find("UI_Weapon1").GetComponent<UIweapon1>().Activate();
+        //GameObject.Find("UI_Weapon1").GetComponent<UIweapon1>().Activate();
     }
 
     IEnumerator disableHitBox()

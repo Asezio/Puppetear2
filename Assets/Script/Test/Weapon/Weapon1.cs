@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class Weapon1 : WeaponBase
 {
-    public GameObject UIweapon1;
+    //public GameObject UIweapon1;
     public override void Start()
     {
         base.Start();
-        UIweapon1 = GameObject.Find("UI_Weapon1");
+        //UIweapon1 = GameObject.Find("UI_Weapon1");
     }
 
 
@@ -19,18 +19,30 @@ public class Weapon1 : WeaponBase
         DetectThing();
         Flip();
 
-        if (UIweapon1.GetComponent<UIweapon1>() != null)
-        {
-            if (canAttack == true && UIweapon1.GetComponent<UIweapon1>().isReady == true)
-            {
-                if (Input.GetButtonDown("Interact"))
-                {
-                    //Debug.Log("Attack");
+        //if (UIweapon1.GetComponent<UIweapon1>() != null)
+        //{
+        //    if (canAttack == true && UIweapon1.GetComponent<UIweapon1>().isReady == true)
+        //    {
+        //        if (Input.GetButtonDown("Interact"))
+        //        {
+        //            //Debug.Log("Attack");
 
-                    Attack();
-                }
+        //            Attack();
+        //        }
+        //    }
+        //}
+
+
+        if (canAttack == true)
+        {
+            if (Input.GetButtonDown("Interact"))
+            {
+                //Debug.Log("Attack");
+
+                Attack();
             }
         }
+
 
     }
 
