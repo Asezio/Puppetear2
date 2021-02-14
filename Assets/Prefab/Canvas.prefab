@@ -1622,6 +1622,7 @@ GameObject:
   - component: {fileID: 389396636912562085}
   - component: {fileID: 389396636912562084}
   - component: {fileID: 389396636912562107}
+  - component: {fileID: 8938507867100055575}
   - component: {fileID: 7517203631553391644}
   m_Layer: 5
   m_Name: Canvas
@@ -1718,6 +1719,22 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &8938507867100055575
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 389396636912562106}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef6d274555ad2f24caadde6eb1051647, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  winTime: {fileID: 7163633092822081663}
+  loseTime: {fileID: 6645680803996119398}
+  winScore: {fileID: 7425002747463768884}
+  loseScore: {fileID: 3127177143600566966}
 --- !u!114 &7517203631553391644
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5911,7 +5928,7 @@ GameObject:
   - component: {fileID: 8960321937605669466}
   - component: {fileID: 3127177143600566966}
   m_Layer: 5
-  m_Name: 'LSText '
+  m_Name: 'LSNText '
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

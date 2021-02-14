@@ -10,6 +10,7 @@ public class SceneManagement : MonoBehaviour
     private GameObject timeBar;
     private GameObject winPanel;
     private GameObject losePanel;
+    private UIRecord record;
     // Start is called before the first frame update
     void Awake()
     {
@@ -17,6 +18,7 @@ public class SceneManagement : MonoBehaviour
         timeBar = GameObject.Find("TimeLeft");
         winPanel = GameObject.Find("WinPanel");
         losePanel = GameObject.Find("LosePanel");
+        record = GameObject.Find("Canvas").GetComponent<UIRecord>();
         winPanel.SetActive(false);
         losePanel.SetActive(false);
         count = player.GetComponent<Points>().sp.scene;
@@ -65,10 +67,12 @@ public class SceneManagement : MonoBehaviour
         player.GetComponent<Points>().PassGame();
         timeBar.GetComponent<UITimeBar>().isActive = false;
         winPanel.SetActive(true);
+        record.BestScore();
     }
     public void LosePanel()
     {
         losePanel.SetActive(true);
+        record.CountScore();
     }
     public void NewGame()
     {
