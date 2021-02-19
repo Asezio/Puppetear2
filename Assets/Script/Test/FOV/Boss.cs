@@ -100,7 +100,6 @@ public class Boss : AIBase
         if (health == 0)
         {
             TaskTarget.bossFinAmount++;
-            Die();
         }
     }
 

@@ -31,6 +31,7 @@ public class MouseTrap : MonoBehaviour
                 }
                 else
                 {
+                    Boss.health--;
                     other.GetComponent<EnemyBase>().Die();
                 }
             }
