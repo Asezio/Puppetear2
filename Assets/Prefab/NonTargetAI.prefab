@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 2310751863472020314}
   - component: {fileID: 2310751863472020315}
   - component: {fileID: 6872977715839966108}
+  - component: {fileID: 462068247861023930}
   m_Layer: 8
   m_Name: NonTargetAI
   m_TagString: Enemy
@@ -162,12 +163,14 @@ MonoBehaviour:
   fov: 90
   viewDistance: 2
   aimDirection: {x: 0, y: 0, z: 0}
+  offsetX: 0
   fieldOfView: {fileID: 0}
   player: {fileID: 0}
   playerLayer:
     serializedVersion: 2
     m_Bits: 4096
   isTarget: 0
+  delayTime: 0
   waypointList:
   - {x: -16.81, y: -34.03, z: 0}
   - {x: -13.36, y: -34.03, z: 0}
@@ -202,3 +205,22 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!95 &462068247861023930
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2310751863472020309}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: cbfdb93dccc656c4db66cf7890d922d2, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
