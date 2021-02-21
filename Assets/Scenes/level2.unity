@@ -5443,6 +5443,11 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 87392932}
+    - target: {fileID: 31522524997193674, guid: b3296448f61b35c4c83751927950b31f,
+        type: 3}
+      propertyPath: drinkTimer
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 3308515414291408423, guid: b3296448f61b35c4c83751927950b31f,
         type: 3}
       propertyPath: waypointList.Array.size
