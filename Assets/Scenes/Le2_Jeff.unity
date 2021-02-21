@@ -633,12 +633,12 @@ PrefabInstance:
     - target: {fileID: 3876941235940676007, guid: 41c314b41a35e684b80b6c9b86dfbf23,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -17.68
+      value: -7.63
       objectReference: {fileID: 0}
     - target: {fileID: 3876941235940676007, guid: 41c314b41a35e684b80b6c9b86dfbf23,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -34.5
+      value: -27.26
       objectReference: {fileID: 0}
     - target: {fileID: 3876941235940676007, guid: 41c314b41a35e684b80b6c9b86dfbf23,
         type: 3}
@@ -688,7 +688,7 @@ PrefabInstance:
     - target: {fileID: 3876941236333852814, guid: 41c314b41a35e684b80b6c9b86dfbf23,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.4830017
+      value: 0.4829998
       objectReference: {fileID: 0}
     - target: {fileID: 3876941236333852848, guid: 41c314b41a35e684b80b6c9b86dfbf23,
         type: 3}
@@ -5428,6 +5428,92 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 31522524997193674, guid: b3296448f61b35c4c83751927950b31f,
+        type: 3}
+      propertyPath: waypointList.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 31522524997193674, guid: b3296448f61b35c4c83751927950b31f,
+        type: 3}
+      propertyPath: waitTimeList.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 31522524997193674, guid: b3296448f61b35c4c83751927950b31f,
+        type: 3}
+      propertyPath: speed
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 31522524997193674, guid: b3296448f61b35c4c83751927950b31f,
+        type: 3}
+      propertyPath: viewDistance
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 31522524997193674, guid: b3296448f61b35c4c83751927950b31f,
+        type: 3}
+      propertyPath: pfFieldofView
+      value: 
+      objectReference: {fileID: 6956349500320316925, guid: 6f55c8cfb428a6a40adc962eca83f0cc,
+        type: 3}
+    - target: {fileID: 31522524997193674, guid: b3296448f61b35c4c83751927950b31f,
+        type: 3}
+      propertyPath: playerLayer.m_Bits
+      value: 4096
+      objectReference: {fileID: 0}
+    - target: {fileID: 31522524997193674, guid: b3296448f61b35c4c83751927950b31f,
+        type: 3}
+      propertyPath: isTarget
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 31522524997193674, guid: b3296448f61b35c4c83751927950b31f,
+        type: 3}
+      propertyPath: detectRange
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 31522524997193674, guid: b3296448f61b35c4c83751927950b31f,
+        type: 3}
+      propertyPath: waypointList.Array.data[0].x
+      value: -16.54
+      objectReference: {fileID: 0}
+    - target: {fileID: 31522524997193674, guid: b3296448f61b35c4c83751927950b31f,
+        type: 3}
+      propertyPath: waypointList.Array.data[1].x
+      value: -11.79
+      objectReference: {fileID: 0}
+    - target: {fileID: 31522524997193674, guid: b3296448f61b35c4c83751927950b31f,
+        type: 3}
+      propertyPath: waypointList.Array.data[0].y
+      value: -23.97
+      objectReference: {fileID: 0}
+    - target: {fileID: 31522524997193674, guid: b3296448f61b35c4c83751927950b31f,
+        type: 3}
+      propertyPath: waypointList.Array.data[1].y
+      value: -22.34
+      objectReference: {fileID: 0}
+    - target: {fileID: 31522524997193674, guid: b3296448f61b35c4c83751927950b31f,
+        type: 3}
+      propertyPath: waitTimeList.Array.data[0]
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 31522524997193674, guid: b3296448f61b35c4c83751927950b31f,
+        type: 3}
+      propertyPath: waitTimeList.Array.data[1]
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 31522524997193674, guid: b3296448f61b35c4c83751927950b31f,
+        type: 3}
+      propertyPath: drinkTimer
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 31522524997193674, guid: b3296448f61b35c4c83751927950b31f,
+        type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 87392932}
+    - target: {fileID: 1120657247302322731, guid: b3296448f61b35c4c83751927950b31f,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 78c791de5c502d047a8bf8217ab6649b, type: 2}
     - target: {fileID: 3308515414291408423, guid: b3296448f61b35c4c83751927950b31f,
         type: 3}
       propertyPath: waypointList.Array.size
@@ -5493,10 +5579,15 @@ PrefabInstance:
       propertyPath: waitTimeList.Array.data[1]
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 3308515414291408423, guid: b3296448f61b35c4c83751927950b31f,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4484886503960730186, guid: b3296448f61b35c4c83751927950b31f,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -11.79
+      value: -13.11
       objectReference: {fileID: 0}
     - target: {fileID: 4484886503960730186, guid: b3296448f61b35c4c83751927950b31f,
         type: 3}
@@ -5553,7 +5644,9 @@ PrefabInstance:
       propertyPath: m_Name
       value: PoisonEnemy
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 0}
+    - {fileID: 1238712038883136900, guid: b3296448f61b35c4c83751927950b31f, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: b3296448f61b35c4c83751927950b31f, type: 3}
 --- !u!1001 &536647634
 PrefabInstance:
@@ -13339,6 +13432,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 794350268153890479, guid: c6869ec617725a24d8ad063a07378623,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1411175205631374474, guid: c6869ec617725a24d8ad063a07378623,
         type: 3}
       propertyPath: m_Name
@@ -15867,7 +15965,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1427012694}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -14.850203, y: -33.313713, z: -10}
+  m_LocalPosition: {x: -7.63, y: -26.777, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}

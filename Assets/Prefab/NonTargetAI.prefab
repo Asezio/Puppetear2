@@ -171,6 +171,7 @@ MonoBehaviour:
     m_Bits: 4096
   isTarget: 0
   delayTime: 0
+  isWalking: 0
   waypointList:
   - {x: -16.81, y: -34.03, z: 0}
   - {x: -13.36, y: -34.03, z: 0}

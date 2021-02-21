@@ -304,7 +304,12 @@ public class WeaponBase : MonoBehaviour
         {
             if (other.GetComponent<Boss>() == null)
             {
+                if (other.GetComponent<AIBase>().isWalking == true)
+                {
+                    other.GetComponent<AIBase>().speed = 0;
+                }
                 other.GetComponent<EnemyBase>().Die();
+
                 if (other.GetComponent<AIBase>().isTarget == false)
                 {
                     TaskTarget.nonTargetFinAmount++;

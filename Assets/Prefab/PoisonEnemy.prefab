@@ -94,9 +94,10 @@ GameObject:
   - component: {fileID: 1337390493089694208}
   - component: {fileID: 2533136414626224349}
   - component: {fileID: 3705108179096775853}
-  - component: {fileID: 3308515414291408423}
   - component: {fileID: 1369251002216124209}
   - component: {fileID: 4583493813841136699}
+  - component: {fileID: 31522524997193674}
+  - component: {fileID: 1120657247302322731}
   m_Layer: 8
   m_Name: PoisonEnemy
   m_TagString: Enemy
@@ -210,39 +211,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   outlineMaterial: {fileID: 2100000, guid: 6843ad5bcc7ea3a4e9e328856c69a8a3, type: 2}
   defaultMaterial: {fileID: 0}
---- !u!114 &3308515414291408423
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6070878073007790167}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 93b555d93cd7b5542b4b03728f976652, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 25
-  pfFieldofView: {fileID: 6956349500320316925, guid: 6f55c8cfb428a6a40adc962eca83f0cc,
-    type: 3}
-  fov: 90
-  viewDistance: 5
-  aimDirection: {x: 0, y: 0, z: 0}
-  fieldOfView: {fileID: 0}
-  player: {fileID: 0}
-  playerLayer:
-    serializedVersion: 2
-    m_Bits: 4096
-  isTarget: 1
-  waypointList: []
-  waitTimeList: []
-  detectRange: 0
-  thingLayers:
-    serializedVersion: 2
-    m_Bits: 2048
-  machineOffset: 0
-  machineWaitTimer: 0
-  state: 0
 --- !u!70 &1369251002216124209
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -280,3 +248,56 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &31522524997193674
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6070878073007790167}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7e3cf87c5cf634a93f7fae28e46b13, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 2
+  pfFieldofView: {fileID: 6956349500320316925, guid: 6f55c8cfb428a6a40adc962eca83f0cc,
+    type: 3}
+  fov: 90
+  viewDistance: 4
+  aimDirection: {x: 0, y: 0, z: 0}
+  offsetX: 0
+  fieldOfView: {fileID: 0}
+  player: {fileID: 0}
+  playerLayer:
+    serializedVersion: 2
+    m_Bits: 4096
+  isTarget: 0
+  delayTime: 0
+  waypointList: []
+  waitTimeList: []
+  detectRange: 0
+  thingLayers:
+    serializedVersion: 2
+    m_Bits: 2048
+  drinkTimer: 0
+  state: 0
+--- !u!95 &1120657247302322731
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6070878073007790167}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 78c791de5c502d047a8bf8217ab6649b, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

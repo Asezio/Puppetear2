@@ -3,9 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class AIBase : MonoBehaviour
-{
+{  
+    protected SpriteRenderer sr;
+    protected Animator anim;
+    public bool isWalking;
+
     [Header("Moving Speed")]
-    [SerializeField] protected float speed = 25f;
+    public float speed = 25f;
 
     [Header("FOV Setting")]
     [SerializeField] protected Transform pfFieldofView;
@@ -27,19 +31,18 @@ public class AIBase : MonoBehaviour
     [Header("Detect Delay Time")]
     public float delayTime;
     private float delayMaxTime;
-    //public bool isChangeDirection;
-    //private float changeMaxTime;
-    //public float changeTime;
 
-    protected SpriteRenderer sr;
 
-    private void Awake()
+  
+
+    protected virtual void Awake()
     {
         sr = GetComponent<SpriteRenderer>();
         canvas = GameObject.Find("Canvas");
-        //changeMaxTime = changeTime;
         delayTime = 0.2f;
         delayMaxTime = delayTime;
+        anim = GetComponent<Animator>();
+        isWalking = false;
     }
 
     protected virtual void Start()
@@ -75,36 +78,12 @@ public class AIBase : MonoBehaviour
             fieldOfView.SetAimDirection(GetAimDir());
         }
 
-        if (fieldOfView.gameObject.activeSelf == true)
+        if (fieldOfView != null &&
+            fieldOfView.gameObject.activeSelf == true)
         {
             FindTargetPlayer();
         }
-
-        //if (fieldOfView.gameObject.activeSelf == true)
-        //{
-        //    if (isChangeDirection == false)
-        //    {
-        //        changeMaxTime = changeTime;
-        //        FindTargetPlayer();
-        //    }
-
-        //    if (isChangeDirection == true)
-        //    {
-        //        changeTime -= Time.deltaTime;
-        //        if (changeTime <= 0)
-        //        {
-        //            changeTime = changeMaxTime;
-        //            FindTargetPlayer();
-        //            isChangeDirection = false;
-
-        //        }
-
-        //    }
-        //}
-
-
-
-        //FindTargetPlayer();
+      
         //Show the move direction
         Debug.DrawLine(transform.position, transform.position + GetAimDir() * 0.5f);
 
@@ -142,12 +121,6 @@ public class AIBase : MonoBehaviour
                 }
             }
         }
-    }
-
-    public virtual void Die()
-    {
-        Destroy(this.gameObject);
-        Destroy(fieldOfView.gameObject);
     }
 
     protected virtual Vector3 GetPosition()

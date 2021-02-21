@@ -111,28 +111,7 @@ public class Boss : AIBase
         {
             case State.Waiting:
                 foreach (var thing in hitThing)
-                {
-                    //if there's a drinker, stop and drink water.
-                    if (thing.GetComponent<Drinker>() != null)
-                    {
-                        Debug.Log("hit drinker");
-                        // drink animation
-                        fieldOfView.gameObject.SetActive(false);
-
-                        if (thing.GetComponent<Drinker>().isPoisoned == true)
-                        {
-                            TaskTarget.poisonFinAmount++;
-                            Die();
-                        }
-                    }
-
-                    //go and check the electric box
-                    if (thing.gameObject.tag == "electricBox")
-                    {
-                        Debug.Log("Electric Box");
-                        fieldOfView.gameObject.SetActive(false);
-                    }
-
+                {                    
                     if (thing.GetComponent<Machine1>() != null)
                     {
                         if (thing.GetComponent<Machine1>().isActive == true)

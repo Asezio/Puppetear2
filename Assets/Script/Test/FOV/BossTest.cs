@@ -121,7 +121,7 @@ public class BossTest : AIBase
         if (health == 0)
         {
             TaskTarget.bossFinAmount++;
-            Die();
+           
         }
 
     }
@@ -144,7 +144,7 @@ public class BossTest : AIBase
                         if (thing.GetComponent<Drinker>().isPoisoned == true)
                         {
                             TaskTarget.poisonFinAmount++;
-                            Die();
+                            
                         }
                     }
 

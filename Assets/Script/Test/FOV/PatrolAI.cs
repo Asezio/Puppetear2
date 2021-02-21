@@ -57,51 +57,37 @@ public class PatrolAI : AIBase
         switch (state)
         {
             case State.Waiting:
+                anim.SetBool("isIdle", true);
                 foreach (var thing in hitThing)
                 {
-                    //if there's a drinker, stop and drink water.
-                    if (thing.GetComponent<Drinker>() != null)
-                    {
-                        //Debug.Log("hit drinker");
-                        // drink animation
-                        fieldOfView.gameObject.SetActive(false);
-
-                        if (thing.GetComponent<ItemStatic>().isPoisoned == true)
-                        {
-                            TaskTarget.poisonFinAmount++;
-                            Debug.Log(thing.GetComponent<ItemStatic>().isPoisoned);
-                            thing.GetComponent<ItemStatic>().isPoisoned = false;
-                            GetComponent<EnemyBase>().Die();
-                        }
-                    }
-
-                    //go and check the electric box
-                    //    if (thing.gameObject.tag == "electricBox")
-                    //    {
-                    //        Debug.Log("Electric Box");
-                    //        fieldOfView.gameObject.SetActive(false);
-                    //    }
 
                     if (thing.GetComponent<Machine1>() != null)
                     {
                         if (thing.GetComponent<Machine1>().isActive == true)
                         {
                             state = State.MoveToMachine;
+                            anim.SetBool("isIdle", false);
                             break;
                         }
                     }
                 }
-                waitTimer -= Time.deltaTime;
 
+                waitTimer -= Time.deltaTime;
                 if (waitTimer <= 0f)
                 {
-                    fieldOfView.gameObject.SetActive(true);
+                    if (fieldOfView != null)
+                    {
+                        fieldOfView.gameObject.SetActive(true);
+                    }
+                    
                     state = State.Moving;
+                    anim.SetBool("isIdle", false);
                 }
                 break;
 
             case State.Moving:
-                //Debug.Log("move");
+                anim.SetBool("isWalking", true);
+                isWalking = true;
 
                 if (waypointList.Length != 0)
                 {
@@ -114,14 +100,13 @@ public class PatrolAI : AIBase
 
                     float arriveDistance = 0.1f;
                     if (distanceAfter < arriveDistance || distanceBefore <= distanceAfter)
-                    {
-                        //Flip();
+                    {                        
                         // Go to next waypoint
-                       //isChangeDirection = true;
                         waitTimer = waitTimeList[wayPointIndex];
                         wayPointIndex = (wayPointIndex + 1) % waypointList.Length;
+                        anim.SetBool("isWalking", false);
+                        isWalking = false;
                         state = State.Waiting;
-
                     }
 
                     foreach (var thing in hitThing)
@@ -144,7 +129,6 @@ public class PatrolAI : AIBase
                 {
                     if (thing.GetComponent<Machine1>() != null)
                     {
-                        Debug.Log("Machine");
                         Vector3 machDir = (thing.transform.position - transform.position).normalized;
                         lastMoveDir = machDir;
                         transform.position = transform.position + machDir * speed * Time.deltaTime;
@@ -153,17 +137,21 @@ public class PatrolAI : AIBase
                         {
                             thing.GetComponent<Machine1>().isActive = false;
                             state = State.WaitMachine;
+                            anim.SetBool("isWalking", false);
+                            isWalking = false;
                         }
                     }
                 }
                 break;
 
             case State.WaitMachine:
+                anim.SetBool("isIdle", true);
                 machineWaitTimer -= Time.deltaTime;
 
                 if (machineWaitTimer <= 0)
                 {
                     machineWaitTimer = machineWaitMaxTime;
+                    anim.SetBool("isIdle", false);
                     state = State.Moving;
                 }
                 break;
