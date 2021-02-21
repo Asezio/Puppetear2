@@ -5438,6 +5438,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 31522524997193674, guid: b3296448f61b35c4c83751927950b31f,
+        type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 87392932}
     - target: {fileID: 3308515414291408423, guid: b3296448f61b35c4c83751927950b31f,
         type: 3}
       propertyPath: waypointList.Array.size
