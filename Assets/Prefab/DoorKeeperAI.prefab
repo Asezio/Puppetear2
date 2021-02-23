@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 1364222273328157651}
   - component: {fileID: 2007444188371909302}
   - component: {fileID: 1302171732374828775}
+  - component: {fileID: 540740067685956786}
   m_Layer: 8
   m_Name: DoorKeeperAI
   m_TagString: Enemy
@@ -158,18 +159,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93b555d93cd7b5542b4b03728f976652, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isWalking: 0
   speed: 2
   pfFieldofView: {fileID: 6956349500320316925, guid: 6f55c8cfb428a6a40adc962eca83f0cc,
     type: 3}
   fov: 90
   viewDistance: 2
   aimDirection: {x: 0, y: 0, z: 0}
+  offsetX: 0
   fieldOfView: {fileID: 0}
   player: {fileID: 0}
   playerLayer:
     serializedVersion: 2
     m_Bits: 4096
   isTarget: 1
+  delayTime: 0
   waypointList:
   - {x: -16.81, y: -34.03, z: 0}
   - {x: -13.36, y: -34.03, z: 0}
@@ -216,6 +220,25 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!95 &540740067685956786
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1364222273328157661}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: cbfdb93dccc656c4db66cf7890d922d2, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &6831475805525017976
 GameObject:
   m_ObjectHideFlags: 0
