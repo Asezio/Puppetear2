@@ -12,7 +12,6 @@ public class UITimeBar : MonoBehaviour
     private Image TimeBar;
     public bool isActive;
 
-
     // Use this for initialization
     void Start()
     {

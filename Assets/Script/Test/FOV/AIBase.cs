@@ -101,27 +101,27 @@ public class AIBase : MonoBehaviour
                 RaycastHit2D raycastHit2D = Physics2D.Raycast(GetPosition(), dirToPlayer, viewDistance);
                 if (raycastHit2D.collider != null)
                 {
-                    Debug.Log(raycastHit2D.collider.name);
+                    //Debug.Log(raycastHit2D.collider.name);
                     if (raycastHit2D.collider.CompareTag("Player"))
                     {
                         delayTime -= Time.deltaTime;
                         if (delayTime <= 0)
                         {
-
-                            player.gameObject.GetComponent<CapsuleCollider2D>().enabled = false;
-                            canvas.GetComponent<SceneManagement>().LosePanel();
-                            Debug.Log("hit by" + this);
+                            UIDetectBar.isFound = true;
+                            Debug.Log("IsFound: " + UIDetectBar.isFound);
+                            //player.gameObject.GetComponent<CapsuleCollider2D>().enabled = false;
+                            //canvas.GetComponent<SceneManagement>().LosePanel();
+                            //Debug.Log("hit by" + this);
                             delayTime = delayMaxTime;
                         }
-
                         //canvas.GetComponent<SceneManagement>().Restart();
 
                     }
-
                 }
             }
         }
     }
+
 
     protected virtual Vector3 GetPosition()
     {
