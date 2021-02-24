@@ -53,6 +53,7 @@ public class UIweapon : MonoBehaviour
     public void Activate()
     {
         WeaponImageGrey.enabled = true;
+        coolDownText.enabled = true;
         timer = coolDownTime;
     }
 }

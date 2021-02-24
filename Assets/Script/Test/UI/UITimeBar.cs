@@ -10,19 +10,23 @@ public class UITimeBar : MonoBehaviour
     public static float timeLeft;
     private int convertTime;
     private Image TimeBar;
-
+    public bool isActive;
 
     // Use this for initialization
     void Start()
     {
         TimeBar = GetComponent<Image>();
         timeLeft = timeMax;
+        isActive = true;
     }
 
     // Update is called once per frame
     void Update()
     {
-        timeLeft = timeLeft - Time.deltaTime;
+        if (isActive == true)
+        {
+            timeLeft = timeLeft - Time.deltaTime;
+        }
         TimeBar.fillAmount = timeLeft / timeMax;
         convertTime = (int)timeLeft;
         timeText.text = "Time Left: " + convertTime.ToString() + "s";

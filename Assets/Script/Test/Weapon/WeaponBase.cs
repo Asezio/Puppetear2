@@ -19,13 +19,14 @@ public class WeaponBase : MonoBehaviour
 
 
     protected SpriteRenderer playerSr;
-    protected Animator anim;
+    public Animator anim;
     protected Transform playerTrans;
     public Transform attackPoint;
-    private PolygonCollider2D coll2D;
+    public PolygonCollider2D coll2D;
 
     protected GameObject test;
-    public GameObject used;
+    public GameObject used;//捡取的道具或隐藏点
+    private GameObject player;
 
     //protected GameObject[] enemyArr;
     protected List<float> thingList;
@@ -35,12 +36,15 @@ public class WeaponBase : MonoBehaviour
     //protected Dictionary<float, GameObject> itemDic;
 
     // Start is called before the first frame update
-    void Awake()
+    public virtual void Start()
     {
-        anim = GameObject.FindGameObjectWithTag("Player").GetComponent<Animator>();
+       
         playerTrans = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
         playerSr = GameObject.FindGameObjectWithTag("Player").GetComponent<SpriteRenderer>();
-        coll2D = GetComponent<PolygonCollider2D>();
+        //coll2D = GetComponent<PolygonCollider2D>();
+        //coll2D.enabled = false;
+        player = GameObject.FindGameObjectWithTag("Player");
+        //anim = GetComponentInParent<Animator>();
 
         test = GameObject.Find("FirstAttached");
 
@@ -53,7 +57,7 @@ public class WeaponBase : MonoBehaviour
         isHiden = false;
         canAttack = true;
         isCarrying = false;
-    
+
     }
 
 
@@ -63,29 +67,61 @@ public class WeaponBase : MonoBehaviour
     {
         if (isCarrying == true)
         {
-
             canAttack = false;
             used.GetComponent<SortingOrder>().enabled = false;
             used.GetComponent<SpriteRenderer>().sortingOrder = GetComponentInParent<SpriteRenderer>().sortingOrder;
-            used.GetComponent<ItemBase>().Stick();
-            if (Input.GetButtonDown("Interact") || Input.GetMouseButtonDown(0))
+            used.GetComponent<ItemMoveable>().Stick();
+            used.GetComponent<ItemMoveable>().startDetect = true;
+            if (Input.GetButtonDown("Interact"))
             {
-                if (used.GetComponent<ItemBase>().CanDrop() == true)
+                if (used.GetComponent<ItemMoveable>().detected == false)
                 {
-                    used.GetComponent<ItemBase>().Drop();
-                    isCarrying = false;
-                    canAttack = true;
-                    used.GetComponent<SortingOrder>().enabled = true;
+                    if (used.GetComponent<ItemMoveable>().CanDrop() == true)
+                    {
+                        used.GetComponent<ItemMoveable>().Drop();
+                        used.GetComponent<ItemMoveable>().startDetect = false;
+                        isCarrying = false;
+                        StartCoroutine(ActivateAttack());
+                        used.GetComponent<SortingOrder>().enabled = true;
+                    }
+                    else
+                    {
+                        //显示UI 无法掉落
+                        Debug.Log("Can't drop.");
+                    }
                 }
                 else
                 {
-                    //显示UI 无法掉落
-                    Debug.Log("Can't drop.");
+                    used.GetComponent<ItemMoveable>().ItemInteract(used.GetComponent<ItemMoveable>().eventNumber);
+                    isCarrying = false;
+                    StartCoroutine(ActivateAttack());
+                    used.GetComponent<ItemMoveable>().Destroy();
                 }
             }
         }
-        if (isCarrying == false && isHiden == false)
+
+        else if (isHiden == true)
         {
+            canAttack = false;
+            isCarrying = false;
+            Transform usedPos = used.GetComponentInChildren<Transform>();
+            Vector3 leavePosition = new Vector3(usedPos.position.x, used.transform.position.y - 0.2f, usedPos.position.z);
+            GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>().position = new Vector3(usedPos.position.x, used.transform.position.y + 0.5f, usedPos.position.z);
+            used.GetComponent<Interactable>().MiaoBian();
+            GetComponentInParent<CapsuleCollider2D>().enabled = false;
+            player.GetComponent<SignText>().ExitHiding();
+            if (Input.GetButtonDown("Interact"))
+            {
+                isHiden = false;
+                GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>().position = leavePosition;
+                GetComponentInParent<CapsuleCollider2D>().enabled = true;
+            }
+
+        }
+
+        else if (isCarrying == false && isHiden == false)
+        {
+            canAttack = true;
             Collider2D[] hitThings = Physics2D.OverlapCircleAll(attackPoint.position, DetectRange, thinglayers);
             //Debug.Log(hitEnemies.Length);
             if (hitThings.Length > 0)
@@ -106,38 +142,100 @@ public class WeaponBase : MonoBehaviour
                 thingDic.TryGetValue(thingList[0], out obj);//获取距离最近的对象
                                                             //Debug.Log(obj.name);
                                                             //若检测物体发生改变，上一检测目标取消描边
-                if (test != obj)
+                if (test != obj && test != null)
                 {
                     test.GetComponent<Interactable>().ExitMiaobian();
                 }
 
-                if (obj.tag != "Enemy")
-                {
-                    canAttack = false;
-                }
-                else
-                {
-                    canAttack = true;
-                }
+                //if (obj.tag != "Enemy")
+                //{
+                //    canAttack = false;
+                //}
+                //else
+                //{
+                //    canAttack = true;
+                //}
 
-                if ((playerTrans.position.x < obj.transform.position.x && playerSr.flipX == true && playerSr.flipX == true)
-                    || (playerTrans.position.x > obj.transform.position.x && playerSr.flipX == false && playerSr.flipX == false))
-                {
+                //if ((playerTrans.position.x < obj.transform.position.x && playerSr.flipX == true)
+                //    || (playerTrans.position.x > obj.transform.position.x && playerSr.flipX == false))
+                //{
+                    //Debug.Log(obj.name);
                     //当前物体描边
+                if (obj.GetComponent<ItemStatic>() == null || obj.GetComponent<ItemStatic>().isAvailable == true)
+                {
+                    //Debug.Log(obj.name);
                     obj.GetComponent<Interactable>().MiaoBian();
-
                     //将检测物体设置为当前选中物体
                     test = obj;
-
-
-                    if (Input.GetButtonDown("Interact") || Input.GetMouseButtonDown(0))
+                    if (obj.tag == "Enemy")
                     {
-                        if (obj.tag == ("Item"))
+                        //obj.GetComponent<Interactable>().
+                        player.GetComponent<SignText>().KillText();
+                        canAttack = true;
+                    }
+                    else
+                    {
+                        canAttack = false;
+                    }
+
+                    if (obj.tag == "Hide")
+                    {
+                        //Debug.Log("hIDING");
+                        player.GetComponent<SignText>().Hide();
+                    }
+
+                    else if (obj.tag == "Item")
+                    {
+                        player.GetComponent<SignText>().Pickup();
+                    }
+
+                    else if (obj.tag == "ItemInteractable")
+                    {
+                        if (obj.GetComponent<Machine1>() != null)//机器
+                        {
+                            player.GetComponent<SignText>().Interact();
+                        }
+
+                        else
+                        {
+                            player.GetComponent<SignText>().NeedItem();
+                        }
+
+                    }
+
+
+                    if (Input.GetButtonDown("Interact"))
+                    {
+                        if (obj.tag == ("Item"))//拾取道具
                         {
                             isCarrying = true;
                             used = obj;
                             //obj.GetComponent<ItemBase>().MoveTo();
                         }
+
+                        else if (obj.tag == "Hide")//Hide
+                        {
+                            isHiden = true;
+                            used = obj;
+                        }
+
+                        else if (obj.tag == "ItemInteractable")
+                        {
+                            if (obj.GetComponent<ElectricBox>() != null)
+                            {
+                                obj.GetComponent<ElectricBox>().ForceOpen();
+                                obj.GetComponent<ItemStatic>().isAvailable = false;
+                            }
+                            else if (obj.GetComponent<Machine1>() != null)
+                            {
+                                obj.GetComponent<ItemStatic>().switchflag = true;
+                            }
+                           
+                        }
+                    }
+
+
+
                         //anim.SetTrigger("Interact");
                         //obj.GetComponent<Interactable>().ExitMiaobian();
                         //obj.GetComponent<EnemyBase>().Die();
@@ -146,9 +244,9 @@ public class WeaponBase : MonoBehaviour
                         //测试物体失去目标，将其指定为初始物体
                         //test = GameObject.Find("FirstAttached");
 
-                    }
-
                 }
+
+                //}
 
 
                 //重置字典与列表
@@ -168,23 +266,19 @@ public class WeaponBase : MonoBehaviour
                 }
             }
         }
-        
+        //Debug.Log(canAttack);
     }
 
     protected void Attack()
     {
-        if(Input.GetMouseButtonDown(0)||Input.GetButtonDown("Interact"))
-        {
-            if(canAttack == true)
-            {
-                Debug.Log("Attack");
-                anim.SetBool("Attack", true);
-                anim.SetTrigger("Interact");
-                StartCoroutine(StartAttack());
-                GameObject.Find("UI_Weapon1").GetComponent<UIweapon1>().Activate();
-            }
-        }
+        //Debug.Log("Attack");
+        // anim.SetBool("Attack", true);
+     
+        anim.SetTrigger("Interact");
+        StartCoroutine(StartAttack());
+        //GameObject.Find("UI_Weapon1").GetComponent<UIweapon1>().Activate();
     }
+
     IEnumerator disableHitBox()
     {
         yield return new WaitForSeconds(time);
@@ -198,12 +292,57 @@ public class WeaponBase : MonoBehaviour
         StartCoroutine(disableHitBox());
     }
 
+    IEnumerator ActivateAttack()
+    {
+        yield return new WaitForEndOfFrame();
+        canAttack = true;
+    }
+
     void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.CompareTag("Enemy"))
         {
-            other.GetComponent<EnemyBase>().Die();
+            if (other.GetComponent<Boss>() == null)
+            {
+                if (other.GetComponent<AIBase>().isWalking == true)
+                {
+                    other.GetComponent<AIBase>().speed = 0;
+                }
+                other.GetComponent<EnemyBase>().Die();
+
+                if (other.GetComponent<AIBase>().isTarget == false)
+                {
+                    TaskTarget.nonTargetFinAmount++;
+                }
+
+                //sleepytask + 1
+                if (other.GetComponent<SleepyAI>() != null)
+                {
+                    TaskTarget.sleepyFinAmount++;
+                }
+
+                if (other.GetComponent<DoorKeeper>() != null)
+                {
+                    TaskTarget2.doorKeeperFinAmount++;
+                }
+            }
+            else
+            {
+                Boss boss = other.GetComponent<Boss>();
+                
+                if (Boss.health >1)
+                {
+                    other.GetComponent<EnemyBase>().Hurt();
+                }
+                else if (Boss.health == 1)
+                {
+                    Boss.health--;
+                    other.GetComponent<EnemyBase>().Die();
+                }
+            }
+
         }
+        
     }
 
     protected void Flip()

@@ -11,17 +11,19 @@ public class SortingOrder : MonoBehaviour
     {
         sr = GetComponent<SpriteRenderer>();
         trans = GetComponent<Transform>();
+        OrderInLayer();
     }
 
     // Update is called once per frame
-    void Update()
-    {
-        OrderInLayer();
-    }
+
     protected void OrderInLayer()//改变角色层级
     {
         float y = trans.position.y * (-10);
-        sr.sortingOrder = Mathf.RoundToInt(y);
+        if (y < 0)
+        {
+            y =0f;
+        }
+        sr.sortingOrder = Mathf.RoundToInt(y);           
     }
 
 }

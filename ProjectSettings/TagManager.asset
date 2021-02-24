@@ -4,10 +4,14 @@
 TagManager:
   serializedVersion: 2
   tags:
+  - Obstacles
   - Enemy
   - Item
   - UIWeapon
-  - Obstacles
+  - ItemInteractable
+  - Hide
+  - electricBox
+  - DetectBar
   layers:
   - Default
   - TransparentFX
@@ -17,12 +21,12 @@ TagManager:
   - UI
   - 
   - 
-  - Player
-  - Collider
   - Enemy
-  - Thing
-  - 
-  - 
+  - ItemM
+  - ItemS
+  - itemInteractable
+  - Player
+  - Obstacle
   - 
   - 
   - 
@@ -42,9 +46,6 @@ TagManager:
   - 
   - 
   m_SortingLayers:
-  - name: Background
-    uniqueID: 1951830189
-    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0

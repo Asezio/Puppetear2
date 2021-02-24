@@ -47,7 +47,7 @@ public class EnemyFOV : MonoBehaviour
         switch (state)
         {
             default:
-            case State.Waiting:
+            //case State.Waiting:
             case State.Moving:
                 HandleMovement();
                 FindTargetPlayer();
@@ -74,6 +74,7 @@ public class EnemyFOV : MonoBehaviour
                 {
                     state = State.Moving;
                 }
+                
                 break;
 
             case State.Moving:
