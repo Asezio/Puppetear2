@@ -5900,12 +5900,12 @@ PrefabInstance:
     - target: {fileID: 620809511658192642, guid: 3fd9469e3bf00764da11c5e279c5dc71,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3.51
+      value: -9.54
       objectReference: {fileID: 0}
     - target: {fileID: 620809511658192642, guid: 3fd9469e3bf00764da11c5e279c5dc71,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -27.35
+      value: -23.7
       objectReference: {fileID: 0}
     - target: {fileID: 620809511658192642, guid: 3fd9469e3bf00764da11c5e279c5dc71,
         type: 3}
@@ -11967,7 +11967,7 @@ PrefabInstance:
     - target: {fileID: 1441546949215337038, guid: 8a71511d5849b204ca3d5791b30b0e4f,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 175.80005
+      value: 175.8003
       objectReference: {fileID: 0}
     - target: {fileID: 1441546949215337038, guid: 8a71511d5849b204ca3d5791b30b0e4f,
         type: 3}
@@ -12288,7 +12288,7 @@ PrefabInstance:
     - target: {fileID: 8419267013482338631, guid: d72786f6fe5f7a8438a85802173ffdea,
         type: 3}
       propertyPath: waypointList3.Array.size
-      value: 8
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 8419267013482338631, guid: d72786f6fe5f7a8438a85802173ffdea,
         type: 3}
@@ -12473,42 +12473,42 @@ PrefabInstance:
     - target: {fileID: 8419267013482338631, guid: d72786f6fe5f7a8438a85802173ffdea,
         type: 3}
       propertyPath: waitTimeList3.Array.data[3]
-      value: 0
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8419267013482338631, guid: d72786f6fe5f7a8438a85802173ffdea,
         type: 3}
       propertyPath: waypointList3.Array.data[2].x
-      value: 17.43
+      value: 18.13
       objectReference: {fileID: 0}
     - target: {fileID: 8419267013482338631, guid: d72786f6fe5f7a8438a85802173ffdea,
         type: 3}
       propertyPath: waypointList3.Array.data[2].y
-      value: -4.94
+      value: -9.3
       objectReference: {fileID: 0}
     - target: {fileID: 8419267013482338631, guid: d72786f6fe5f7a8438a85802173ffdea,
         type: 3}
       propertyPath: waypointList3.Array.data[3].x
-      value: 17.43
+      value: 18.13
       objectReference: {fileID: 0}
     - target: {fileID: 8419267013482338631, guid: d72786f6fe5f7a8438a85802173ffdea,
         type: 3}
       propertyPath: waypointList3.Array.data[3].y
-      value: -8.44
+      value: -5.54
       objectReference: {fileID: 0}
     - target: {fileID: 8419267013482338631, guid: d72786f6fe5f7a8438a85802173ffdea,
         type: 3}
       propertyPath: waypointList3.Array.data[0].x
-      value: 12.94
+      value: 12.62
       objectReference: {fileID: 0}
     - target: {fileID: 8419267013482338631, guid: d72786f6fe5f7a8438a85802173ffdea,
         type: 3}
       propertyPath: waypointList3.Array.data[0].y
-      value: -1.44
+      value: -14.96
       objectReference: {fileID: 0}
     - target: {fileID: 8419267013482338631, guid: d72786f6fe5f7a8438a85802173ffdea,
         type: 3}
       propertyPath: waypointList3.Array.data[1].y
-      value: -4.94
+      value: -9.3
       objectReference: {fileID: 0}
     - target: {fileID: 8419267013482338631, guid: d72786f6fe5f7a8438a85802173ffdea,
         type: 3}
@@ -12518,32 +12518,32 @@ PrefabInstance:
     - target: {fileID: 8419267013482338631, guid: d72786f6fe5f7a8438a85802173ffdea,
         type: 3}
       propertyPath: waypointList3.Array.data[4].x
-      value: 2.83
+      value: 18.13
       objectReference: {fileID: 0}
     - target: {fileID: 8419267013482338631, guid: d72786f6fe5f7a8438a85802173ffdea,
         type: 3}
       propertyPath: waypointList3.Array.data[4].y
-      value: -8.44
+      value: -9.3
       objectReference: {fileID: 0}
     - target: {fileID: 8419267013482338631, guid: d72786f6fe5f7a8438a85802173ffdea,
         type: 3}
       propertyPath: waypointList3.Array.data[5].x
-      value: 17.43
+      value: 12.94
       objectReference: {fileID: 0}
     - target: {fileID: 8419267013482338631, guid: d72786f6fe5f7a8438a85802173ffdea,
         type: 3}
       propertyPath: waypointList3.Array.data[5].y
-      value: -8.44
+      value: -9.3
       objectReference: {fileID: 0}
     - target: {fileID: 8419267013482338631, guid: d72786f6fe5f7a8438a85802173ffdea,
         type: 3}
       propertyPath: waypointList3.Array.data[6].x
-      value: 17.43
+      value: 12.62
       objectReference: {fileID: 0}
     - target: {fileID: 8419267013482338631, guid: d72786f6fe5f7a8438a85802173ffdea,
         type: 3}
       propertyPath: waypointList3.Array.data[6].y
-      value: -4.94
+      value: -14.96
       objectReference: {fileID: 0}
     - target: {fileID: 8419267013482338631, guid: d72786f6fe5f7a8438a85802173ffdea,
         type: 3}
@@ -12573,7 +12573,7 @@ PrefabInstance:
     - target: {fileID: 8419267013482338631, guid: d72786f6fe5f7a8438a85802173ffdea,
         type: 3}
       propertyPath: waitTimeList3.Array.data[7]
-      value: 0
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8419267013482338631, guid: d72786f6fe5f7a8438a85802173ffdea,
         type: 3}
