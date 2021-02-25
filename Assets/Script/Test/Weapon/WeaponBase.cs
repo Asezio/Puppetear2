@@ -229,6 +229,7 @@ public class WeaponBase : MonoBehaviour
                             else if (obj.GetComponent<Machine1>() != null)
                             {
                                 obj.GetComponent<ItemStatic>().switchflag = true;
+                                obj.GetComponent<ItemStatic>().ActiveMachine();
                             }
                            
                         }

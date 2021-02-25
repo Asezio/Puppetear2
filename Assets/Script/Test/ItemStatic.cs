@@ -10,6 +10,9 @@ public class ItemStatic : ItemBase
     public bool isAvailable;
     public bool switchflag;
 
+    private Animator anim;
+    private float lastTime;
+
     //public BoxCollider2D coll2D;
     //public float waitTime;
     //public float lastTime;
@@ -21,7 +24,12 @@ public class ItemStatic : ItemBase
         //exposion = false;
         isAvailable = true;
         switchflag = false;
+        lastTime = GameObject.Find("NonTargetAI (1)").GetComponent<PatrolAI>().machineWaitTimer;
 
+        if (GetComponent<Animator>() != null)
+        {
+            anim = GetComponent<Animator>();
+        }
         //coll2D = GetComponent<BoxCollider2D>();
         //coll2D.enabled = false;
     }
@@ -51,7 +59,37 @@ public class ItemStatic : ItemBase
 
     public void DrinkerBreaker()
     {
+        anim.SetTrigger("Break");
+        StartCoroutine(Broken());
         //gameObject.GetComponentInChildren<>
         isAvailable = false;
+    }
+
+
+    public void DrinkerPoisoned()
+    {
+        isPoisoned = true;
+        anim.SetTrigger("Poison");
+        anim.SetBool("IsPoisoned", true);
+    }
+
+    public void ActiveMachine()
+    {
+        anim.SetBool("Active", true);
+        //Debug.Log("Kere");
+        StartCoroutine(DisableMachine());
+    }
+
+    IEnumerator DisableMachine()
+    {
+        yield return new WaitForSeconds(lastTime);
+        anim.SetBool("Active", false);
+    }
+
+ 
+    IEnumerator Broken()
+    {
+        yield return new WaitForSeconds(0.59f);
+        anim.SetBool("IsBroken", true);
     }
 }

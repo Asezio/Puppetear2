@@ -69,11 +69,13 @@ public class SceneManagement : MonoBehaviour
         timeBar.GetComponent<UITimeBar>().isActive = false;
         winPanel.SetActive(true);
         record.BestScore();
+        Time.timeScale = 0;
     }
     public void LosePanel()
     {
         losePanel.SetActive(true);
         record.CountScore();
+        Time.timeScale = 0;
     }
     public void NewGame()
     {
@@ -81,6 +83,7 @@ public class SceneManagement : MonoBehaviour
         count = 1;
         player.GetComponent<Points>().Reset();
         SceneManager.LoadScene(1);
+        Time.timeScale = 1;
     }
 
     

@@ -21840,7 +21840,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!114 &2007466970 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1245267497140996173, guid: 3b8b785e3537a0648872699b1337437b,

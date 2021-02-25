@@ -125,7 +125,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   duration: 0
-  detectBar: {fileID: 0}
+  UIdetectBar: {fileID: 0}
   endingPosition: {fileID: 85699198516236769}
   startPosition: {fileID: 3382395665321174354}
 --- !u!1 &8419267013482338624
@@ -347,7 +347,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!1 &8923049251985242750
 GameObject:
   m_ObjectHideFlags: 0

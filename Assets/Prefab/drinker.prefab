@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6350514395915717084}
   - component: {fileID: 2788438594376911345}
+  - component: {fileID: 3521909280018170486}
   m_Layer: 11
   m_Name: shuizi
   m_TagString: Untagged
@@ -41,14 +42,52 @@ EdgeCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   m_EdgeRadius: 0
   m_Points:
-  - {x: -0.5, y: 0}
-  - {x: 0.5, y: 0}
+  - {x: -0.5487607, y: 0.511988}
+  - {x: -0.5519733, y: 0.341327}
+  - {x: -0.69114083, y: 0.23038803}
+  - {x: -0.5975644, y: 0.19106843}
+  - {x: -0.5929683, y: 0.08883237}
+  - {x: -0.6713427, y: 0.03320197}
+  - {x: -0.56934035, y: -0.041991964}
+  - {x: -0.5296682, y: -0.008958577}
+  - {x: -0.41949764, y: -0.10439027}
+  - {x: -0.4555968, y: -0.14444003}
+  - {x: -0.38482338, y: -0.20112006}
+  - {x: -0.061313108, y: -0.12149005}
+  - {x: 0.03378073, y: -0.15109299}
+  - {x: 0.1678546, y: -0.09424785}
+  - {x: 0.37720627, y: -0.19853222}
+  - {x: 0.45691773, y: -0.17754275}
+  - {x: 0.4808315, y: -0.02967685}
+  - {x: 0.5821071, y: -0.05756308}
+  - {x: 0.64603966, y: 0.0065882}
+  - {x: 0.5849345, y: 0.111978345}
+  - {x: 0.6674501, y: 0.32553482}
+  - {x: 0.5001043, y: 0.30672055}
+  - {x: 0.56428754, y: 0.47350684}
+  - {x: 0.49593502, y: 0.5251125}
+  - {x: 0.38318262, y: 0.42564428}
+  - {x: 0.29262093, y: 0.4827854}
+  - {x: -0.09290356, y: 0.3081732}
+  - {x: -0.5483566, y: 0.5079247}
+--- !u!114 &3521909280018170486
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2666838504398282685}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 22a51e82fc2d8724abf01c15bab88fc7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5029049365825594185
 GameObject:
   m_ObjectHideFlags: 0
@@ -286,7 +325,7 @@ Animator:
   m_GameObject: {fileID: 9159881381004987901}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: f8cd5594d499c77498b4625953d666e5, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

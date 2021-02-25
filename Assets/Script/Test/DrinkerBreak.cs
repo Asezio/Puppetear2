@@ -4,21 +4,17 @@ using UnityEngine;
 
 public class DrinkerBreak : MonoBehaviour
 {
-    private SpriteRenderer sr;
-    private PolygonCollider2D coll;
+    private EdgeCollider2D coll;
 
     // Start is called before the first frame update
     void Awake()
     {
-        sr = GetComponent<SpriteRenderer>();
-        coll = GetComponent<PolygonCollider2D>();
-        sr.enabled = false;
+        coll = GetComponent<EdgeCollider2D>();
         coll.enabled = false;
     }
 
     public void Active()
     {
-        sr.enabled = true;
         coll.enabled = true;
     }
 
