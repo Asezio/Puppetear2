@@ -7,10 +7,12 @@ public class UIDetectBar : MonoBehaviour
 {
     public Image detectBar;
     public bool isFound;
+    private GameObject player;
     [SerializeField] private float barIncreasingSpeed;
     [SerializeField] private float barDecreasingSpeed;
     void Awake()
     {
+        player = GameObject.FindGameObjectWithTag("Player");
         detectBar.fillAmount = 0;
         isFound = false;
         //this.gameObject.SetActive(false);
@@ -48,7 +50,7 @@ public class UIDetectBar : MonoBehaviour
         detectBar.fillAmount += barIncreasingSpeed * Time.deltaTime;
         if (detectBar.fillAmount >= 1)
         {
-            //Player die
+            player.GetComponent<Player_Controller>().PlayerDead();
         }
     }
 

@@ -123,21 +123,23 @@ public class PoisonAI : AIBase
                     fieldOfView.gameObject.SetActive(false);
                 }
 
+                anim.SetBool("isDrink", true);
 
-                //喝水动画
                 drinkTimer -= Time.deltaTime;
 
                 if (drinkTimer <= 0)
                 {
                     fieldOfView.gameObject.SetActive(true);
                     drinkTimer = drinkMaxTime;
+                    anim.SetBool("isDrink", false);
                     state = State.Moving;
 
                 }
                 break;
 
             case State.Poisoned:
-                //喝水动画
+                anim.SetBool("isDrink", true);
+
                 if (fieldOfView != null)
                 {
                     fieldOfView.gameObject.SetActive(false);

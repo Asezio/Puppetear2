@@ -50,9 +50,13 @@ public class SleepyAI : AIBase
     {
         while(state == State.Sleep)
         {
+            anim.SetBool("isSleeping", true);
             fieldOfView.gameObject.SetActive(false);
+
             yield return new WaitForSeconds(sleepTimer);
+
             isSleeping = false;
+            anim.SetBool("isSleeping", false);
             SetState(State.Awake);
         }
     }
@@ -61,9 +65,13 @@ public class SleepyAI : AIBase
     {
         while (state == State.Awake)
         {
+            anim.SetBool("isIdle", true);
             fieldOfView.gameObject.SetActive(true);
+
             yield return new WaitForSeconds(awakeTimer);
+
             isSleeping = true;
+            anim.SetBool("isIdle", false);
             SetState(State.Sleep);
         }
     }
