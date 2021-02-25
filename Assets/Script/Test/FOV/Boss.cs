@@ -111,7 +111,7 @@ public class Boss : AIBase
         {
             case State.Waiting:
                 foreach (var thing in hitThing)
-                {                    
+                {
                     if (thing.GetComponent<Machine1>() != null)
                     {
                         if (thing.GetComponent<Machine1>().isActive == true)
@@ -126,7 +126,11 @@ public class Boss : AIBase
 
                 if (waitTimer <= 0f)
                 {
-                    fieldOfView.gameObject.SetActive(true);
+                    if (fieldOfView != null)
+                    {
+                        fieldOfView.gameObject.SetActive(true);
+                    }
+
                     state = State.Moving;
                 }
                 break;
