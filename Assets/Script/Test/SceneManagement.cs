@@ -44,7 +44,7 @@ public class SceneManagement : MonoBehaviour
         if (UITimeBar.timeLeft <= 0)
         {
             //Debug.Log("12");
-            LosePanel();
+            player.GetComponent<Player_Controller>().PlayerDead();
         }
     }
 
@@ -60,6 +60,7 @@ public class SceneManagement : MonoBehaviour
     {
         player.GetComponent<Points>().Restart();
         SceneManager.LoadScene(count);
+        Time.timeScale = 1;
     }
 
     public void WinPanel()

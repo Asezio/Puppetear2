@@ -7,11 +7,6 @@ public class Player_Controller : BaseUnit
 {
 
     // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
     // Update is called once per frame
     void Update()
     {
@@ -35,7 +30,11 @@ public class Player_Controller : BaseUnit
 
     }
 
-
+    public void PlayerDead()
+    {
+        GetComponent<CapsuleCollider2D>().enabled = false;
+        sceneManagement.LosePanel();
+    }
 
 
 }
