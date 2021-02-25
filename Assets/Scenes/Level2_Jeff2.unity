@@ -638,7 +638,7 @@ PrefabInstance:
     - target: {fileID: 3876941235940676007, guid: 41c314b41a35e684b80b6c9b86dfbf23,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -23
+      value: -34.1
       objectReference: {fileID: 0}
     - target: {fileID: 3876941235940676007, guid: 41c314b41a35e684b80b6c9b86dfbf23,
         type: 3}
@@ -688,7 +688,7 @@ PrefabInstance:
     - target: {fileID: 3876941236333852814, guid: 41c314b41a35e684b80b6c9b86dfbf23,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.4829998
+      value: 0.4830017
       objectReference: {fileID: 0}
     - target: {fileID: 3876941236333852848, guid: 41c314b41a35e684b80b6c9b86dfbf23,
         type: 3}
@@ -5440,6 +5440,16 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 31522524997193674, guid: b3296448f61b35c4c83751927950b31f,
         type: 3}
+      propertyPath: waypointList.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 31522524997193674, guid: b3296448f61b35c4c83751927950b31f,
+        type: 3}
+      propertyPath: waitTimeList.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 31522524997193674, guid: b3296448f61b35c4c83751927950b31f,
+        type: 3}
       propertyPath: player
       value: 
       objectReference: {fileID: 87392932}
@@ -5447,6 +5457,41 @@ PrefabInstance:
         type: 3}
       propertyPath: drinkTimer
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 31522524997193674, guid: b3296448f61b35c4c83751927950b31f,
+        type: 3}
+      propertyPath: waypointList.Array.data[0].x
+      value: -16.54
+      objectReference: {fileID: 0}
+    - target: {fileID: 31522524997193674, guid: b3296448f61b35c4c83751927950b31f,
+        type: 3}
+      propertyPath: waypointList.Array.data[1].x
+      value: -11.79
+      objectReference: {fileID: 0}
+    - target: {fileID: 31522524997193674, guid: b3296448f61b35c4c83751927950b31f,
+        type: 3}
+      propertyPath: waypointList.Array.data[0].y
+      value: -23.97
+      objectReference: {fileID: 0}
+    - target: {fileID: 31522524997193674, guid: b3296448f61b35c4c83751927950b31f,
+        type: 3}
+      propertyPath: waypointList.Array.data[1].y
+      value: -22.34
+      objectReference: {fileID: 0}
+    - target: {fileID: 31522524997193674, guid: b3296448f61b35c4c83751927950b31f,
+        type: 3}
+      propertyPath: waitTimeList.Array.data[0]
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 31522524997193674, guid: b3296448f61b35c4c83751927950b31f,
+        type: 3}
+      propertyPath: waitTimeList.Array.data[1]
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 31522524997193674, guid: b3296448f61b35c4c83751927950b31f,
+        type: 3}
+      propertyPath: detectRange
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 3308515414291408423, guid: b3296448f61b35c4c83751927950b31f,
         type: 3}
@@ -15792,7 +15837,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1427012694}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -14.796068, y: -22.523241, z: -10}
+  m_LocalPosition: {x: -14.850203, y: -33.313713, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
