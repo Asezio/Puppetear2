@@ -35,7 +35,10 @@ public class TargetMark : MonoBehaviour
             hasDoneOnce = false;
         }
 
+   
+
     }
+
 
     protected void moving(Vector3 EndingPosition, float duration)
     {
