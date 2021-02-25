@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class AIBase : MonoBehaviour
-{  
+{
     protected SpriteRenderer sr;
     protected Animator anim;
     public bool isWalking;
+    public UIDetectBar detectBar;
 
     [Header("Moving Speed")]
     public float speed = 25f;
@@ -28,21 +29,19 @@ public class AIBase : MonoBehaviour
     [Header("Is Target")]
     public bool isTarget;
 
-    [Header("Detect Delay Time")]
-    public float delayTime;
-    private float delayMaxTime;
-
-
-  
+    //[Header("Detect Delay Time")]
+    //public float delayTime;
+    //private float delayMaxTime;
 
     protected virtual void Awake()
     {
         sr = GetComponent<SpriteRenderer>();
         canvas = GameObject.Find("Canvas");
-        delayTime = 0.2f;
-        delayMaxTime = delayTime;
+        //delayTime = 0.2f;
+        //delayMaxTime = delayTime;
         anim = GetComponent<Animator>();
         isWalking = false;
+        detectBar = GetComponentInChildren<UIDetectBar>();
     }
 
     protected virtual void Start()
@@ -83,7 +82,7 @@ public class AIBase : MonoBehaviour
         {
             FindTargetPlayer();
         }
-      
+
         //Show the move direction
         Debug.DrawLine(transform.position, transform.position + GetAimDir() * 0.5f);
 
@@ -93,7 +92,6 @@ public class AIBase : MonoBehaviour
     {
         if (Vector3.Distance(GetPosition(), player.position) < viewDistance)
         {
-
             // Player inside viewDistance
             Vector3 dirToPlayer = (player.position - GetPosition()).normalized;
             if (Vector3.Angle(GetAimDir(), dirToPlayer) < fov / 2f)
@@ -104,21 +102,29 @@ public class AIBase : MonoBehaviour
                     //Debug.Log(raycastHit2D.collider.name);
                     if (raycastHit2D.collider.CompareTag("Player"))
                     {
-                        delayTime -= Time.deltaTime;
-                        if (delayTime <= 0)
-                        {
-                            UIDetectBar.isFound = true;
-                            Debug.Log("IsFound: " + UIDetectBar.isFound);
-                            //player.gameObject.GetComponent<CapsuleCollider2D>().enabled = false;
-                            //canvas.GetComponent<SceneManagement>().LosePanel();
-                            //Debug.Log("hit by" + this);
-                            delayTime = delayMaxTime;
-                        }
+                        //delayTime -= Time.deltaTime;
+                        //if (delayTime <= 0)
+                        //{
+                        detectBar.isFound = true;
+                        //UIDetectBar.isFound = true;
+                        // Debug.Log("IsFound: " + UIDetectBar.isFound);
+                        //player.gameObject.GetComponent<CapsuleCollider2D>().enabled = false;
+                        //canvas.GetComponent<SceneManagement>().LosePanel();
+                        //Debug.Log("hit by" + this);
+                        //delayTime = delayMaxTime;
+                        //}
                         //canvas.GetComponent<SceneManagement>().Restart();
-
                     }
                 }
             }
+            else
+            {
+                detectBar.isFound = false;
+            }
+        }
+        else
+        {
+            detectBar.isFound = false;
         }
     }
 
