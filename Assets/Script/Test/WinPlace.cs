@@ -1,15 +1,20 @@
-﻿using System.Collections;
+﻿
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
 
 public class WinPlace : MonoBehaviour
 {
     private GameObject player;
     private GameObject canvas;
+    private TaskTarget task;
+    private bool flag;
     void Awake()
     {
         player = GameObject.FindGameObjectWithTag("Player");
         canvas = GameObject.Find("Canvas");
+        flag = true;
     }
     void OnTriggerEnter2D(Collider2D other)
     {
@@ -46,5 +51,34 @@ public class WinPlace : MonoBehaviour
     void OnTriggerStay2D(Collider2D other)
     {
         //UI
+    }
+
+    public void OpenFinalDoor()
+    {
+        OpenDoor[] openDoor = GetComponentsInChildren<OpenDoor>();
+        for (int i = 0; i < openDoor.Length; i++)
+        {
+            openDoor[i].KeepDoorOpen();
+        }
+    }
+
+    void Update()
+    {
+        if(player.GetComponent<Points>().sp.scene==1)
+        {
+            if (player.GetComponent<TaskTarget2>().isLevelPass == true && flag == true)
+            {
+                flag = false;
+                OpenFinalDoor();
+            }
+        }
+        else
+        {
+            if (player.GetComponent<TaskTarget>().isLevelPass == true && flag == true)
+            {
+                flag = false;
+                OpenFinalDoor();
+            }
+        }
     }
 }

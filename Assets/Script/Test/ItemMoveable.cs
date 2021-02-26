@@ -38,7 +38,7 @@ public class ItemMoveable : ItemBase
         startDetect = false;
         detected = false;
         offsetX = 0.1f;
-        detectRange = 1f;
+        detectRange = 0.7f;
 
         test = GameObject.Find("FirstAttached");
     }
