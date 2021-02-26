@@ -76,6 +76,7 @@ public class WinPlace : MonoBehaviour
         {
             if (player.GetComponent<TaskTarget>().isLevelPass == true && flag == true)
             {
+                Debug.Log("2333");
                 flag = false;
                 OpenFinalDoor();
             }

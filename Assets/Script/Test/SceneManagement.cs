@@ -11,6 +11,8 @@ public class SceneManagement : MonoBehaviour
     private GameObject winPanel;
     private GameObject losePanel;
     private UIRecord record;
+    private GameObject introduction;
+
     // Start is called before the first frame update
     void Awake()
     {
@@ -22,12 +24,29 @@ public class SceneManagement : MonoBehaviour
         winPanel.SetActive(false);
         losePanel.SetActive(false);
         count = player.GetComponent<Points>().sp.scene;
+        if (GameObject.Find("Introduction") != null)
+        {
+            introduction = GameObject.Find("Introduction");
+        }
+        //Debug.Log(player.GetComponent<Points>().sp.intro);
         if (GameObject.Find("CanvasTask2") != null)
         {
-            player.GetComponent<Points>().Reset();
+            //player.GetComponent<Points>().Reset();
             count = player.GetComponent<Points>().sp.scene;
         }
 
+        if (player.GetComponent<Points>().sp.intro == false)
+        {
+            //Debug.Log("kere");
+            Time.timeScale = 0;
+        }
+        else
+        {
+            Time.timeScale = 1;
+            //Debug.Log("here");
+            introduction.SetActive(false);
+        }
+            
     }
     //void Start()
     //{
@@ -57,10 +76,11 @@ public class SceneManagement : MonoBehaviour
     }
 
     public void Restart()
-    {
+    {        
         player.GetComponent<Points>().Restart();
+        //Time.timeScale = 1;
         SceneManager.LoadScene(count);
-        Time.timeScale = 1;
+        //Debug.Log(Time.timeScale);
     }
 
     public void WinPanel()
@@ -86,5 +106,12 @@ public class SceneManagement : MonoBehaviour
         Time.timeScale = 1;
     }
 
-    
+    public void ResetTimeScale()
+    {
+        Time.timeScale = 1;
+        player.GetComponent<Points>().sp.intro = true;
+        Debug.Log(player.GetComponent<Points>().sp.intro);
+    }
+
+
 }

@@ -17,5 +17,9 @@ public class SkillPoints : ScriptableObject
     public float totalTime = 0f;
     public float levelTime = 0f;
 
+    public int speedlevel=1;
+    public int healthlevel=1;
+
+    public bool intro = false;
     //public int hintPoint;
 }

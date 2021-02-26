@@ -12,7 +12,7 @@ public class Points : MonoBehaviour
 
     void Update()
     {
-        if(sp.upgradePoint > lvUpNeedPoints)
+        if (sp.upgradePoint > lvUpNeedPoints)
         {
             sp.skillPoint++;
             sp.upgradePoint -= lvUpNeedPoints;
@@ -32,7 +32,22 @@ public class Points : MonoBehaviour
     {
         sp.skillPoint--;
     }
-    
+
+    public void SpeedUpgrade()
+    {
+        sp.speedlevel++;
+
+        UseSP();
+    }
+
+    public void HealthUpgrade()
+    {
+        sp.healthlevel++;
+
+        UseSP();
+    }
+
+
     public void SaveLevelData()
     {
         sp.levelPoint = sp.currentPoint;
@@ -54,6 +69,9 @@ public class Points : MonoBehaviour
         sp.totalTime = 0f;
         sp.upgradePoint = 0;
         sp.scene = 1;
+        sp.speedlevel = 1;
+        sp.healthlevel = 1;
+        sp.intro = false;
     }
 
     public void PassGame()
