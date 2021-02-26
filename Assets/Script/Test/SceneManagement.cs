@@ -44,7 +44,7 @@ public class SceneManagement : MonoBehaviour
         if (UITimeBar.timeLeft <= 0)
         {
             //Debug.Log("12");
-            LosePanel();
+            player.GetComponent<Player_Controller>().PlayerDead();
         }
     }
 
@@ -60,6 +60,7 @@ public class SceneManagement : MonoBehaviour
     {
         player.GetComponent<Points>().Restart();
         SceneManager.LoadScene(count);
+        Time.timeScale = 1;
     }
 
     public void WinPanel()
@@ -68,11 +69,13 @@ public class SceneManagement : MonoBehaviour
         timeBar.GetComponent<UITimeBar>().isActive = false;
         winPanel.SetActive(true);
         record.BestScore();
+        Time.timeScale = 0;
     }
     public void LosePanel()
     {
         losePanel.SetActive(true);
         record.CountScore();
+        Time.timeScale = 0;
     }
     public void NewGame()
     {
@@ -80,6 +83,7 @@ public class SceneManagement : MonoBehaviour
         count = 1;
         player.GetComponent<Points>().Reset();
         SceneManager.LoadScene(1);
+        Time.timeScale = 1;
     }
 
     

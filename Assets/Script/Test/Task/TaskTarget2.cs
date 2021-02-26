@@ -13,6 +13,8 @@ public class TaskTarget2 : MonoBehaviour
     public static int sewerPassFinAmount;
     public GameObject sewerPassTask;
 
+    public bool isLevelPass = false;
+
 
     private void Start()
     {
@@ -26,6 +28,10 @@ public class TaskTarget2 : MonoBehaviour
         UpdateTask(doorKeeperTask, doorKeeperFinAmount, doorKeeperAmount);
         UpdateTask(sewerPassTask,sewerPassFinAmount, sewerPassAmount);
 
+        if (doorKeeperAmount <= doorKeeperFinAmount)
+        {
+            isLevelPass = true;
+        }
     }
 
     public void SetTask(GameObject task, int require)

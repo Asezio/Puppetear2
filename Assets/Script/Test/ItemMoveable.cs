@@ -38,7 +38,7 @@ public class ItemMoveable : ItemBase
         startDetect = false;
         detected = false;
         offsetX = 0.1f;
-        detectRange = 0.2f;
+        detectRange = 1f;
 
         test = GameObject.Find("FirstAttached");
     }
@@ -215,10 +215,10 @@ public class ItemMoveable : ItemBase
     {
         if (number == 1)
         {
-            used.GetComponent<ItemStatic>().isPoisoned = true;
+            used.GetComponent<ItemStatic>().DrinkerPoisoned();
             used.GetComponent<ItemStatic>().isAvailable = false;
             //used.GetComponent<ItemStatic>().Destroy();
-            used.GetComponent<SpriteRenderer>().color = new Color32(0,255,25,255);
+            //used.GetComponent<SpriteRenderer>().color = new Color32(0,255,25,255);
         }
         else if (number == 2)
         {
@@ -228,7 +228,7 @@ public class ItemMoveable : ItemBase
         else if (number == 3)
         {
             used.GetComponentInChildren<DrinkerBreak>().Active();
-            used.GetComponent<ItemStatic>().isAvailable = false;
+            used.GetComponent<ItemStatic>().DrinkerBreaker();
         }
     }
 

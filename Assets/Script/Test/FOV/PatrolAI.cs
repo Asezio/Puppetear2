@@ -16,7 +16,7 @@ public class PatrolAI : AIBase
 
     [Header("Interactive Machine")]
     [SerializeField] private float machineOffset;
-    [SerializeField] private float machineWaitTimer;
+    public float machineWaitTimer;
     private float machineWaitMaxTime;
 
     [Header("State")]

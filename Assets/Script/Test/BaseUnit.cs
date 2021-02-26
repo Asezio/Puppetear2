@@ -14,7 +14,7 @@ public class BaseUnit : MonoBehaviour
     protected SpriteRenderer sr;
     protected Animator anim;
     public Transform trans;
-    
+    protected SceneManagement sceneManagement;
 
 
     //public static bool isWeapon1Active = true;
@@ -30,7 +30,7 @@ public class BaseUnit : MonoBehaviour
         anim = GetComponent<Animator>();
         sr = GetComponent<SpriteRenderer>();
         trans = GetComponent<Transform>();
-
+        sceneManagement = GameObject.Find("Canvas").GetComponent<SceneManagement>();
     }
 
     //make it protected so we can call it from playercontroller and AIcontroller

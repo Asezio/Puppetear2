@@ -5,54 +5,52 @@ using UnityEngine.UI;
 
 public class UIDetectBar : MonoBehaviour
 {
-    private Image detectBar;
-    public static bool isFound;
-    [SerializeField] private float detectSpeed;
-
-     void Awake()
+    public Image detectBar;
+    public bool isFound;
+    private GameObject player;
+    [SerializeField] private float barIncreasingSpeed;
+    [SerializeField] private float barDecreasingSpeed;
+    void Awake()
     {
-        detectBar = GameObject.Find("BarFilled").GetComponent<Image>();
+        player = GameObject.FindGameObjectWithTag("Player");
         detectBar.fillAmount = 0;
         isFound = false;
         //this.gameObject.SetActive(false);
     }
 
-     void Update()
+    void Update()
     {
         if (isFound == false)
         {
-            Debug.Log("notFound");
-            GetComponent<CanvasGroup>().alpha = 0;
             BarDecrease();
+
         }
         else
         {
-            Debug.Log("111");
-            GetComponent<CanvasGroup>().alpha = 1;
             BarIncrease();
         }
     }
 
     private void BarDecrease()
     {
-        
         if (detectBar.fillAmount > 0)
         {
-            detectBar.fillAmount -= detectSpeed * Time.deltaTime; 
-            
+            detectBar.fillAmount -= barDecreasingSpeed * Time.deltaTime;
         }
         else
         {
             detectBar.fillAmount = 0;
+            GetComponent<CanvasGroup>().alpha = 0;
         }
     }
 
     private void BarIncrease()
     {
-        detectBar.fillAmount += detectSpeed * Time.deltaTime;
+        GetComponent<CanvasGroup>().alpha = 1;
+        detectBar.fillAmount += barIncreasingSpeed * Time.deltaTime;
         if (detectBar.fillAmount >= 1)
         {
-            //Player die
+            player.GetComponent<Player_Controller>().PlayerDead();
         }
     }
 
