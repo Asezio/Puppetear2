@@ -38,7 +38,7 @@ public class WeaponBase : MonoBehaviour
     // Start is called before the first frame update
     public virtual void Start()
     {
-       
+
         playerTrans = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
         playerSr = GameObject.FindGameObjectWithTag("Player").GetComponent<SpriteRenderer>();
         //coll2D = GetComponent<PolygonCollider2D>();
@@ -159,8 +159,8 @@ public class WeaponBase : MonoBehaviour
                 //if ((playerTrans.position.x < obj.transform.position.x && playerSr.flipX == true)
                 //    || (playerTrans.position.x > obj.transform.position.x && playerSr.flipX == false))
                 //{
-                    //Debug.Log(obj.name);
-                    //当前物体描边
+                //Debug.Log(obj.name);
+                //当前物体描边
                 if (obj.GetComponent<ItemStatic>() == null || obj.GetComponent<ItemStatic>().isAvailable == true)
                 {
                     //Debug.Log(obj.name);
@@ -231,19 +231,19 @@ public class WeaponBase : MonoBehaviour
                                 obj.GetComponent<ItemStatic>().switchflag = true;
                                 obj.GetComponent<ItemStatic>().ActiveMachine();
                             }
-                           
+
                         }
                     }
 
 
 
-                        //anim.SetTrigger("Interact");
-                        //obj.GetComponent<Interactable>().ExitMiaobian();
-                        //obj.GetComponent<EnemyBase>().Die();
-                        //test.GetComponent<Interactable>().ExitMiaobian();
-                        //GameObject.Find("UI_Weapon1").GetComponent<UIweapon>().Cooldown(gameObject);
-                        //测试物体失去目标，将其指定为初始物体
-                        //test = GameObject.Find("FirstAttached");
+                    //anim.SetTrigger("Interact");
+                    //obj.GetComponent<Interactable>().ExitMiaobian();
+                    //obj.GetComponent<EnemyBase>().Die();
+                    //test.GetComponent<Interactable>().ExitMiaobian();
+                    //GameObject.Find("UI_Weapon1").GetComponent<UIweapon>().Cooldown(gameObject);
+                    //测试物体失去目标，将其指定为初始物体
+                    //test = GameObject.Find("FirstAttached");
 
                 }
 
@@ -274,7 +274,7 @@ public class WeaponBase : MonoBehaviour
     {
         //Debug.Log("Attack");
         // anim.SetBool("Attack", true);
-     
+
         anim.SetTrigger("Interact");
         StartCoroutine(StartAttack());
         //GameObject.Find("UI_Weapon1").GetComponent<UIweapon1>().Activate();
@@ -305,10 +305,10 @@ public class WeaponBase : MonoBehaviour
         {
             if (other.GetComponent<Boss>() == null)
             {
-                if (other.GetComponent<AIBase>().isWalking == true)
-                {
-                    other.GetComponent<AIBase>().speed = 0;
-                }
+                //if (other.GetComponent<AIBase>().isWalking == true)
+                //{
+                //    other.GetComponent<AIBase>().speed = 0;
+                //}
                 other.GetComponent<EnemyBase>().Die();
 
                 if (other.GetComponent<AIBase>().isTarget == false)
@@ -330,8 +330,8 @@ public class WeaponBase : MonoBehaviour
             else
             {
                 Boss boss = other.GetComponent<Boss>();
-                
-                if (Boss.health >1)
+
+                if (Boss.health > 1)
                 {
                     other.GetComponent<EnemyBase>().Hurt();
                 }
@@ -343,7 +343,7 @@ public class WeaponBase : MonoBehaviour
             }
 
         }
-        
+
     }
 
     protected void Flip()

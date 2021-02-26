@@ -633,12 +633,12 @@ PrefabInstance:
     - target: {fileID: 3876941235940676007, guid: 41c314b41a35e684b80b6c9b86dfbf23,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -7.4
+      value: -9.7
       objectReference: {fileID: 0}
     - target: {fileID: 3876941235940676007, guid: 41c314b41a35e684b80b6c9b86dfbf23,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -32.57
+      value: -22.29
       objectReference: {fileID: 0}
     - target: {fileID: 3876941235940676007, guid: 41c314b41a35e684b80b6c9b86dfbf23,
         type: 3}
@@ -688,7 +688,7 @@ PrefabInstance:
     - target: {fileID: 3876941236333852814, guid: 41c314b41a35e684b80b6c9b86dfbf23,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.4830017
+      value: 0.4829998
       objectReference: {fileID: 0}
     - target: {fileID: 3876941236333852815, guid: 41c314b41a35e684b80b6c9b86dfbf23,
         type: 3}
@@ -4248,7 +4248,7 @@ PrefabInstance:
     - target: {fileID: 2310751863472020309, guid: 296afa90157505a4eb0fb8d4d69303d2,
         type: 3}
       propertyPath: m_Name
-      value: NonTargetAI (12)
+      value: NonTargetAI (1)
       objectReference: {fileID: 0}
     - target: {fileID: 2310751863472020315, guid: 296afa90157505a4eb0fb8d4d69303d2,
         type: 3}
@@ -5446,7 +5446,7 @@ PrefabInstance:
     - target: {fileID: 31522524997193674, guid: b3296448f61b35c4c83751927950b31f,
         type: 3}
       propertyPath: drinkTimer
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 31522524997193674, guid: b3296448f61b35c4c83751927950b31f,
         type: 3}
@@ -5476,7 +5476,7 @@ PrefabInstance:
     - target: {fileID: 31522524997193674, guid: b3296448f61b35c4c83751927950b31f,
         type: 3}
       propertyPath: waitTimeList.Array.data[1]
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 31522524997193674, guid: b3296448f61b35c4c83751927950b31f,
         type: 3}
@@ -15884,7 +15884,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1427012694}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.4, y: -32.086998, z: -10}
+  m_LocalPosition: {x: -9.7, y: -21.807001, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
