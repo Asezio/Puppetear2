@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 1364222273328157651}
   - component: {fileID: 2007444188371909302}
   - component: {fileID: 1302171732374828775}
+  - component: {fileID: 4227481343011622127}
   - component: {fileID: 540740067685956786}
   m_Layer: 8
   m_Name: DoorKeeperAI
@@ -223,6 +224,20 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &4227481343011622127
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1364222273328157661}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f124d3f0a8667254c9b9a849e240d32e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outsideMarkpf: {fileID: 2080884228368208954, guid: c4325743d6ce50146be8bfd29d8fdd5e,
+    type: 3}
 --- !u!95 &540740067685956786
 Animator:
   serializedVersion: 3
@@ -328,7 +343,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6831475805525017976}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.066, y: 1.219, z: -0.05}
+  m_LocalPosition: {x: 0.058, y: 1.219, z: -0.05}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1364222273328157660}

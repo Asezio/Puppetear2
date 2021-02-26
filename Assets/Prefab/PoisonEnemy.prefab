@@ -175,6 +175,7 @@ GameObject:
   - component: {fileID: 4583493813841136699}
   - component: {fileID: 31522524997193674}
   - component: {fileID: 1120657247302322731}
+  - component: {fileID: 6921654063146657697}
   m_Layer: 8
   m_Name: PoisonEnemy
   m_TagString: Enemy
@@ -382,6 +383,20 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &6921654063146657697
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6070878073007790167}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f124d3f0a8667254c9b9a849e240d32e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outsideMarkpf: {fileID: 2080884228368208954, guid: c4325743d6ce50146be8bfd29d8fdd5e,
+    type: 3}
 --- !u!1001 &3198599282752867971
 PrefabInstance:
   m_ObjectHideFlags: 0
