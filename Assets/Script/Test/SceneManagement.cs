@@ -40,7 +40,7 @@ public class SceneManagement : MonoBehaviour
             //Debug.Log("kere");
             Time.timeScale = 0;
         }
-        else
+        else if(player.GetComponent<Points>().sp.intro == true && GameObject.Find("CanvasTask2") != null)
         {
             Time.timeScale = 1;
             //Debug.Log("here");
