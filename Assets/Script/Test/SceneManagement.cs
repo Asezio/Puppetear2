@@ -46,7 +46,10 @@ public class SceneManagement : MonoBehaviour
             //Debug.Log("here");
             introduction.SetActive(false);
         }
-            
+        else
+        {
+            Time.timeScale = 1;
+        }
     }
     //void Start()
     //{

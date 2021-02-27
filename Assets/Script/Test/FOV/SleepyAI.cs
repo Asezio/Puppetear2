@@ -69,8 +69,10 @@ public class SleepyAI : AIBase
         while (state == State.Awake)
         {
             anim.SetBool("isIdle", true);
-            fieldOfView.gameObject.SetActive(true);
-
+            if (fieldOfView != null)
+            {
+                fieldOfView.gameObject.SetActive(true);
+            }
             yield return new WaitForSeconds(awakeTimer);
 
             isSleeping = true;

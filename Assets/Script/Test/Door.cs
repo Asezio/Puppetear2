@@ -6,7 +6,7 @@ public class Door : MonoBehaviour
 {
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log(collision.gameObject.name);
+        //Debug.Log(collision.gameObject.name);
         if (collision.tag == "Player")
         {
             Debug.Log(collision.gameObject.name);

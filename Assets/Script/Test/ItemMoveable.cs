@@ -83,10 +83,10 @@ public class ItemMoveable : ItemBase
         Vector2 raycastStart = transform.position;
         RaycastHit2D hitInfo = Physics2D.Raycast(raycastStart, Vector2.down, raycastDistance);
         Debug.DrawRay(raycastStart, Vector2.down * raycastDistance, Color.red);
-        if (hitInfo.collider != null)
-        {
-            Debug.Log(hitInfo.collider.gameObject.name);
-        }
+        //if (hitInfo.collider != null)
+        //{
+        //    Debug.Log(hitInfo.collider.gameObject.name);
+        //}
         //GameObject test = gameObject;
         //test.transform.position = new Vector3(targetTrans.position.x, playerTrans.position.y, targetTrans.position.z);
         if (hitInfo.collider == null || hitInfo.collider.gameObject.tag != "Obstacles" && hitInfo.collider.gameObject.tag != "Wall")
@@ -186,7 +186,7 @@ public class ItemMoveable : ItemBase
             //当前物体描边
             if (obj.GetComponent<ItemStatic>().itemName == gameObject.GetComponent<ItemMoveable>().targetName)
             {
-                Debug.Log(obj.name);
+                //Debug.Log(obj.name);
                 detected = true;
                 obj.GetComponent<Interactable>().MiaoBian();
                 player.GetComponent<SignText>().Interact();
