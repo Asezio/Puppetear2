@@ -6,8 +6,25 @@ public class Points : MonoBehaviour
 {
     public int lvUpNeedPoints;
     public SkillPoints sp;
-    // Start is called before the first frame update
+    private UITimeBar timeBar;
+    private float maxTime;
+    private float speed;
 
+    private UILevelUpPanel levelUpPanel;
+
+    // Start is called before the first frame update
+    void Awake()
+    {
+        if (GameObject.Find("TimeLeft") != null)
+        {
+            timeBar = GameObject.Find("TimeLeft").GetComponent<UITimeBar>();
+            maxTime = timeBar.timeMax;
+        }
+        
+        speed = GetComponent<Player_Controller>().speed;
+        levelUpPanel = GameObject.Find("Canvas").GetComponent<UILevelUpPanel>();
+
+    }
 
 
     void Update()
@@ -35,16 +52,73 @@ public class Points : MonoBehaviour
 
     public void SpeedUpgrade()
     {
-        sp.speedlevel++;
-
-        UseSP();
+        if(sp.speedlevel< 5 && sp.skillPoint>0)
+        {
+            sp.speedlevel++;
+            if(sp.speedlevel == 2)
+            {
+                speed = sp.speedLevel2;
+            }
+            else if (sp.speedlevel == 3)
+            {
+                speed = sp.speedLevel3;
+            }
+            else if (sp.speedlevel == 4)
+            {
+                speed = sp.speedLevel4;
+            }
+            else if (sp.speedlevel == 5)
+            {
+                speed = sp.speedLevel5;
+            }
+            UseSP();
+        }
+        else if (sp.speedlevel >=5)
+        {
+            levelUpPanel.Comment(2);
+        }
+        else if(sp.skillPoint <= 0)
+        {
+            levelUpPanel.Comment(1);
+        }
+        
     }
 
     public void HealthUpgrade()
     {
-        sp.healthlevel++;
-
-        UseSP();
+        if (sp.healthlevel < 5 && sp.skillPoint > 0)
+        {
+            sp.healthlevel++;
+            if (sp.healthlevel == 2)
+            {
+                maxTime = sp.healthLevel2;
+                timeBar.Refresh();
+            }
+            else if (sp.healthlevel == 3)
+            {
+                maxTime = sp.healthLevel3;
+                timeBar.Refresh();
+            }
+            else if (sp.healthlevel == 4)
+            {
+                maxTime = sp.healthLevel4;
+                timeBar.Refresh();
+            }
+            else if (sp.healthlevel == 5)
+            {
+                maxTime = sp.healthLevel5;
+                timeBar.Refresh();
+            }
+            UseSP();
+        }
+        else if(sp.healthlevel >=5)
+        {
+            levelUpPanel.Comment(3);
+        }
+        else if(sp.skillPoint <= 0)
+        {
+            levelUpPanel.Comment(1);
+        }
     }
 
 

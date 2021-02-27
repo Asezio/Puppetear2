@@ -12,6 +12,7 @@ public class SceneManagement : MonoBehaviour
     private GameObject losePanel;
     private UIRecord record;
     private GameObject introduction;
+    private GameObject levelUp;
 
     // Start is called before the first frame update
     void Awake()
@@ -20,6 +21,7 @@ public class SceneManagement : MonoBehaviour
         timeBar = GameObject.Find("TimeLeft");
         winPanel = GameObject.Find("WinPanel");
         losePanel = GameObject.Find("LosePanel");
+        levelUp = GameObject.Find("LevelUp");
         record = GameObject.Find("Canvas").GetComponent<UIRecord>();
         winPanel.SetActive(false);
         losePanel.SetActive(false);
@@ -51,13 +53,10 @@ public class SceneManagement : MonoBehaviour
             Time.timeScale = 1;
         }
     }
-    //void Start()
-    //{
-    //    if (GameObject.Find("CanvasTask2") != null)
-    //    {
-    //        player.GetComponent<Points>().Reset();
-    //    }
-    //}
+    void Start()
+    {
+        levelUp.SetActive(false);
+    }
     // Update is called once per frame
     void Update()
     {

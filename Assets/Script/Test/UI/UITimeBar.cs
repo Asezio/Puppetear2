@@ -11,9 +11,11 @@ public class UITimeBar : MonoBehaviour
     private int convertTime;
     private Image TimeBar;
     public bool isActive;
+    public float speed;
+
 
     // Use this for initialization
-    void Start()
+    void Awake()
     {
         TimeBar = GetComponent<Image>();
         timeLeft = timeMax;
@@ -30,5 +32,10 @@ public class UITimeBar : MonoBehaviour
         TimeBar.fillAmount = timeLeft / timeMax;
         convertTime = (int)timeLeft;
         timeText.text = "Time Left: " + convertTime.ToString() + "s";
+    }
+
+    public void Refresh()
+    {
+        timeLeft = timeMax;
     }
 }

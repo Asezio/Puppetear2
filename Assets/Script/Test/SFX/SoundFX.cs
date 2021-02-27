@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.Assertions;
 
+
 public class SoundFX : MonoBehaviour {
     private AudioSource audioSource;
 
@@ -20,10 +21,9 @@ public class SoundFX : MonoBehaviour {
     ///<param name="loop">True if the clip should be looped; false otherwise.</param>
     public void Play(AudioClip clip, bool loop = false)
     {
-        Debug.Log("1");
         if (clip == null)
         {
-            return;
+           return;
         }
         audioSource.clip = clip;
         audioSource.loop = loop;
@@ -43,8 +43,6 @@ public class SoundFX : MonoBehaviour {
     
     public void Play(AudioClip clip, bool loop = false,  float time = 0f)
     {
-        Debug.Log("2");
-        Debug.Log(time);
         if (clip == null)
         {          
             return;
