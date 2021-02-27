@@ -29,7 +29,10 @@ public class EnemyBase : MonoBehaviour
 
         GetComponent<AIBase>().enabled = false;
         Destroy(gameObject, 1.1f);
-        Destroy(GetComponent<AIBase>().fieldOfView.gameObject, 0.2f);
+        if (GetComponent<AIBase>().fieldOfView != null)
+        {
+            Destroy(GetComponent<AIBase>().fieldOfView.gameObject, 0.2f);
+        }
        
         int addPoints = Random.Range(150, 201);
         player.GetComponent<Points>().AddPoints(addPoints);

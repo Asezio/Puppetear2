@@ -71,8 +71,9 @@ public class SoundManager : MonoBehaviour {
     
     public void PlaySound(AudioClip clip, bool loop = false)
     {
+        
         if (clip != null)
-        {
+        {Debug.LogError(1);
             soundPool.GetObject().GetComponent<SoundFX>().Play(clip, loop);
         }
     }
