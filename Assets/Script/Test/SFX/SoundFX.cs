@@ -27,7 +27,7 @@ public class SoundFX : MonoBehaviour {
         }
         audioSource.clip = clip;
         audioSource.loop = loop;
-
+        audioSource.Play();
         if (!loop)
         {
             Invoke("DisableSoundFx", clip.length + 0.1f);
