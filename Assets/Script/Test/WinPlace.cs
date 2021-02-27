@@ -46,7 +46,7 @@ public class WinPlace : MonoBehaviour
                 //UI
             }
         }
-        
+
     }
     void OnTriggerStay2D(Collider2D other)
     {
@@ -64,7 +64,7 @@ public class WinPlace : MonoBehaviour
 
     void Update()
     {
-        if(player.GetComponent<Points>().sp.scene==1)
+        if (player.GetComponent<Points>().sp.scene == 1)
         {
             if (player.GetComponent<TaskTarget2>().isLevelPass == true && flag == true)
             {
@@ -72,14 +72,19 @@ public class WinPlace : MonoBehaviour
                 OpenFinalDoor();
             }
         }
-        else
+        else if (player.GetComponent<Points>().sp.scene == 2)
         {
-            if (player.GetComponent<TaskTarget>().isLevelPass == true && flag == true)
+            var tT = player.GetComponent<TaskTarget>();
+            if (tT != null)
             {
-                Debug.Log("2333");
-                flag = false;
-                OpenFinalDoor();
+                if (player.GetComponent<TaskTarget>().isLevelPass == true && flag == true)
+                {
+                    Debug.Log("2333");
+                    flag = false;
+                    OpenFinalDoor();
+                }
             }
+
         }
     }
 }

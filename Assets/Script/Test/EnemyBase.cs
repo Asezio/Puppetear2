@@ -23,7 +23,10 @@ public class EnemyBase : MonoBehaviour
     public void Die()
     {
         UITimeBar.timeLeft = GameObject.Find("TimeLeft").GetComponent<UITimeBar>().timeMax;
+
         anim.SetTrigger("isDead");
+        SoundManager.instance.PlaySound("Hit for enemy 2"); 
+
         GetComponent<AIBase>().enabled = false;
         Destroy(gameObject, 1.1f);
         Destroy(GetComponent<AIBase>().fieldOfView.gameObject, 0.2f);

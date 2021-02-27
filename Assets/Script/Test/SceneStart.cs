@@ -14,7 +14,7 @@ public class SceneStart : MonoBehaviour
     public void NextLevel()
     {
         SceneManager.LoadScene(1);
-
+        BackgroundMusic.instance.audioSource.Stop();
     }
 
     public void QuitGame()
