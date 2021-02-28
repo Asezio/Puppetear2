@@ -73,7 +73,7 @@ public class SoundManager : MonoBehaviour {
     {
         
         if (clip != null)
-        {Debug.LogError(1);
+        {
             soundPool.GetObject().GetComponent<SoundFX>().Play(clip, loop);
         }
     }
@@ -110,6 +110,24 @@ public class SoundManager : MonoBehaviour {
             soundPool.GetObject().GetComponent<SoundFX>().Play(clip, loop, time);
         }
     }
+
+    public void PlayLooped3DSound(string soundName, Vector3 place, bool loop = false, float time = 0f)
+    {
+        var clip = nameToSound[soundName];
+        if (clip != null)
+        {
+            if (time <= 0f)
+            {
+                time = clip.length;
+            }
+
+            var obj = soundPool.GetObject();
+            obj.transform.position = place;
+            obj.GetComponent<SoundFX>().Play3D(clip, loop, time);
+        }
+    }
+
+
 
     ///<summary>
     ///Stops a currently playing audio clip in the attached audioSource component to this object/script.

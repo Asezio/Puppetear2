@@ -27,6 +27,8 @@ public class SoundFX : MonoBehaviour {
         }
         audioSource.clip = clip;
         audioSource.loop = loop;
+        audioSource.spatialBlend = 0;
+
         audioSource.Play();
         if (!loop)
         {
@@ -49,6 +51,8 @@ public class SoundFX : MonoBehaviour {
         }
         audioSource.clip = clip;
         audioSource.loop = loop;
+        audioSource.spatialBlend = 0;
+
         audioSource.Play();
         if (!loop)
         {
@@ -60,6 +64,30 @@ public class SoundFX : MonoBehaviour {
         }
 
     }
+
+    public void Play3D(AudioClip clip, bool loop = false, float time = 0f)
+    {
+        if (clip == null)
+        {
+            return;
+        }
+        audioSource.clip = clip;
+        audioSource.loop = loop;
+        audioSource.spatialBlend = 1;
+        audioSource.maxDistance = 3;
+
+        audioSource.Play();
+        if (!loop)
+        {
+            Invoke("DisableSoundFx", clip.length + 0.1f);
+        }
+        else
+        {
+            Invoke("DisableSoundFx", time);
+        }
+
+    }
+
 
     ///<summary>
     ///Stops a currently playing audio clip in the attached audioSource component to this object/script.

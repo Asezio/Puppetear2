@@ -50,6 +50,7 @@ public class SleepyAI : AIBase
     {
         while(state == State.Sleep)
         {
+            SoundManager.instance.PlayLooped3DSound("hulu2",transform.position, true, sleepTimer);
             anim.SetBool("isSleeping", true);
             if (fieldOfView != null)
             {
