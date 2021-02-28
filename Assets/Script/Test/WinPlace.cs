@@ -48,10 +48,10 @@ public class WinPlace : MonoBehaviour
         }
 
     }
-    void OnTriggerStay2D(Collider2D other)
-    {
-        //UI
-    }
+    //void OnTriggerStay2D(Collider2D other)
+    //{
+    //    //UI
+    //}
 
     public void OpenFinalDoor()
     {

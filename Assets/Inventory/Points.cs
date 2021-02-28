@@ -7,8 +7,8 @@ public class Points : MonoBehaviour
     public int lvUpNeedPoints;
     public SkillPoints sp;
     private UITimeBar timeBar;
-    private float maxTime;
-    private float speed;
+    public float maxTime = 0f;
+    public float speed = 0f;
 
     private UILevelUpPanel levelUpPanel;
 
@@ -18,10 +18,7 @@ public class Points : MonoBehaviour
         if (GameObject.Find("TimeLeft") != null)
         {
             timeBar = GameObject.Find("TimeLeft").GetComponent<UITimeBar>();
-            maxTime = timeBar.timeMax;
         }
-        
-        speed = GetComponent<Player_Controller>().speed;
         levelUpPanel = GameObject.Find("Canvas").GetComponent<UILevelUpPanel>();
 
     }
@@ -72,6 +69,7 @@ public class Points : MonoBehaviour
                 speed = sp.speedLevel5;
             }
             UseSP();
+            GetComponent<Player_Controller>().speed = speed;
         }
         else if (sp.speedlevel >=5)
         {
@@ -92,24 +90,22 @@ public class Points : MonoBehaviour
             if (sp.healthlevel == 2)
             {
                 maxTime = sp.healthLevel2;
-                timeBar.Refresh();
             }
             else if (sp.healthlevel == 3)
             {
                 maxTime = sp.healthLevel3;
-                timeBar.Refresh();
             }
             else if (sp.healthlevel == 4)
             {
                 maxTime = sp.healthLevel4;
-                timeBar.Refresh();
             }
             else if (sp.healthlevel == 5)
             {
                 maxTime = sp.healthLevel5;
-                timeBar.Refresh();
             }
             UseSP();
+            timeBar.timeMax = maxTime;
+            timeBar.Refresh();
         }
         else if(sp.healthlevel >=5)
         {

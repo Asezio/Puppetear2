@@ -12,14 +12,23 @@ public class UITimeBar : MonoBehaviour
     private Image TimeBar;
     public bool isActive;
     public float speed;
-
+    private Points points;
 
     // Use this for initialization
     void Awake()
     {
         TimeBar = GetComponent<Image>();
-        timeLeft = timeMax;
         isActive = true;
+        points = GameObject.Find("Chara_Player").GetComponent<Points>();
+        if(points.sp.healthlevel == 1)
+        {
+            timeMax = points.sp.healthLevel1;
+        }
+        else
+        {
+            timeMax = points.maxTime;
+        }
+        timeLeft = timeMax;
     }
 
     // Update is called once per frame

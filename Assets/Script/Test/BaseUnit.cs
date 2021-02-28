@@ -15,7 +15,7 @@ public class BaseUnit : MonoBehaviour
     protected Animator anim;
     public Transform trans;
     protected SceneManagement sceneManagement;
-
+    private Points points;
 
     //public static bool isWeapon1Active = true;
     //public static bool isWeapon2Active = true;
@@ -30,7 +30,19 @@ public class BaseUnit : MonoBehaviour
         anim = GetComponent<Animator>();
         sr = GetComponent<SpriteRenderer>();
         trans = GetComponent<Transform>();
+        points = GameObject.Find("Chara_Player").GetComponent<Points>();
         sceneManagement = GameObject.Find("Canvas").GetComponent<SceneManagement>();
+        if(GameObject.Find("WinPlace") != null)
+        {
+            if (points.sp.speedlevel == 1)
+            {
+                speed = points.sp.speedLevel1;
+            }
+            else
+            {
+                speed = points.speed;
+            }
+        }
     }
 
     //make it protected so we can call it from playercontroller and AIcontroller
