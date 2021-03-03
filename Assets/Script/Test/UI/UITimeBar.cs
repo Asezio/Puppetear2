@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using DG.Tweening;
 
 public class UITimeBar : MonoBehaviour
 {
@@ -10,6 +11,7 @@ public class UITimeBar : MonoBehaviour
     public static float timeLeft;
     private int convertTime;
     private Image TimeBar;
+    public Image TimeCao;
     public Image TimeBarDown;
     public bool isActive;
     public float speed;
@@ -20,7 +22,8 @@ public class UITimeBar : MonoBehaviour
     {
         TimeBar = GetComponent<Image>();
         isActive = true;
-        points = GameObject.Find("Chara_Player").GetComponent<Points>();   
+        points = GameObject.Find("Chara_Player").GetComponent<Points>();
+        //shaLou = GameObject.Find("ShaLou");
     }
 
     void Start()
@@ -43,6 +46,19 @@ public class UITimeBar : MonoBehaviour
 
     public void Refresh()
     {
+        StartCoroutine(Rotate());
+    }
+
+    IEnumerator Rotate()
+    {
+        Debug.Log("1");
+        TimeBar.transform.DOLocalRotate(new Vector3(0, 0, 180), 0.5f);
+        TimeBarDown.transform.DOLocalRotate(new Vector3(0, 0, 180), 0.5f);
+        TimeCao.transform.DOLocalRotate(new Vector3(0, 0, 180), 0.5f);
+        yield return new WaitForSeconds(0.5f);
+        TimeBar.transform.rotation = Quaternion.Euler(0, 0, 0);
+        TimeBarDown.transform.rotation = Quaternion.Euler(0, 0, 0);
+        TimeCao.transform.rotation = Quaternion.Euler(0, 0, 0);
         timeLeft = timeMax;
     }
 }

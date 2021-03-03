@@ -10,6 +10,7 @@ public class EnemyBase : MonoBehaviour
     private GameObject player;
     private GameObject bossG;
     private Animator anim;
+    private UITimeBar timeBar;
     // Start is called before the first frame update
     void Awake()
     {
@@ -17,12 +18,13 @@ public class EnemyBase : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player");
         bossG = GameObject.Find("Boss");
         anim = GetComponent<Animator>();
+        timeBar = GameObject.Find("TimeLeft").GetComponent<UITimeBar>();
     }
 
 
     public void Die()
     {
-        UITimeBar.timeLeft = GameObject.Find("TimeLeft").GetComponent<UITimeBar>().timeMax;
+        timeBar.Refresh();
 
         anim.SetTrigger("isDead");
         //SoundManager.instance.PlaySound("Hit for enemy 2"); 
