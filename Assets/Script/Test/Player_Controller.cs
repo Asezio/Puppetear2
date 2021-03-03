@@ -32,6 +32,7 @@ public class Player_Controller : BaseUnit
 
     public void PlayerDead()
     {
+        Debug.Log("Player Die.");
         GetComponent<CapsuleCollider2D>().enabled = false;
         sceneManagement.LosePanel();
     }

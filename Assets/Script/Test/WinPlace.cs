@@ -35,6 +35,7 @@ public class WinPlace : MonoBehaviour
         }
         else
         {
+            canvas.GetComponent<SceneManagement>().WinPanel();
             if (other.tag == ("Player") && player.GetComponent<TaskTarget>().isLevelPass == true)
             {
                 //Debug.Log("2");

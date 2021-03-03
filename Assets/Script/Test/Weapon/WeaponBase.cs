@@ -274,7 +274,7 @@ public class WeaponBase : MonoBehaviour
     {
         //Debug.Log("Attack");
         // anim.SetBool("Attack", true);
-        SoundManager.instance.PlaySound("attack2");
+        //SoundManager.instance.PlaySound("attack2");
         anim.SetTrigger("Interact");
         StartCoroutine(StartAttack());
         //GameObject.Find("UI_Weapon1").GetComponent<UIweapon1>().Activate();
