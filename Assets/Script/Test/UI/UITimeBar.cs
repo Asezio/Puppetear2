@@ -52,10 +52,10 @@ public class UITimeBar : MonoBehaviour
     IEnumerator Rotate()
     {
         Debug.Log("1");
-        TimeBar.transform.DOLocalRotate(new Vector3(0, 0, 180), 0.5f);
-        TimeBarDown.transform.DOLocalRotate(new Vector3(0, 0, 180), 0.5f);
-        TimeCao.transform.DOLocalRotate(new Vector3(0, 0, 180), 0.5f);
-        yield return new WaitForSeconds(0.5f);
+        TimeBar.transform.DOLocalRotate(new Vector3(0, 0, 180), 0.25f);
+        TimeBarDown.transform.DOLocalRotate(new Vector3(0, 0, 180), 0.25f);
+        TimeCao.transform.DOLocalRotate(new Vector3(0, 0, 180), 0.25f);
+        yield return new WaitForSeconds(0.25f);
         TimeBar.transform.rotation = Quaternion.Euler(0, 0, 0);
         TimeBarDown.transform.rotation = Quaternion.Euler(0, 0, 0);
         TimeCao.transform.rotation = Quaternion.Euler(0, 0, 0);
