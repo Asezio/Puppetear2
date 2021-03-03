@@ -45,12 +45,13 @@ public class SceneManagement : MonoBehaviour
         else if(player.GetComponent<Points>().sp.intro == true && GameObject.Find("CanvasTask2") != null)
         {
             Time.timeScale = 1;
-            //Debug.Log("here");
+            //Debug.Log(Time.timeScale);
             introduction.SetActive(false);
         }
         else
         {
             Time.timeScale = 1;
+            //Debug.Log(Time.timeScale + "2");
         }
     }
     void Start()
@@ -87,8 +88,8 @@ public class SceneManagement : MonoBehaviour
 
     public void WinPanel()
     {
+        Debug.Log("1");
         player.GetComponent<Points>().PassGame();
-        timeBar.GetComponent<UITimeBar>().isActive = false;
         winPanel.SetActive(true);
         record.BestScore();
         Time.timeScale = 0;

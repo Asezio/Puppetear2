@@ -23,7 +23,7 @@ public class UIRecord : MonoBehaviour
     {
         usedTime = playerPoints.sp.totalTime;
         int a = Mathf.FloorToInt(usedTime);
-        winTime.text = string.Format("{0:d2}:{1,d2}:{2:d2}", a / 3600, a / 60, a % 60);
+        winTime.text = string.Format("{0:d2}:{1:d2}:{2:d2}", a / 3600, a / 60, a % 60);
         //winTime.text = "00:00:00";
     }
     private void CountLoseTime()

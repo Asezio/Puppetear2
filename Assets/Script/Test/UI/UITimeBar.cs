@@ -10,6 +10,7 @@ public class UITimeBar : MonoBehaviour
     public static float timeLeft;
     private int convertTime;
     private Image TimeBar;
+    public Image TimeBarDown;
     public bool isActive;
     public float speed;
     private Points points;
@@ -19,18 +20,14 @@ public class UITimeBar : MonoBehaviour
     {
         TimeBar = GetComponent<Image>();
         isActive = true;
-        points = GameObject.Find("Chara_Player").GetComponent<Points>();
-        if(points.sp.healthlevel == 1)
-        {
-            timeMax = points.sp.healthLevel1;
-        }
-        else
-        {
-            timeMax = points.maxTime;
-        }
-        timeLeft = timeMax;
+        points = GameObject.Find("Chara_Player").GetComponent<Points>();   
     }
 
+    void Start()
+    {
+        timeMax = points.maxTime;
+        timeLeft = timeMax;
+    }
     // Update is called once per frame
     void Update()
     {
@@ -39,8 +36,9 @@ public class UITimeBar : MonoBehaviour
             timeLeft = timeLeft - Time.deltaTime;
         }
         TimeBar.fillAmount = timeLeft / timeMax;
+        TimeBarDown.fillAmount = 1-timeLeft / timeMax;
         convertTime = (int)timeLeft;
-        timeText.text = "Time Left: " + convertTime.ToString() + "s";
+        timeText.text = convertTime.ToString() + "s";
     }
 
     public void Refresh()

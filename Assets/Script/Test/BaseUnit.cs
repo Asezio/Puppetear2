@@ -32,16 +32,13 @@ public class BaseUnit : MonoBehaviour
         trans = GetComponent<Transform>();
         points = GameObject.Find("Chara_Player").GetComponent<Points>();
         sceneManagement = GameObject.Find("Canvas").GetComponent<SceneManagement>();
-        if(GameObject.Find("WinPlace") != null)
+    }
+
+    void Start()
+    {
+        if (GameObject.Find("WinPlace") != null)
         {
-            if (points.sp.speedlevel == 1)
-            {
-                speed = points.sp.speedLevel1;
-            }
-            else
-            {
-                speed = points.speed;
-            }
+            speed = points.speed;
         }
     }
 
