@@ -344,6 +344,9 @@ public class WeaponBase : MonoBehaviour
                 if (Boss.health > 1)
                 {
                     other.GetComponent<EnemyBase>().Hurt();
+                    GameObject.Find("TimeLeft").GetComponent<UITimeBar>().Refresh();
+                    int addPoints = Random.Range(150, 201);
+                    player.GetComponent<Points>().AddPoints(addPoints);
                 }
                 else if (Boss.health == 1)
                 {

@@ -46,20 +46,33 @@ public class EnemyBase : MonoBehaviour
 
     public void Hurt()
     {
+        StartCoroutine(BossHurt());
+
+    }
+    IEnumerator BossHurt()
+    {
         Boss boss = bossG.GetComponent<Boss>();
-        Boss.health--;
         Boss.isChanged = true;
+        boss.speed = 0;
+        boss.GetComponent<Animator>().SetTrigger("isHit");
+        boss.GetComponent<Rigidbody2D>().Sleep();
+        boss.GetComponent<CapsuleCollider2D>().enabled = false;
+        boss.fieldOfView.gameObject.SetActive(false);
+        yield return new WaitForSeconds(1);
+        Boss.health--;
         if (Boss.health == 2)
         {
             bossG.transform.position = boss.waypointList2[0];
+            boss.speed = 2;
         }
         else if (Boss.health == 1)
         {
             bossG.transform.position = boss.waypointList3[0];
+            boss.speed = 2;
         }
-        UITimeBar.timeLeft = GameObject.Find("TimeLeft").GetComponent<UITimeBar>().timeMax;
-        int addPoints = Random.Range(150, 201);
-        player.GetComponent<Points>().AddPoints(addPoints);
+        boss.GetComponent<Rigidbody2D>().WakeUp();
+        boss.fieldOfView.gameObject.SetActive(true);
+        boss.GetComponent<CapsuleCollider2D>().enabled = true;
     }
 
     IEnumerator TimeRefresh()
