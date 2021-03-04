@@ -28,7 +28,10 @@ public class EnemyBase : MonoBehaviour
 
         anim.SetTrigger("isDead");
         //SoundManager.instance.PlaySound("Hit for enemy 2"); 
-
+        if (GameObject.Find("KillStage") != null)
+        {
+            GameObject.Find("KillStage").GetComponent<KillStage>().FirstKillAI();
+        }
         GetComponent<AIBase>().enabled = false;
         Destroy(gameObject, 1.1f);
         if (GetComponent<AIBase>().fieldOfView != null)
