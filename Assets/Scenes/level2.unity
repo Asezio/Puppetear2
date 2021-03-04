@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -3747,7 +3747,7 @@ PrefabInstance:
     - target: {fileID: 389396636912562106, guid: c577f476344221c449831bfc2fe57c36,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2395982650829095111, guid: c577f476344221c449831bfc2fe57c36,
         type: 3}
@@ -11529,7 +11529,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &878406921
 RectTransform:
   m_ObjectHideFlags: 0
@@ -19492,7 +19492,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1328139962
 RectTransform:
   m_ObjectHideFlags: 0
@@ -26701,7 +26701,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1739731675
 RectTransform:
   m_ObjectHideFlags: 0
@@ -31959,6 +31959,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2368852402356856442, guid: 07df64ab70d3ea14781f111b554d6f78,
+        type: 3}
+      propertyPath: postImage
+      value: 
+      objectReference: {fileID: 878406922}
     - target: {fileID: 8241846348756268990, guid: 07df64ab70d3ea14781f111b554d6f78,
         type: 3}
       propertyPath: m_Name

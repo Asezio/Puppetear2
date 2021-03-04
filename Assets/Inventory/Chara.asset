@@ -13,14 +13,14 @@ MonoBehaviour:
   m_Name: Chara
   m_EditorClassIdentifier: 
   scene: 2
-  upgradePoint: 1
-  currentPoint: 351
-  levelPoint: 351
+  upgradePoint: 0
+  currentPoint: 0
+  levelPoint: 0
   bestScore: 0
-  skillPoint: 34
-  totalTime: 56.564262
-  levelTime: 25.588844
-  speedlevel: 2
+  skillPoint: 0
+  totalTime: 62.78552
+  levelTime: 0
+  speedlevel: 1
   healthlevel: 1
   intro: 1
   healthLevel1: 30

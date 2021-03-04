@@ -238,7 +238,8 @@ public class WeaponBase : MonoBehaviour
                             }
                             else if (obj.GetComponent<Post>()!=null)
                             {
-                                
+                                obj.GetComponent<Post>().isOpened=!obj.GetComponent<Post>().isOpened;
+                                obj.GetComponent<Post>().ShowPost(obj.GetComponent<Post>().isOpened);
                             }
                         }
                     }
