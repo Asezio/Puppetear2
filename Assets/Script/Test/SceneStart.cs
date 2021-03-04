@@ -15,6 +15,7 @@ public class SceneStart : MonoBehaviour
     {
         SceneManager.LoadScene(1);
         BackgroundMusic.instance.audioSource.Stop();
+        BackgroundMusic.instance.ChangeBGM();
     }
 
     public void QuitGame()

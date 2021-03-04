@@ -38,12 +38,12 @@ public class BackgroundMusic : MonoBehaviour
         Scene scene = SceneManager.GetActiveScene();
         if (scene.name == "Start")
         {
-            audioSource.clip = bgms[0];
+            audioSource.clip = bgms[1];
         }
 
         if (scene.name == "Level1")
         {
-            audioSource.clip = bgms[1];
+            audioSource.clip = bgms[2];
         }
 
         if (scene.name == "level2")

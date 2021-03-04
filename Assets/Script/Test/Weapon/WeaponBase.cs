@@ -195,7 +195,10 @@ public class WeaponBase : MonoBehaviour
                         {
                             player.GetComponent<SignText>().Interact();
                         }
-
+                        else if (obj.GetComponent<Post>()!=null)
+                        {
+                            player.GetComponent<SignText>().Read();
+                        }
                         else
                         {
                             player.GetComponent<SignText>().NeedItem();
@@ -233,7 +236,10 @@ public class WeaponBase : MonoBehaviour
                                 obj.GetComponent<ItemStatic>().switchflag = true;
                                 obj.GetComponent<ItemStatic>().ActiveMachine();
                             }
-
+                            else if (obj.GetComponent<Post>()!=null)
+                            {
+                                
+                            }
                         }
                     }
 
@@ -276,7 +282,6 @@ public class WeaponBase : MonoBehaviour
     {
         //Debug.Log("Attack");
         // anim.SetBool("Attack", true);
-       // SoundManager.instance.PlaySound("attack");
         anim.SetTrigger("Interact");
         StartCoroutine(StartAttack());
         //GameObject.Find("UI_Weapon1").GetComponent<UIweapon1>().Activate();
@@ -291,6 +296,7 @@ public class WeaponBase : MonoBehaviour
     IEnumerator StartAttack()
     {
         yield return new WaitForSeconds(starttime);
+        SoundManager.instance.PlaySound("attack");
         coll2D.enabled = true;
         StartCoroutine(disableHitBox());
     }

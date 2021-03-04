@@ -88,7 +88,7 @@ public class SceneManagement : MonoBehaviour
 
     public void WinPanel()
     {
-        Debug.Log("1");
+        //Debug.Log("1");
         player.GetComponent<Points>().PassGame();
         winPanel.SetActive(true);
         record.BestScore();

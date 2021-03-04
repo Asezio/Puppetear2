@@ -106,19 +106,19 @@ public class UITimeBar : MonoBehaviour
     IEnumerator Scale2()
     {
         scale1Flag = true;
-        TimeBar.transform.DOPunchScale(new Vector3(0.2f, 0.2f, 0.2f), 0.85f, 1);
-        TimeBarDown.transform.DOPunchScale(new Vector3(0.2f, 0.2f, 0.2f), 0.85f, 1);
-        TimeCao.transform.DOPunchScale(new Vector3(0.2f, 0.2f, 0.2f), 0.85f, 1);
-        yield return new WaitForSeconds(0.85f);
+        TimeBar.transform.DOPunchScale(new Vector3(0.2f, 0.2f, 0.2f), 0.7f, 1);
+        TimeBarDown.transform.DOPunchScale(new Vector3(0.2f, 0.2f, 0.2f), 0.7f, 1);
+        TimeCao.transform.DOPunchScale(new Vector3(0.2f, 0.2f, 0.2f), 0.7f, 1);
+        yield return new WaitForSeconds(0.7f);
         scale1Flag = false;
     }
     IEnumerator Scale3()
     {
         scale1Flag = true;
-        TimeBar.transform.DOPunchScale(new Vector3(0.3f, 0.3f, 0.3f), 0.7f, 1);
-        TimeBarDown.transform.DOPunchScale(new Vector3(0.3f, 0.3f, 0.3f), 0.7f, 1);
-        TimeCao.transform.DOPunchScale(new Vector3(0.3f, 0.3f, 0.3f), 0.7f, 1);
-        yield return new WaitForSeconds(0.7f);
+        TimeBar.transform.DOPunchScale(new Vector3(0.3f, 0.3f, 0.3f), 0.5f, 1);
+        TimeBarDown.transform.DOPunchScale(new Vector3(0.3f, 0.3f, 0.3f), 0.5f, 1);
+        TimeCao.transform.DOPunchScale(new Vector3(0.3f, 0.3f, 0.3f), 0.5f, 1);
+        yield return new WaitForSeconds(0.5f);
         scale1Flag = false;
     }
 

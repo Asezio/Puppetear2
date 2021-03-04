@@ -63,4 +63,8 @@ public class SignText : MonoBehaviour
     {
         textUI.text = "Need Item";
     }
+    public void Read()
+    {
+        textUI.text = "E to Read";
+    }
 }

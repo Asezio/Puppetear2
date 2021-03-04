@@ -98,4 +98,9 @@ public class ItemStatic : ItemBase
         yield return new WaitForSeconds(0.59f);
         anim.SetBool("IsBroken", true);
     }
+
+    public void Post()
+    {
+
+    }
 }
