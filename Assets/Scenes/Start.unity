@@ -399,6 +399,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d9dc643cd71c3d4693167116417e905, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bgms:
+  - {fileID: 8300000, guid: 7d7badd8df028f3418c403ec6c79144f, type: 3}
+  - {fileID: 8300000, guid: 3bdd0076758142444ae0238ae548bada, type: 3}
+  - {fileID: 8300000, guid: 661b06a48fc1f79478c4eb3c2f9b0855, type: 3}
   audioSource: {fileID: 0}
 --- !u!4 &531537919
 Transform:
