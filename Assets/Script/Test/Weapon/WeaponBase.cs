@@ -195,7 +195,10 @@ public class WeaponBase : MonoBehaviour
                         {
                             player.GetComponent<SignText>().Interact();
                         }
-
+                        else if (obj.GetComponent<ItemStatic>().itemName == "Post")
+                        {
+                            player.GetComponent<SignText>().Read();
+                        }
                         else
                         {
                             player.GetComponent<SignText>().NeedItem();
@@ -233,7 +236,10 @@ public class WeaponBase : MonoBehaviour
                                 obj.GetComponent<ItemStatic>().switchflag = true;
                                 obj.GetComponent<ItemStatic>().ActiveMachine();
                             }
-
+                            else if (obj.GetComponent<ItemStatic>().itemName == "Post")
+                            {
+                                player.GetComponent<SignText>().Read();
+                            }
                         }
                     }
 

@@ -14,7 +14,6 @@ GameObject:
   - component: {fileID: -974380463774184903}
   - component: {fileID: 7806140102561809121}
   - component: {fileID: 3422655113681152674}
-  - component: {fileID: 4205999451633466564}
   - component: {fileID: 8336124409526412407}
   - component: {fileID: 6945154433337496884}
   - component: {fileID: 5850336080043532158}
@@ -152,18 +151,6 @@ EdgeCollider2D:
   - {x: 1.8234577, y: 0.609395}
   - {x: -1.9060106, y: 0.60022736}
   - {x: -1.8976421, y: -0.0014381409}
---- !u!114 &4205999451633466564
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5707743782658635589}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bab044239623587488fdb2181276f4e7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &8336124409526412407
 MonoBehaviour:
   m_ObjectHideFlags: 0

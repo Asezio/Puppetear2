@@ -107,7 +107,6 @@ GameObject:
   - component: {fileID: 3381246102312594759}
   - component: {fileID: 8659142193670634552}
   - component: {fileID: 8216667197405885209}
-  - component: {fileID: 6763402179679512705}
   - component: {fileID: 6097275673700824677}
   m_Layer: 11
   m_Name: ShuaKaJi_Blue
@@ -213,18 +212,6 @@ MonoBehaviour:
   isPoisoned: 0
   isAvailable: 0
   switchflag: 0
---- !u!114 &6763402179679512705
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6868728457203172701}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bab044239623587488fdb2181276f4e7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!61 &6097275673700824677
 BoxCollider2D:
   m_ObjectHideFlags: 0
