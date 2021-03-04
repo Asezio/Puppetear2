@@ -154,7 +154,7 @@ public class Boss : AIBase
                     float distanceAfter = Vector3.Distance(transform.position, waypoint);
 
                     float arriveDistance = 0.1f;
-                    if (distanceAfter < arriveDistance || distanceBefore <= distanceAfter)
+                    if (distanceAfter < arriveDistance )
                     {
                         waitTimer = waitTimeList[wayPointIndex];
                         wayPointIndex = (wayPointIndex + 1) % waypointList.Length;
