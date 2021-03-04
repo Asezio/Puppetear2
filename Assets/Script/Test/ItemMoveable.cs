@@ -217,12 +217,14 @@ public class ItemMoveable : ItemBase
         {
             used.GetComponent<ItemStatic>().DrinkerPoisoned();
             used.GetComponent<ItemStatic>().isAvailable = false;
+            SoundManager.instance.PlaySound("poison");
             //used.GetComponent<ItemStatic>().Destroy();
             //used.GetComponent<SpriteRenderer>().color = new Color32(0,255,25,255);
         }
         else if (number == 2)
         {
             used.GetComponent<ItemStatic>().FBIOpenTheDoor();
+            SoundManager.instance.PlaySound("dd");
             //Debug.Log("Here");
         }
         else if (number == 3)
