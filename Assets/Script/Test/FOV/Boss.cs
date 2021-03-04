@@ -30,7 +30,7 @@ public class Boss : AIBase
     [Header("Health")]
     public static int health = 3;
 
-    private float waitTimer;
+    [SerializeField]private float waitTimer;
     private int wayPointIndex;
 
     public static bool isChanged = true;
@@ -56,8 +56,10 @@ public class Boss : AIBase
 
         if (health == 3)
         {
+            anim.SetInteger("health", 3);
             if (isChanged == true)
             {
+                //anim.SetTrigger("isHit");
                 wayPointIndex = 0;
                 if (waitTimeList1.Length != 0)
                 {
@@ -70,8 +72,10 @@ public class Boss : AIBase
 
         if (health == 2)
         {
+            anim.SetInteger("health", 2);
             if (isChanged == true)
             {
+                
                 wayPointIndex = 0;
                 if (waitTimeList2.Length != 0)
                 {
@@ -85,6 +89,7 @@ public class Boss : AIBase
 
         if (health == 1)
         {
+            anim.SetInteger("health", 1);
             if (isChanged == true)
             {
                 wayPointIndex = 0;
@@ -110,6 +115,7 @@ public class Boss : AIBase
         switch (state)
         {
             case State.Waiting:
+                anim.SetBool("isIdle", true);
                 foreach (var thing in hitThing)
                 {
                     if (thing.GetComponent<Machine1>() != null)
@@ -130,14 +136,14 @@ public class Boss : AIBase
                     {
                         fieldOfView.gameObject.SetActive(true);
                     }
-
+                    anim.SetBool("isIdle", false);
                     state = State.Moving;
                 }
                 break;
 
             case State.Moving:
                 //Debug.Log("move");
-
+                anim.SetBool("isWalk", true);
                 if (waypointList.Length != 0)
                 {
                     Vector3 waypoint = waypointList[wayPointIndex];
@@ -150,13 +156,9 @@ public class Boss : AIBase
                     float arriveDistance = 0.1f;
                     if (distanceAfter < arriveDistance || distanceBefore <= distanceAfter)
                     {
-                        //Flip();
-                        // Go to next waypoint
-
-
-
-
+                        waitTimer = waitTimeList[wayPointIndex];
                         wayPointIndex = (wayPointIndex + 1) % waypointList.Length;
+                        anim.SetBool("isWalk", false);
                         state = State.Waiting;
                     }
 
@@ -175,11 +177,11 @@ public class Boss : AIBase
                 break;
 
             case State.MoveToMachine:
+                anim.SetBool("isWalk", true);
                 foreach (var thing in hitThing)
                 {
                     if (thing.GetComponent<Machine1>() != null)
-                    {
-                        Debug.Log("Machine");
+                    {    
                         Vector3 machDir = (thing.transform.position - transform.position).normalized;
                         lastMoveDir = machDir;
                         transform.position = transform.position + machDir * speed * Time.deltaTime;
@@ -187,6 +189,7 @@ public class Boss : AIBase
                         if (distanceAfter < machineOffset)
                         {
                             thing.GetComponent<Machine1>().isActive = false;
+                            anim.SetBool("isWalk", false);
                             state = State.WaitMachine;
                         }
                     }
@@ -194,10 +197,12 @@ public class Boss : AIBase
                 break;
 
             case State.WaitMachine:
+                anim.SetBool("isIdle", true);
                 machineWaitTimer -= Time.deltaTime;
 
                 if (machineWaitTimer <= 0)
                 {
+                    anim.SetBool("isIdle", false);
                     state = State.Moving;
                 }
                 break;

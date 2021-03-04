@@ -6,6 +6,7 @@ public class AIBase : MonoBehaviour
 {
     protected SpriteRenderer sr;
     protected Animator anim;
+    public Rigidbody2D rb;
     public bool isWalking;
     public UIDetectBar detectBar;
 
@@ -39,6 +40,7 @@ public class AIBase : MonoBehaviour
         canvas = GameObject.Find("Canvas");
         //delayTime = 0.2f;
         //delayMaxTime = delayTime;
+        rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         isWalking = false;
         detectBar = GetComponentInChildren<UIDetectBar>();
