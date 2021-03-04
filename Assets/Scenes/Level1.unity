@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -653,6 +653,16 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1340098173709867782, guid: 21c3c9457a631124492d9e1da15bc881,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1340098173709867782, guid: 21c3c9457a631124492d9e1da15bc881,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2385182208738815615, guid: 21c3c9457a631124492d9e1da15bc881,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -708,6 +718,31 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5334877956885810721, guid: 21c3c9457a631124492d9e1da15bc881,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5334877956885810721, guid: 21c3c9457a631124492d9e1da15bc881,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.543
+      objectReference: {fileID: 0}
+    - target: {fileID: 5334877956885810721, guid: 21c3c9457a631124492d9e1da15bc881,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.034
+      objectReference: {fileID: 0}
+    - target: {fileID: 5334877956885810721, guid: 21c3c9457a631124492d9e1da15bc881,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5975516952118189308, guid: 21c3c9457a631124492d9e1da15bc881,
+        type: 3}
+      propertyPath: card
+      value: 
+      objectReference: {fileID: 1107882351}
     - target: {fileID: 6868728457203172701, guid: 21c3c9457a631124492d9e1da15bc881,
         type: 3}
       propertyPath: m_Name
@@ -2386,6 +2421,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.48004988, y: 0.8252964}
   m_EdgeRadius: 0
+--- !u!114 &1107882351 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1597482916279156715, guid: 885e45a4200b15948bbebb2344c2783c,
+    type: 3}
+  m_PrefabInstance: {fileID: 412792278}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e54910f5c1110b44a4e6e84092f86d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &1109420695 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7517203631553391644, guid: c577f476344221c449831bfc2fe57c36,
@@ -3847,7 +3894,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 4105e3eba91b62647a735d724f88bef4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

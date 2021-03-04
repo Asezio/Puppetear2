@@ -70,7 +70,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: fda20da28a44027459a5e71442bbe088, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -110,7 +110,7 @@ GameObject:
   - component: {fileID: 6763402179679512705}
   - component: {fileID: 6097275673700824677}
   m_Layer: 11
-  m_Name: ShuaKaJi
+  m_Name: ShuaKaJi_Red
   m_TagString: ItemInteractable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -172,7 +172,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 4d827026cf3aeff409e86bc1b502b148, type: 3}
+  m_Sprite: {fileID: 21300000, guid: d1a0a69862ec39e499a4d7b38d6283f2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
