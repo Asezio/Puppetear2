@@ -276,7 +276,7 @@ public class WeaponBase : MonoBehaviour
     {
         //Debug.Log("Attack");
         // anim.SetBool("Attack", true);
-        SoundManager.instance.PlaySound("attack");
+       // SoundManager.instance.PlaySound("attack");
         anim.SetTrigger("Interact");
         StartCoroutine(StartAttack());
         //GameObject.Find("UI_Weapon1").GetComponent<UIweapon1>().Activate();
@@ -327,6 +327,7 @@ public class WeaponBase : MonoBehaviour
                 if (other.GetComponent<DoorKeeper>() != null)
                 {
                     TaskTarget2.doorKeeperFinAmount++;
+                    GameObject.Find("KillStage").GetComponent<KillStage>().FirstKillDoorKeeper();
                 }
             }
             else
