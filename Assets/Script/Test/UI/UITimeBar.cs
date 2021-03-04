@@ -65,7 +65,7 @@ public class UITimeBar : MonoBehaviour
                 StartCoroutine(Scale2());
                 TimeAlert2();
             }
-            else if (TimeBar.fillAmount >= 0f)
+            else if (TimeBar.fillAmount > 0.01f)
             {
                 StartCoroutine(Scale3());
                 TimeAlert3();
@@ -115,6 +115,7 @@ public class UITimeBar : MonoBehaviour
     IEnumerator Scale3()
     {
         scale1Flag = true;
+        SoundManager.instance.PlayLoopedSound("heart beat", true, 0.5f);
         TimeBar.transform.DOPunchScale(new Vector3(0.3f, 0.3f, 0.3f), 0.5f, 1);
         TimeBarDown.transform.DOPunchScale(new Vector3(0.3f, 0.3f, 0.3f), 0.5f, 1);
         TimeCao.transform.DOPunchScale(new Vector3(0.3f, 0.3f, 0.3f), 0.5f, 1);
@@ -153,7 +154,7 @@ public class UITimeBar : MonoBehaviour
 
     IEnumerator Alert2()
     {
-        head.GetComponentInChildren<Text>().text = "Kill, kill...";
+        head.GetComponentInChildren<Text>().text = "Kill, kill!";
         head.GetComponent<UIFadeInOut>().FadeIn();
 
         yield return new WaitForSeconds(2);

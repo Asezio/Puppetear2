@@ -36,7 +36,7 @@ public class SoundManager : MonoBehaviour {
         {
             nameToSound.Add(sound.name, sound);
         }
-        bgMusic = GameObject.Find("BackgroundMusic").GetComponent<BackgroundMusic>();
+        //bgMusic = GameObject.Find("BackgroundMusic").GetComponent<BackgroundMusic>();
     }
 
     ///<summary>

@@ -25,7 +25,7 @@ public class EnemyBase : MonoBehaviour
     public void Die()
     {
         timeBar.Refresh();
-
+        SoundManager.instance.PlaySound("attack npc");
         anim.SetTrigger("isDead");
         //SoundManager.instance.PlaySound("Hit for enemy 2"); 
         if (GameObject.Find("KillStage") != null)
@@ -41,13 +41,28 @@ public class EnemyBase : MonoBehaviour
        
         int addPoints = Random.Range(150, 201);
         player.GetComponent<Points>().AddPoints(addPoints);
-
+        if(gameObject.GetComponent<SleepyAI>() == null && gameObject.GetComponent<Boss>() == null && gameObject.GetComponent<PoisonAI>() == null)
+        {
+            gameObject.GetComponent<PatrolAI>().enabled = false;
+        }
+        else if(gameObject.GetComponent<Boss>() != null)
+        {
+            gameObject.GetComponent<Boss>().enabled = false;
+        }
+        else if (gameObject.GetComponent<PoisonAI>() != null)
+        {
+            gameObject.GetComponent<PoisonAI>().enabled = false;
+        }
+        else
+        {
+            gameObject.GetComponent<SleepyAI>().enabled = false;
+        }
     }
 
     public void Hurt()
     {
         StartCoroutine(BossHurt());
-
+        SoundManager.instance.PlaySound("attack npc");
     }
     IEnumerator BossHurt()
     {

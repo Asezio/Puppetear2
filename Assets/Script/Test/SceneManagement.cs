@@ -116,5 +116,14 @@ public class SceneManagement : MonoBehaviour
         Debug.Log(player.GetComponent<Points>().sp.intro);
     }
 
+    public void PlaySound()
+    {
+        SoundManager.instance.PlaySound("click");
 
+    }
+
+    public void Quit()
+    {
+        SceneManager.LoadScene(0);
+    }
 }
