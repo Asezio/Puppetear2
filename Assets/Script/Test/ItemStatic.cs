@@ -67,6 +67,7 @@ public class ItemStatic : ItemBase
         StartCoroutine(Broken());
         //gameObject.GetComponentInChildren<>
         isAvailable = false;
+        SoundManager.instance.PlaySound("broken");
     }
 
 
@@ -82,6 +83,7 @@ public class ItemStatic : ItemBase
         anim.SetBool("Active", true);
         //Debug.Log("Kere");
         StartCoroutine(DisableMachine());
+        SoundManager.instance.PlayLoopedSound("machine",true,lastTime);
     }
 
     IEnumerator DisableMachine()

@@ -18,8 +18,11 @@ public class UITimeBar : MonoBehaviour
     private Points points;
 
     private bool scale1Flag;
-    private bool scale2Flag;
-    private bool scale3Flaf;
+    private bool stage1Flag;
+    private bool stage2Flag;
+    private bool stage3Flag;
+
+    private GameObject head;
     // Use this for initialization
     void Awake()
     {
@@ -28,8 +31,10 @@ public class UITimeBar : MonoBehaviour
         points = GameObject.Find("Chara_Player").GetComponent<Points>();
         //shaLou = GameObject.Find("ShaLou");
         scale1Flag = false;
-        scale2Flag = false;
-        scale3Flaf = false;
+        stage1Flag = false;
+        stage2Flag = false;
+        stage3Flag = false;
+        head = GameObject.Find("Head");
     }
 
     void Start()
@@ -53,14 +58,17 @@ public class UITimeBar : MonoBehaviour
             if(TimeBar.fillAmount >=0.5f )
             {
                 StartCoroutine(Scale1());
+                TimeAlert1();
             }
-            else if(TimeBar.fillAmount >= 0.2f)
+            else if(TimeBar.fillAmount >= 0.25f)
             {
                 StartCoroutine(Scale2());
+                TimeAlert2();
             }
             else if (TimeBar.fillAmount >= 0f)
             {
                 StartCoroutine(Scale3());
+                TimeAlert3();
             }
         }
     }
@@ -68,6 +76,9 @@ public class UITimeBar : MonoBehaviour
     public void Refresh()
     {
         StartCoroutine(Rotate());
+        stage1Flag = false;
+        stage2Flag = false;
+        stage3Flag = false;
     }
 
     IEnumerator Rotate()
@@ -109,5 +120,61 @@ public class UITimeBar : MonoBehaviour
         TimeCao.transform.DOPunchScale(new Vector3(0.3f, 0.3f, 0.3f), 0.7f, 1);
         yield return new WaitForSeconds(0.7f);
         scale1Flag = false;
+    }
+
+    public void TimeAlert1()
+    {
+        if (!stage1Flag)
+        {
+            StartCoroutine(Alert1());
+            stage1Flag = true;
+        }
+
+    }
+
+    IEnumerator Alert1()
+    {
+        head.GetComponentInChildren<Text>().text = "Need to kill...";
+        head.GetComponent<UIFadeInOut>().FadeIn();
+
+        yield return new WaitForSeconds(2);
+        head.GetComponent<UIFadeInOut>().FadeOut();
+    }
+
+    public void TimeAlert2()
+    {
+        if (!stage2Flag)
+        {
+            StartCoroutine(Alert2());
+            stage2Flag = true;
+        }
+
+    }
+
+    IEnumerator Alert2()
+    {
+        head.GetComponentInChildren<Text>().text = "Kill, kill...";
+        head.GetComponent<UIFadeInOut>().FadeIn();
+
+        yield return new WaitForSeconds(2);
+        head.GetComponent<UIFadeInOut>().FadeOut();
+    }
+    public void TimeAlert3()
+    {
+        if (!stage3Flag)
+        {
+            StartCoroutine(Alert3());
+            stage3Flag = true;
+        }
+
+    }
+
+    IEnumerator Alert3()
+    {
+        head.GetComponentInChildren<Text>().text = "Must kill now!!";
+        head.GetComponent<UIFadeInOut>().FadeIn();
+
+        yield return new WaitForSeconds(2);
+        head.GetComponent<UIFadeInOut>().FadeOut();
     }
 }

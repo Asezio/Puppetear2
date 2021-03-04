@@ -217,6 +217,7 @@ public class WeaponBase : MonoBehaviour
                         {
                             isHiden = true;
                             used = obj;
+                            SoundManager.instance.PlaySound("hide1");
                         }
 
                         else if (obj.tag == "ItemInteractable")
@@ -225,6 +226,7 @@ public class WeaponBase : MonoBehaviour
                             {
                                 obj.GetComponent<ElectricBox>().ForceOpen();
                                 obj.GetComponent<ItemStatic>().isAvailable = false;
+                                SoundManager.instance.PlaySound("electricBroken");
                             }
                             else if (obj.GetComponent<Machine1>() != null)
                             {
@@ -274,7 +276,6 @@ public class WeaponBase : MonoBehaviour
     {
         //Debug.Log("Attack");
         // anim.SetBool("Attack", true);
-        //SoundManager.instance.PlaySound("attack2");
         anim.SetTrigger("Interact");
         StartCoroutine(StartAttack());
         //GameObject.Find("UI_Weapon1").GetComponent<UIweapon1>().Activate();
@@ -289,6 +290,7 @@ public class WeaponBase : MonoBehaviour
     IEnumerator StartAttack()
     {
         yield return new WaitForSeconds(starttime);
+        SoundManager.instance.PlaySound("attack");
         coll2D.enabled = true;
         StartCoroutine(disableHitBox());
     }
@@ -325,6 +327,7 @@ public class WeaponBase : MonoBehaviour
                 if (other.GetComponent<DoorKeeper>() != null)
                 {
                     TaskTarget2.doorKeeperFinAmount++;
+                    GameObject.Find("KillStage").GetComponent<KillStage>().FirstKillDoorKeeper();
                 }
             }
             else
