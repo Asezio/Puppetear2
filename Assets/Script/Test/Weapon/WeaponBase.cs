@@ -276,7 +276,6 @@ public class WeaponBase : MonoBehaviour
     {
         //Debug.Log("Attack");
         // anim.SetBool("Attack", true);
-       // SoundManager.instance.PlaySound("attack");
         anim.SetTrigger("Interact");
         StartCoroutine(StartAttack());
         //GameObject.Find("UI_Weapon1").GetComponent<UIweapon1>().Activate();
@@ -291,6 +290,7 @@ public class WeaponBase : MonoBehaviour
     IEnumerator StartAttack()
     {
         yield return new WaitForSeconds(starttime);
+        SoundManager.instance.PlaySound("attack");
         coll2D.enabled = true;
         StartCoroutine(disableHitBox());
     }

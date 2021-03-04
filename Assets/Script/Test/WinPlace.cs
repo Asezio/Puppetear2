@@ -27,6 +27,7 @@ public class WinPlace : MonoBehaviour
                 //Debug.Log("2");
                 canvas.GetComponent<SceneManagement>().NextLevel();
                 //player.GetComponent<CapsuleCollider2D>().enabled = false;
+                BackgroundMusic.instance.ChangeBGM();
             }
             else
             {
