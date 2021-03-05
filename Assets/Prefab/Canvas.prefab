@@ -1605,8 +1605,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pointNum: {fileID: 389396638283504231}
-  speedNum: {fileID: 389396637657457755}
-  healthNum: {fileID: 389396637506569813}
+  speedNum: {fileID: 389396638472500186}
+  healthNum: {fileID: 389396638139810052}
   textComment: {fileID: 389396638507779256}
   speedButton: {fileID: 389396638033076888}
   healthButton: {fileID: 389396636727821320}

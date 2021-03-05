@@ -421,7 +421,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 453a9e065598ab940b3db1b1c48aeef0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lvUpNeedPoints: 10
+  lvUpNeedPoints: 800
   sp: {fileID: 11400000, guid: 827c4f68b0e262349b5cb25157176bc7, type: 2}
   maxTime: 0
   speed: 0

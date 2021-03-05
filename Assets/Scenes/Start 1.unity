@@ -661,6 +661,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 811c6e95a6d5c794ab42ac3dc51473eb, type: 3}
   - {fileID: 8300000, guid: 3701a69b0929de043a1ed260740a3df1, type: 3}
   - {fileID: 8300000, guid: c131138b847aa5d45aefa8a3f45419f9, type: 3}
+  - {fileID: 8300000, guid: 8203375c3f24c624f8a2c2deaf30695d, type: 3}
   bgMusic: {fileID: 0}
 --- !u!114 &1860286820
 MonoBehaviour:

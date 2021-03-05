@@ -580,6 +580,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93b555d93cd7b5542b4b03728f976652, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rb: {fileID: 0}
   isWalking: 0
   detectBar: {fileID: 0}
   speed: 2
@@ -605,7 +606,7 @@ MonoBehaviour:
   thingLayers:
     serializedVersion: 2
     m_Bits: 2048
-  machineOffset: 5
+  machineOffset: 2
   machineWaitTimer: 5
   state: 0
 --- !u!50 &6872977715839966108

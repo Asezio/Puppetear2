@@ -15,9 +15,9 @@ GameObject:
   - component: {fileID: 4020824406103527367}
   - component: {fileID: 1060084580526892796}
   - component: {fileID: 8873358609897887049}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: ElectricBox
-  m_TagString: ItemInteractable
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

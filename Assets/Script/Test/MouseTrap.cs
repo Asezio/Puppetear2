@@ -4,8 +4,14 @@ using UnityEngine;
 
 public class MouseTrap : MonoBehaviour
 {
+    public GameObject player;
     // Start is called before the first frame update
     // Update is called once per frame
+
+    void Awake()
+    {
+        player = GameObject.Find("Chara_Player");
+    }
     void Update()
     {
         GetComponent<EdgeCollider2D>().enabled = !GetComponent<ItemMoveable>().isStick;
@@ -28,10 +34,14 @@ public class MouseTrap : MonoBehaviour
                 {
                     Debug.Log("2");
                     other.GetComponent<EnemyBase>().Hurt();
+                    GameObject.Find("TimeLeft").GetComponent<UITimeBar>().Refresh();
+                    int addPoints = Random.Range(150, 201);
+                    player.GetComponent<Points>().AddPoints(addPoints);
                 }
                 else
                 {
                     Boss.health--;
+                    TaskTarget.bossFinAmount++;
                     other.GetComponent<EnemyBase>().Die();
                 }
             }

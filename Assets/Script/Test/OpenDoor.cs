@@ -38,7 +38,7 @@ public class OpenDoor : MonoBehaviour
     {
         OpenTheDoor();
         canOpen = true;
-        GetComponentInParent<BoxCollider2D>().enabled = false;
+        //GetComponentInParent<BoxCollider2D>().enabled = false;
     }
 
     public void ForceOpen(float time)

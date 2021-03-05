@@ -27,6 +27,7 @@ public class EnemyBase : MonoBehaviour
         timeBar.Refresh();
         SoundManager.instance.PlaySound("attack npc");
         anim.SetTrigger("isDead");
+        GetComponent<CapsuleCollider2D>().enabled = false;
         //SoundManager.instance.PlaySound("Hit for enemy 2"); 
         if (GameObject.Find("KillStage") != null)
         {

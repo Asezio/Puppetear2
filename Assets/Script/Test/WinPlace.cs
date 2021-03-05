@@ -68,11 +68,15 @@ public class WinPlace : MonoBehaviour
     {
         if (player.GetComponent<Points>().sp.scene == 1)
         {
-            if (player.GetComponent<TaskTarget2>().isLevelPass == true && flag == true)
+            if(player.GetComponent<TaskTarget2>()!=null)
             {
-                flag = false;
-                OpenFinalDoor();
+                if (player.GetComponent<TaskTarget2>().isLevelPass == true && flag == true)
+                {
+                    flag = false;
+                    OpenFinalDoor();
+                }
             }
+
         }
         else if (player.GetComponent<Points>().sp.scene == 2)
         {
